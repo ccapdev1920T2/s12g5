@@ -20,13 +20,13 @@
                 </script>
                 {{#each products}}
                     <div class="col-md-6">
-                        <div class="card" style="width: 25rem;">
+                        <div class="card listingcard" style="width: 25rem;">
                             <img src={{{photo}}} class="card-img-top" alt="product">
                             <div class="card-body">
                                 <h5 class="card-title" >{{name}}</h5>
                                 <p class="card-text" >{{description}}</p>
                                 <h6 class="prices"><span>{{startprice}}</span>php - <span>{{endprice}}</span>php</h6>
-                                <a href="listing.html" class="btn btn-secondary btn-block bid">    bid</a>
+                                <a href="/listing" class="btn btn-secondary btn-block bid"> bid</a>
                             </div>
                         </div>
                     </div>
