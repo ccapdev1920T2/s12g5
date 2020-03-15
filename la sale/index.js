@@ -100,6 +100,10 @@ app.get('/pinnedlistings', function(req, res){
     res.render('pinnedlistings', {listing: nlisting});
 });
 
+app.get('/editlisting', function(req, res){
+    res.render('editlisting', {listing: nlisting});
+});
+
 
 app.get('/profile', function(req, res) {
     res.render('profile', {});
