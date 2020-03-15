@@ -77,19 +77,30 @@ app.get('/mylistings', function(req, res) {
                     {ulimg: "https://cdn.vox-cdn.com/thumbor/Vvlyzrlf5dip-bFgfSa9vi7rzdk=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/66113368/EOaIPk4U4AANzxs.5.jpg", ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, },
                     {ulimg: "https://cdn.vox-cdn.com/thumbor/Vvlyzrlf5dip-bFgfSa9vi7rzdk=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/66113368/EOaIPk4U4AANzxs.5.jpg", ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, },
                     {ulimg: "https://cdn.vox-cdn.com/thumbor/Vvlyzrlf5dip-bFgfSa9vi7rzdk=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/66113368/EOaIPk4U4AANzxs.5.jpg", ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, }];
-    var plisting = [{plimg: "https://vignette.wikia.nocookie.net/p__/images/d/dc/Lucina_SSBU.png/revision/latest?cb=20180613135651&path-prefix=protagonist", plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
+
+
+    res.render('mylistings', {olisting: olisting, clisting: clisting, ulisting: ulisting});
+});
+
+app.get('/listingparticipation', function(req, res){
+     var plisting = [{plimg: "https://vignette.wikia.nocookie.net/p__/images/d/dc/Lucina_SSBU.png/revision/latest?cb=20180613135651&path-prefix=protagonist", plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
                     {plimg: "https://vignette.wikia.nocookie.net/p__/images/d/dc/Lucina_SSBU.png/revision/latest?cb=20180613135651&path-prefix=protagonist", plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
                     {plimg: "https://vignette.wikia.nocookie.net/p__/images/d/dc/Lucina_SSBU.png/revision/latest?cb=20180613135651&path-prefix=protagonist", plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
                     {plimg: "https://vignette.wikia.nocookie.net/p__/images/d/dc/Lucina_SSBU.png/revision/latest?cb=20180613135651&path-prefix=protagonist", plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
                     {plimg: "https://vignette.wikia.nocookie.net/p__/images/d/dc/Lucina_SSBU.png/revision/latest?cb=20180613135651&path-prefix=protagonist", plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350}];
+    res.render('listingparticipation', {listing: plisting});
+});
+
+app.get('/pinnedlistings', function(req, res){
     var nlisting = [{nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
                     {nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
                     {nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
                     {nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
                     {nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250}];
-
-    res.render('mylistings', {olisting: olisting, clisting: clisting, ulisting: ulisting, plisting: plisting, nlisting: nlisting});
+    res.render('pinnedlistings', {listing: nlisting});
 });
+
+
 app.get('/profile', function(req, res) {
     res.render('profile', {});
 });
