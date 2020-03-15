@@ -15,7 +15,7 @@
 
 
     <div>
-        <div class="container mlistings" id="listings">
+        <div class="container mylistings" id="mylistings">
             <h1 id="my">my.</h1>
             <h1 id="pinnedl">pinned listings.</h1>
             
@@ -24,7 +24,7 @@
 
             {{#each listing}}
                     <div class="col-md-6">
-                        <div class="card participationcard" style="width: 25rem;">
+                        <div class="card" style="width: 25rem;">
                             <img src={{{nlimg}}} class="card-img-top" alt="product">
                             <div class="card-body">
                                 <h5 class="card-title" > {{nlname}} </h5>
@@ -38,7 +38,7 @@
                 <script>
                     x++;
                 if(x%2==0){
-                    $("#listings").append("</div> <div class=\"row\"");
+                    $("#mylistings").append("</div> <div class=\"row\"");
                     x=0;
                 }
                 </script>
