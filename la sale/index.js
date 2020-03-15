@@ -7,7 +7,7 @@ app.set('view engine', 'hbs');
 
 
 app.get('/', function(req, res) {
-    res.send('hello world');
+    res.render('userlogin', {});
 });
 
 app.listen(port, function() {
