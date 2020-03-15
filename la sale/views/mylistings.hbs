@@ -112,37 +112,30 @@
                             <script> x=0; var j=0; </script>
                                 {{#each plisting}}
                                 <script> 
+                                    var string="<div class=\"card participationcard\" style=\"width: 25rem;\"><img src={{{plimg}}} class=\"card-img-top\" alt=\"product\"><div class=\"card-body\"> <h5 class=\"card-title\" > {{plname}} </h5> <p class=\"card-text\" > {{pldescription}} </p><h6 class=\"prices\">highest bidder: @{{plusername}} </h6> <h6 class=\"prices\"><span> {{plprice}} </span>php</h6><a href=\"listing.html\" class=\"btn btn-secondary btn-block bid\"> View</a></div></div>";
+                                    var enddiv = "</div></div>";
                                     if (x%2==0 && j==0){
                                         var html = "<div class=\"carousel-item active\"> <div class=\"row\"> <div class=\"col-md partItemLeft\">"
-                                        $("#pl").append(html);
+                                        $("#pl").append(html+string);
                                     }
 
                                     else if(x%2==0){
-                                        var html = "</div> </div> <div class=\"carousel-item\"> <div class=\"row\"> <div class=\"col-md partItemLeft\"> "
-                                        $("#pl").append(html)
+                                        var html = "<div class=\"carousel-item\"> <div class=\"row\"> <div class=\"col-md partItemLeft\"> "
+                                        $("#pl").append(html+string)
                                     }
 
                                     else if (x%2==1){
                                         var html= "<div class=\"col-md partItemRight\">"
-                                        $("#pl").append(html)
+                                        $("#pl").append(html+string+enddiv)
                                     }
                                 </script>
-                                    <div class="card participationcard" style="width: 25rem;">
-                                        <img src={{{plimg}}} class="card-img-top" alt="product">
-                                        <div class="card-body">
-                                            <h5 class="card-title" > {{plname}} </h5>
-                                            <p class="card-text" > {{pldescription}} </p>
-                                            <h6 class="prices">highest bidder: @{{plusername}} </h6>
-                                            <h6 class="prices"><span> {{plprice}} </span>php</h6>
-                                            <a href="listing.html" class="btn btn-secondary btn-block bid"> View</a>  
-                                        </div>
-                                    </div>
+                                    
                                 <script>
                                     x++;
                                     j++;
                                 </script>
                                 {{/each}}
-                                </div></div> <!-- For the remaining unmatched carousel item and row divs -->
+                                <!-- For the remaining unmatched carousel item and row divs -->
                     </div>
                 </div>
             </div>
@@ -199,16 +192,14 @@
                                             <a href="listing.html" class="btn btn-secondary btn-block bid"> View</a>  
                                         </div>
                                     </div>
+                                    </div> <!-- For the partItem div-->
                                 <script>
                                     x++;
                                     j++;
                                 </script>
                                 {{/each}}
                                 </div></div> <!-- For the remaining unmatched carousel item and row divs -->
-                    </div>
-                </div>
-            </div>
-                    
+                    </div>             
 
                     <a class="carousel-control-prev" href="#pinnedlistingscarousel" role="button" data-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -219,8 +210,9 @@
                       <span class="sr-only">Next</span>
                     </a>
                   </div>
-          
+            </div>
             <div class="col-md-2"></div>
+        </div>
     </div>
 
 
