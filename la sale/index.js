@@ -44,8 +44,13 @@ app.get('/editprofile', function(req, res) {
     res.render('editprofile', {name: name, username: username, rating: rating, idnum: idnum, college: college, userdesc: userdesc});
 });
 app.get('/listing', function(req, res) {
+    var productname = "kitty kat";
+    var producttype = "pet";
+    var username = "katthecat";
+    var photos = [{img: "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg"}, 
+                {img: "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/reference_guide/cats_and_excessive_meowing_ref_guide/1800x1200_cats_and_excessive_meowing_ref_guide.jpg"}];
 
-    res.render('listing', {});
+    res.render('listing', {productname: productname, producttype: producttype, username: username,photo: photos});
 });
 app.get('/messages', function(req, res) {
     res.render('messages', {});
