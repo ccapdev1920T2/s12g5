@@ -12,6 +12,10 @@ body{
     margin-bottom: 500px;
 }
 
+.listingcard {
+    margin-top: 50px;
+}
+
 #lasalenav{
     background-color: #DAE9CF;
 }
