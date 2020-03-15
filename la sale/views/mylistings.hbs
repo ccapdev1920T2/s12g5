@@ -110,7 +110,7 @@
                 <div id="pinnedlistingscarousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner" id="pl">
                             <script> x=0; var j=0; </script>
-                                {{#each plisting}
+                                {{#each plisting}}
                                 <script> 
                                     if (x%2==0 && j==0){
                                         $("#pl").append("<div class=\"carousel-item active\"> <div class=\"row\"> <div class=\"col-md partItemLeft\">")
@@ -160,14 +160,14 @@
     
     <div class="container-fluid mylistings" id="pinnedlistings">
         <h1 id="my">my.</h1>
-        <h1 id="listingparticipation">pinned listings.</h1>
+        <h1 id="pinnedl">pinned listings.</h1>
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <div id="pinnedlistingscarousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner" id="nl">
                             <script> x=0; j=0; </script>
-                                {{#each nlisting}
+                                {{#each nlisting}}
                                 <script> 
                                     if (x%2==0 && j==0){
                                         $("#nl").append("<div class=\"carousel-item active\"> <div class=\"row\"> <div class=\"col-md partItemLeft\">")
@@ -184,8 +184,8 @@
                                     <div class="card participationcard" style="width: 25rem;">
                                         <img src={{{plimg}}} class="card-img-top" alt="product">
                                         <div class="card-body">
-                                            <h5 class="card-title" > {{nlname}} </h5>
-                                            <p class="card-text" > {{nldescription}} </p>
+                                            <h5 class="card-title"> {{nlname}} </h5>
+                                            <p class="card-text"> {{nldescription}} </p>
                                             <h6 class="prices">highest bidder: @{{nlusername}} </h6>
                                             <h6 class="prices"><span> {{nlprice}} </span>php</h6>
                                             <a href="listing.html" class="btn btn-secondary btn-block bid"> View</a>  
