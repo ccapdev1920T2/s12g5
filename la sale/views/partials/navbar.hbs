@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>browselisting</title>
-    <!-- BootstrapCDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="styles/browselisting_style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:300,400,500,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div id="clock">
-        <iframe scrolling="no" frameborder="no" clocktype="html5" style="overflow:hidden;border:0;margin:0;padding:0;width:240px;height:25px; position:fixed; bottom:0; right: 0;"src="https://www.clocklink.com/html5embed.php?clock=018&timezone=GMT0800&color=gray&size=240&Title=&Message=&Target=&From=2020,1,1,0,0,0&DateFormat=yyyy / mm / dd DDD&TimeFormat=hh:mm:ss TT&Color=gray"></iframe>
-    </div>
-    <!-- Navbar -->
+<!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #DAE9CF; position: sticky; top:0; z-index: 9;">
         <a class="navbar-brand" href="browselisting.html">
             <img src="assets/logo.png" id="lasalelogo" style="height: 50px;">
@@ -65,37 +52,3 @@
             </form>
         </div>
     </nav>
-
-
-    <div>
-        <div class="container" id="browselistings">
-            <h1 id="browse">browse listings</h1>
-            <div class="row">
-                <script> var x = 1; </script>
-
-                {{#each products}}
-                <div class="col-md-6">
-                    <div class="card" style="width: 25rem;">
-                        <img src={{{photo}}}class="card-img-top" alt="product">
-                        <div class="card-body">
-                            <h5 class="card-title" >{{name}}</h5>
-                            <p class="card-text" >{{description}}</p>
-                            <h6 class="prices"><span>{{startprice}}</span>php - <span>{{endprice}}</span>php</h6>
-                            <a href="listing.html" class="btn btn-secondary btn-block bid">    bid</a>
-                        </div>
-                    </div>
-                </div>
-
-                {{/each}}
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-</body>
-
-</html>
