@@ -63,7 +63,29 @@ app.get('/messages', function(req, res) {
     res.render('messages', {});
 });
 app.get('/mylistings', function(req, res) {
-    res.render('mylistings', {});
+    var olisting = [{olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100}, {olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100}, {olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100}, {olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100}, {olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100}];
+    var clisting = [{clname: "cat dog", cldescription: "whatever this is", winner: "winnerchickendinner", clprice: 200},
+                    {clname: "cat dog", cldescription: "whatever this is", winner: "winnerchickendinner", clprice: 200},
+                    {clname: "cat dog", cldescription: "whatever this is", winner: "winnerchickendinner", clprice: 200},
+                    {clname: "cat dog", cldescription: "whatever this is", winner: "winnerchickendinner", clprice: 200},
+                    {clname: "cat dog", cldescription: "whatever this is", winner: "winnerchickendinner", clprice: 200}];
+    var ulisting = [{ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, },
+                    {ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, },
+                    {ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, },
+                    {ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, },
+                    {ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, }];
+    var plisting = [{plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
+                    {plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
+                    {plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
+                    {plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
+                    {plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350}];
+    var nlisting = [{nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
+                    {nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
+                    {nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
+                    {nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
+                    {nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250}];
+
+    res.render('mylistings', {olisting: olisting, clisting: clisting, ulisting: ulisting, plisting: plisting, nlisting: nlisting});
 });
 app.get('/profile', function(req, res) {
     res.render('profile', {});
