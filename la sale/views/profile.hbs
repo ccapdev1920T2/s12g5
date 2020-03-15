@@ -23,20 +23,20 @@
               <div class="row">
                   <div class="col-md-5"> 
                     <!-- Profile Picture goes here -->
-                    <img src="https://scontent.fmnl4-2.fna.fbcdn.net/v/t31.0-8/p960x960/20121362_1736297566398483_7291854775675033945_o.jpg?_nc_cat=110&_nc_ohc=5jcWFVIEsWoAX8eQawm&_nc_ht=scontent.fmnl4-2.fna&_nc_tp=6&oh=f910a6c44070644b617115eaf29f680d&oe=5EC21F51" class="rounded-circle" id="profilepic">
+                    <img src={{{img}}} class="rounded-circle" id="profilepic">
                   </div>
                   <div class="col-md-7" id="textdetails">
                       
                       <div class="row">
                           <!-- Name -->
                           <div class="col-md">
-                              <h1 id="name">Jed Tan</h1>
+                              <h1 id="name">{{name}}</h1>
                           </div>
                       </div>
                       <div class="row">
                           <!-- Username and rating -->
                           <div class="col-md-6">
-                              <h2 id="username">@imsopogi</h2>
+                              <h2 id="username">@{{username}} </h2>
                           </div>
                           
                       </div>
@@ -71,14 +71,14 @@
                       
                       <div class="row" id="minordetails">
                           <div class="col-md" >
-                              <p id="rating">10.0</p>
+                              <p id="rating">{{rating}}</p>
                           </div>
                           <div class="col-md">
-                              <p id="idnum">118</p>
+                              <p id="idnum">{{idnum}}</p>
                           </div>
 
                           <div class="col-md">
-                                <p id="college">ccs</p>
+                                <p id="college">{{college}}</p>
                           </div>
                       </div>
 
@@ -101,7 +101,7 @@
               <div class="row" id="about">
                   <div class="col-md-10">
                     <h2 id="about1">about</h2>
-                    <p id="userdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p id="userdesc">{{userdesc}}</p>
                   </div>
                   
               </div>
@@ -112,35 +112,37 @@
       <div>
           <div class="container" id="activelistings">
             <h1 id="active">active listings</h1>
-              <div class="row">
+              <div class="row" id="listings">
                   
-                  <div class="col-md-6">
-                      
-                    <div class="card" style="width: 25rem;">
-                        <img src="https://www.thesprucepets.com/thmb/jbD_0GJnIVGmnLve7QDe9hCDbPU=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txp33a24e10lxw100_Medium_214761-5af9d6d7875db900360440a7.jpg" class="card-img-top" alt="product">
-                        <div class="card-body">
-                          <h5 class="card-title" >kitty cat</h5>
-                          <p class="card-text" >This is cat. Pls buy him, he needs home. His name is fluffly.</p>
-                          <h6 class="prices"><span>100</span>php - <span>1000</span>php</h6>
-                          <a href="listing.html" class="btn btn-secondary btn-block bid">bid</a>
+                  <script>
+                    x = 0;
+                </script>
+                {{#each products}}
+                    <div class="col-md-6">
+                        <div class="card" style="width: 25rem;">
+                            <img src={{{photo}}} class="card-img-top" alt="product">
+                            <div class="card-body">
+                                <h5 class="card-title" >{{name}}</h5>
+                                <p class="card-text" >{{description}}</p>
+                                <h6 class="prices"><span>{{startprice}}</span>php - <span>{{endprice}}</span>php</h6>
+                                <a href="listing.html" class="btn btn-secondary btn-block bid">    bid</a>
+                            </div>
                         </div>
                     </div>
+                <script>
+                    x++;
+                    if(x%2==0){
+                        $("#listings").append("</div> <br> <div class=\"row\"");
+                        x=0;
+                    }
+                </script>
+                {{/each}}
+                <script>
+                    if(x%2==1){
+                        $("#listings").append("</div>");
+                    }
+                </script>
 
-                  </div>
-
-                  <div class="col-md-6">
-
-                    <div class="card" style="width: 25rem;">
-                        <img src="https://www.thesprucepets.com/thmb/jbD_0GJnIVGmnLve7QDe9hCDbPU=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txp33a24e10lxw100_Medium_214761-5af9d6d7875db900360440a7.jpg" class="card-img-top" alt="product">
-                        <div class="card-body">
-                          <h5 class="card-title" >kitty cat</h5>
-                          <p class="card-text" >This is cat. Pls buy him, he needs home. His name is fluffly.</p>
-                          <h6 class="prices"><span>100</span>php - <span>1000</span>php</h6>
-                          <a href="listing.html" class="btn btn-secondary btn-block bid">bid</a>
-                        </div>
-                    </div>
-
-                  </div>
               </div>
           </div>
       </div>

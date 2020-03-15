@@ -20,16 +20,16 @@
             <h1 id="listings">listings.</h1>
             
             <div class="row">
-            <script>x=0;</script>
+            <script>var x=0;</script>
 
             {{#each olisting}}
                     <div class="col-md-6">
                         <div class="card" style="width: 25rem;">
-                            <img src="https://www.thesprucepets.com/thmb/jbD_0GJnIVGmnLve7QDe9hCDbPU=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txp33a24e10lxw100_Medium_214761-5af9d6d7875db900360440a7.jpg" class="card-img-top" alt="product">
+                            <img src={{{olimg}}} class="card-img-top" alt="product">
                             <div class="card-body">
                                 <h5 class="card-title" > {{olname}} </h5>
                                 <p class="card-text" > {{oldescription}}</p>
-                                <h6 class="prices">highest bidder: {{olusername}}</h6>
+                                <h6 class="prices">highest bidder: @{{olusername}}</h6>
                                 <h6 class="prices"><span>{{olprice}}</span>php</h6>
                                 <a href="listing.html" class="btn btn-secondary btn-block bid"> Ongoing</a>  
                             </div>
@@ -47,11 +47,11 @@
             {{#each clisting}}
                 <div class="col-md-6">
                     <div class="card" style="width: 25rem;">
-                        <img src="https://www.thesprucepets.com/thmb/jbD_0GJnIVGmnLve7QDe9hCDbPU=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txp33a24e10lxw100_Medium_214761-5af9d6d7875db900360440a7.jpg" class="card-img-top" alt="product">
+                        <img src={{{climg}}} class="card-img-top" alt="product">
                         <div class="card-body">
                             <h5 class="card-title" > {{clname}} </h5>
                             <p class="card-text" > {{cldescription}} </p>
-                            <h6 class="prices">winner: {{clusername}} </h6>
+                            <h6 class="prices">winner: @{{clusername}} </h6>
                             <h6 class="prices"><span> {{clprice}} </span>php</h6>
                             <button class="btn btn-secondary btn-block bid" id="completed" disabled>Completed</a>
                         </div>
@@ -69,7 +69,7 @@
             {{#each ulisting}}
                 <div class="col-md-6">
                     <div class="card" style="width: 25rem;">
-                        <img src="https://www.thesprucepets.com/thmb/jbD_0GJnIVGmnLve7QDe9hCDbPU=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txp33a24e10lxw100_Medium_214761-5af9d6d7875db900360440a7.jpg" class="card-img-top" alt="product">
+                        <img src={{{ulimg}}} class="card-img-top" alt="product">
                         <div class="card-body">
                             <h5 class="card-title" > {{ulname}}</h5>
                             <p class="card-text" > {{uldescription}} </p>
@@ -95,90 +95,59 @@
                     x=0;
                 }
                 </script>
-            {{/each}} 
+            {{/each}}
+
+            <script>
+                    if(x%2==1){
+                        $("#mylistings").append("</div>");
+                    }
+            </script> 
         </div>
     </div>
 
     
-    <div class="container-fluid mylistings" id="pinnedlistings">
+    <div class="container-fluid mylistings" id="listingparticipations">
         <h1 id="my">my.</h1>
         <h1 id="listingparticipation">listing participations.</h1>
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <div id="pinnedlistingscarousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-md partItemLeft">
+                    <div class="carousel-inner" id="pl">
+                            <script> x=0; var j=0; </script>
+                                {{#each plisting}
+                                <script> 
+                                    if (x%2==0 && j==0){
+                                        $("#pl").append("<div class=\"carousel-item active\"> <div class=\"row\"> <div class=\"col-md partItemLeft\">")
+                                    }
+
+                                    else if(x%2==0){
+                                        $("#pl").append("</div> </div> <div class=\"carousel-item\"> <div class=\"row\"> <div class=\"col-md partItemLeft\"> ")
+                                    }
+
+                                    else if (x%2==1){
+                                        $("#pl").append("<div class=\"col-md partItemRight\">")
+                                    }
+                                </script>
                                     <div class="card participationcard" style="width: 25rem;">
-                                        <img src="https://www.thesprucepets.com/thmb/jbD_0GJnIVGmnLve7QDe9hCDbPU=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txp33a24e10lxw100_Medium_214761-5af9d6d7875db900360440a7.jpg" class="card-img-top" alt="product">
+                                        <img src={{{plimg}}} class="card-img-top" alt="product">
                                         <div class="card-body">
-                                            <h5 class="card-title" >kitty cat</h5>
-                                            <p class="card-text" >This is cat. Pls buy him, he needs home. His name is fluffly.</p>
-                                            <h6 class="prices">highest bidder: @imsopogi</h6>
-                                            <h6 class="prices"><span>1000</span>php</h6>
+                                            <h5 class="card-title" > {{plname}} </h5>
+                                            <p class="card-text" > {{pldescription}} </p>
+                                            <h6 class="prices">highest bidder: @{{plusername}} </h6>
+                                            <h6 class="prices"><span> {{plprice}} </span>php</h6>
                                             <a href="listing.html" class="btn btn-secondary btn-block bid"> View</a>  
                                         </div>
                                     </div>
-                                </div>
-                             
-        
-                            <div class="col-md partItemRight">
-                                <div class="card participationcard" style="width: 25rem;">
-                                    <img src="https://www.thesprucepets.com/thmb/jbD_0GJnIVGmnLve7QDe9hCDbPU=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txp33a24e10lxw100_Medium_214761-5af9d6d7875db900360440a7.jpg" class="card-img-top" alt="product">
-                                    <div class="card-body">
-                                        <h5 class="card-title" >kitty cat</h5>
-                                        <p class="card-text" >This is cat. Pls buy him, he needs home. His name is fluffly.</p>
-                                        <h6 class="prices">highest bidder: @imsopogi</h6>
-                                        <h6 class="prices"><span>1000</span>php</h6>
-                                        <a href="listing.html" class="btn btn-secondary btn-block bid"> View</a>  
-                                    </div>
-                                </div>
-                            </div>
-        
-                                         
-                        </div>
-
-                          
-                      </div>
-
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-md partItemLeft">
-                              <div class="card participationcard" style="width: 25rem;">
-                                  <img src="https://i.ytimg.com/vi/uHKfrz65KSU/maxresdefault.jpg" class="card-img-top" alt="product">
-                                  <div class="card-body">
-                                      <h5 class="card-title" >kitty cat</h5>
-                                      <p class="card-text" >This is cat. Pls buy him, he needs home. His name is fluffly.</p>
-                                      <h6 class="prices">highest bidder: @imsopogi</h6>
-                                      <h6 class="prices"><span>1000</span>php</h6>
-                                      <a href="listing.html" class="btn btn-secondary btn-block bid"> View</a>  
-                                  </div>
-                              </div>
-  
-                            </div>
-                           
-      
-                            <div class="col-md partItemRight">
-                              <div class="card participationcard" style="width: 25rem;">
-                                  <img src="https://i.ytimg.com/vi/uHKfrz65KSU/maxresdefault.jpg" class="card-img-top" alt="product">
-                                  <div class="card-body">
-                                      <h5 class="card-title" >kitty cat</h5>
-                                      <p class="card-text" >This is cat. Pls buy him, he needs home. His name is fluffly.</p>
-                                      <h6 class="prices">highest bidder: @imsopogi</h6>
-                                      <h6 class="prices"><span>1000</span>php</h6>
-                                      <a href="listing.html" class="btn btn-secondary btn-block bid"> View</a>  
-                                  </div>
-                              </div>
-                            </div>
-      
-                                       
-                      </div>
-
-                        
+                                <script>
+                                    x++;
+                                    j++;
+                                </script>
+                                {{/each}}
+                                </div></div> <!-- For the remaining unmatched carousel item and row divs -->
                     </div>
-    </div>
+                </div>
+            </div>
                     
 
                     <a class="carousel-control-prev" href="#pinnedlistingscarousel" role="button" data-slide="prev">
@@ -190,109 +159,67 @@
                       <span class="sr-only">Next</span>
                     </a>
                   </div>
-            </div>
+          
             <div class="col-md-2"></div>
-        </div>
-        
     </div>
     
-
-
-    <div class="container-fluid mylistings" id="mylisting">
+    <div class="container-fluid mylistings" id="pinnedlistings">
         <h1 id="my">my.</h1>
-        <h1 id="pinnedl">pinned listings.</h1>
+        <h1 id="listingparticipation">pinned listings.</h1>
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-md partItemLeft">
+                <div id="pinnedlistingscarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" id="nl">
+                            <script> x=0; j=0; </script>
+                                {{#each nlisting}
+                                <script> 
+                                    if (x%2==0 && j==0){
+                                        $("#nl").append("<div class=\"carousel-item active\"> <div class=\"row\"> <div class=\"col-md partItemLeft\">")
+                                    }
+
+                                    else if(x%2==0){
+                                        $("#nl").append("</div> </div> <div class=\"carousel-item\"> <div class=\"row\"> <div class=\"col-md partItemLeft\"> ")
+                                    }
+
+                                    else if (x%2==1){
+                                        $("#nl").append("<div class=\"col-md partItemRight\">")
+                                    }
+                                </script>
                                     <div class="card participationcard" style="width: 25rem;">
-                                        <img src="https://www.thesprucepets.com/thmb/jbD_0GJnIVGmnLve7QDe9hCDbPU=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txp33a24e10lxw100_Medium_214761-5af9d6d7875db900360440a7.jpg" class="card-img-top" alt="product">
+                                        <img src={{{plimg}}} class="card-img-top" alt="product">
                                         <div class="card-body">
-                                            <h5 class="card-title" >kitty cat</h5>
-                                            <p class="card-text" >This is cat. Pls buy him, he needs home. His name is fluffly.</p>
-                                            <h6 class="prices">highest bidder: @imsopogi</h6>
-                                            <h6 class="prices"><span>1000</span>php</h6>
+                                            <h5 class="card-title" > {{nlname}} </h5>
+                                            <p class="card-text" > {{nldescription}} </p>
+                                            <h6 class="prices">highest bidder: @{{nlusername}} </h6>
+                                            <h6 class="prices"><span> {{nlprice}} </span>php</h6>
                                             <a href="listing.html" class="btn btn-secondary btn-block bid"> View</a>  
                                         </div>
                                     </div>
-                                </div>
-                             
-        
-                            <div class="col-md partItemRight">
-                                <div class="card participationcard" style="width: 25rem;">
-                                    <img src="https://www.thesprucepets.com/thmb/jbD_0GJnIVGmnLve7QDe9hCDbPU=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txp33a24e10lxw100_Medium_214761-5af9d6d7875db900360440a7.jpg" class="card-img-top" alt="product">
-                                    <div class="card-body">
-                                        <h5 class="card-title" >kitty cat</h5>
-                                        <p class="card-text" >This is cat. Pls buy him, he needs home. His name is fluffly.</p>
-                                        <h6 class="prices">highest bidder: @imsopogi</h6>
-                                        <h6 class="prices"><span>1000</span>php</h6>
-                                        <a href="listing.html" class="btn btn-secondary btn-block bid"> View</a>  
-                                    </div>
-                                </div>
-                            </div>
-        
-                                         
-                        </div>
-
-                          
-                      </div>
-
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-md partItemLeft">
-                              <div class="card participationcard" style="width: 25rem;">
-                                  <img src="https://i.ytimg.com/vi/uHKfrz65KSU/maxresdefault.jpg" class="card-img-top" alt="product">
-                                  <div class="card-body">
-                                      <h5 class="card-title" >kitty cat</h5>
-                                      <p class="card-text" >This is cat. Pls buy him, he needs home. His name is fluffly.</p>
-                                      <h6 class="prices">highest bidder: @imsopogi</h6>
-                                      <h6 class="prices"><span>1000</span>php</h6>
-                                      <a href="listing.html" class="btn btn-secondary btn-block bid"> View</a>  
-                                  </div>
-                              </div>
-  
-                            </div>
-                           
-      
-                            <div class="col-md partItemRight">
-                              <div class="card participationcard" style="width: 25rem;">
-                                  <img src="https://i.ytimg.com/vi/uHKfrz65KSU/maxresdefault.jpg" class="card-img-top" alt="product">
-                                  <div class="card-body">
-                                      <h5 class="card-title" >kitty cat</h5>
-                                      <p class="card-text" >This is cat. Pls buy him, he needs home. His name is fluffly.</p>
-                                      <h6 class="prices">highest bidder: @imsopogi</h6>
-                                      <h6 class="prices"><span>1000</span>php</h6>
-                                      <a href="listing.html" class="btn btn-secondary btn-block bid"> View</a>  
-                                  </div>
-                              </div>
-                            </div>
-      
-                                       
-                      </div>
-
-                        
+                                <script>
+                                    x++;
+                                    j++;
+                                </script>
+                                {{/each}}
+                                </div></div> <!-- For the remaining unmatched carousel item and row divs -->
                     </div>
-    </div>
+                </div>
+            </div>
                     
 
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#pinnedlistingscarousel" role="button" data-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                       <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#pinnedlistingscarousel" role="button" data-slide="next">
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="sr-only">Next</span>
                     </a>
                   </div>
-            </div>
+          
             <div class="col-md-2"></div>
-        </div>
-        
     </div>
+
 
     
 
