@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <form id="login">
+                    <form id="login" action="/browse" method="GET">
                         <h2 class="title">login.</h2>
                         <br>
                         <div class="form-group">
@@ -35,7 +35,7 @@
                         <div class="form-group">
                             <input type="password" class="form-control" id="password" name="password" placeholder="password">
                         </div>
-                        <button type="button" class="btn btn-secondary btn-block loginbtn" id="submitlogin">login</button>
+                        <input type="submit" class="btn btn-secondary btn-block loginbtn" id="submitlogin" value="login">
                         <p id="msg"> </p>
                         <div id="signup"> 
                             <h2 class="title">signup.</h2>
