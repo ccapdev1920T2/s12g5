@@ -49,8 +49,15 @@ app.get('/listing', function(req, res) {
     var username = "katthecat";
     var photos = [{img: "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg"}, 
                 {img: "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/reference_guide/cats_and_excessive_meowing_ref_guide/1800x1200_cats_and_excessive_meowing_ref_guide.jpg"}];
+   
+    var productdesc = "its a cat. thats it.";
+    var lowrange = 50;
+    var highrange = 500;
+    var highestbid = 200;
+    var highestbidderun = "trisha";
 
-    res.render('listing', {productname: productname, producttype: producttype, username: username,photo: photos});
+    res.render('listing', {productname: productname, producttype: producttype, username: username,photo: photos, 
+                            productdesc: productdesc, lowrange: lowrange, highrange: highrange, highestbid: highestbid, highestbidderun: highestbidderun});
 });
 app.get('/messages', function(req, res) {
     res.render('messages', {});
