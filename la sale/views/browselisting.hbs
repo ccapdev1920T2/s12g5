@@ -15,7 +15,9 @@
         <div class="container" id="browselistings">
             <h1 id="browse">browse listings</h1>
             <div class="row">
-
+                <script>
+                    x = 0;
+                </script>
                 {{#each products}}
                     <div class="col-md-6">
                         <div class="card" style="width: 25rem;">
@@ -28,9 +30,20 @@
                             </div>
                         </div>
                     </div>
+                <script>
+                    x++;
+                    if(x%2==0){
+                        $("#browselistings").append("</div> <div class=\"row\"");
+                        x=0;
+                    }
+                </script>
                 {{/each}}
-                
-            </div>
+                <script>
+                    if(x%2==1){
+                        $("#browselistings").append("</div>");
+                    }
+                </script>
+
         </div>
     </div>
 

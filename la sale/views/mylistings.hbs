@@ -51,22 +51,29 @@
                         <div class="card-body">
                             <h5 class="card-title" > {{clname}} </h5>
                             <p class="card-text" > {{cldescription}} </p>
-                            <h6 class="prices">winner: @jedtan</h6>
-                            <h6 class="prices"><span>1000</span>php</h6>
+                            <h6 class="prices">winner: {{clusername}} </h6>
+                            <h6 class="prices"><span> {{clprice}} </span>php</h6>
                             <button class="btn btn-secondary btn-block bid" id="completed" disabled>Completed</a>
                         </div>
                     </div>
                 </div>
+                <script>
+                    x++;
+                if(x%2==0){
+                    $("#mylistings").append("</div> <div class=\"row\"");
+                    x=0;
+                }
+                </script>
             {{/each}}
 
-            <div class="row">
+            {{#each ulisting}}
                 <div class="col-md-6">
                     <div class="card" style="width: 25rem;">
                         <img src="https://www.thesprucepets.com/thmb/jbD_0GJnIVGmnLve7QDe9hCDbPU=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txp33a24e10lxw100_Medium_214761-5af9d6d7875db900360440a7.jpg" class="card-img-top" alt="product">
                         <div class="card-body">
-                            <h5 class="card-title" >kitty cat</h5>
-                            <p class="card-text" >This is cat. Pls buy him, he needs home. His name is fluffly.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                            <h6 class="prices"><span>100</span>php - <span>5000</span>php</h6>
+                            <h5 class="card-title" > {{ulname}}</h5>
+                            <p class="card-text" > {{uldescription}} </p>
+                            <h6 class="prices"><span> {{ulpricelow}} </span>php - <span> {{ulpricehigh}} </span>php</h6>
                             <div class="row">
                                 <div class="col-md-4">
                                     <a href="listing.html" class="btn btn-secondary btn-block bid">View</a> 
@@ -81,31 +88,14 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-6">
-                    <div class="card" style="width: 25rem;">
-                        <img src="https://www.thesprucepets.com/thmb/jbD_0GJnIVGmnLve7QDe9hCDbPU=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txp33a24e10lxw100_Medium_214761-5af9d6d7875db900360440a7.jpg" class="card-img-top" alt="product">
-                        <div class="card-body">
-                            <h5 class="card-title" >kitty cat</h5>
-                            <p class="card-text" >This is cat. Pls buy him, he needs home. His name is fluffly.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                            <h6 class="prices"><span>100</span>php - <span>5000</span>php</h6>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <a href="listing.html" class="btn btn-secondary btn-block bid">View</a> 
-                                </div>
-                                <div class="col-md-4">
-                                    <a href="editlisting.html" class="btn btn-secondary btn-block bid"> Edit</a>  
-                                </div>
-                                <div class="col-md-4">
-                                    <button class="btn btn-secondary btn-block bid delete remove" id="test"> Delete</a>  
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            
+                <script>
+                    x++;
+                if(x%2==0){
+                    $("#mylistings").append("</div> <div class=\"row\"");
+                    x=0;
+                }
+                </script>
+            {{/each}} 
         </div>
     </div>
 
