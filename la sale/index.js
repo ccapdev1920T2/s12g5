@@ -4,10 +4,9 @@ const app = express();
 const port = 9090;
 
 app.set('view engine', 'hbs');
-
-
-
 app.use(express.static(__dirname + '/views'));
+hbs.registerPartials(__dirname + '/views/partials');
+
 
 
 app.get('/', function(req, res) {
