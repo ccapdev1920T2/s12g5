@@ -63,27 +63,30 @@ app.get('/messages', function(req, res) {
     res.render('messages', {});
 });
 app.get('/mylistings', function(req, res) {
-    var olisting = [{olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100}, {olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100}, {olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100}, {olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100}, {olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100}];
-    var clisting = [{clname: "cat dog", cldescription: "whatever this is", winner: "winnerchickendinner", clprice: 200},
-                    {clname: "cat dog", cldescription: "whatever this is", winner: "winnerchickendinner", clprice: 200},
-                    {clname: "cat dog", cldescription: "whatever this is", winner: "winnerchickendinner", clprice: 200},
-                    {clname: "cat dog", cldescription: "whatever this is", winner: "winnerchickendinner", clprice: 200},
-                    {clname: "cat dog", cldescription: "whatever this is", winner: "winnerchickendinner", clprice: 200}];
-    var ulisting = [{ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, },
-                    {ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, },
-                    {ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, },
-                    {ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, },
-                    {ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, }];
-    var plisting = [{plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
-                    {plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
-                    {plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
-                    {plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
-                    {plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350}];
-    var nlisting = [{nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
-                    {nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
-                    {nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
-                    {nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
-                    {nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250}];
+    var olisting = [{olimg: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/single-minded-royalty-free-image-997141470-1558379890.jpg?crop=0.671xw:1.00xh;0.0847xw,0&resize=640:*", olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100}, 
+                    {olimg: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/single-minded-royalty-free-image-997141470-1558379890.jpg?crop=0.671xw:1.00xh;0.0847xw,0&resize=640:*", olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100},
+                    {olimg: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/single-minded-royalty-free-image-997141470-1558379890.jpg?crop=0.671xw:1.00xh;0.0847xw,0&resize=640:*", olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100},
+                    {olimg: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/single-minded-royalty-free-image-997141470-1558379890.jpg?crop=0.671xw:1.00xh;0.0847xw,0&resize=640:*", olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100}];
+    var clisting = [{climg: "https://2rdnmg1qbg403gumla1v9i2h-wpengine.netdna-ssl.com/wp-content/uploads/sites/3/2016/11/GettyImages-173569324-650x450.jpg", clname: "cat dog", cldescription: "whatever this is", winner: "winnerchickendinner", clprice: 200, clusername: "dogggg"},
+                    {climg: "https://2rdnmg1qbg403gumla1v9i2h-wpengine.netdna-ssl.com/wp-content/uploads/sites/3/2016/11/GettyImages-173569324-650x450.jpg", clname: "cat dog", cldescription: "whatever this is", winner: "winnerchickendinner", clprice: 200, clusername: "dogggg"},
+                    {climg: "https://2rdnmg1qbg403gumla1v9i2h-wpengine.netdna-ssl.com/wp-content/uploads/sites/3/2016/11/GettyImages-173569324-650x450.jpg", clname: "cat dog", cldescription: "whatever this is", winner: "winnerchickendinner", clprice: 200, clusername: "dogggg"},
+                    {climg: "https://2rdnmg1qbg403gumla1v9i2h-wpengine.netdna-ssl.com/wp-content/uploads/sites/3/2016/11/GettyImages-173569324-650x450.jpg", clname: "cat dog", cldescription: "whatever this is", winner: "winnerchickendinner", clprice: 200, clusername: "dogggg"},
+                    {climg: "https://2rdnmg1qbg403gumla1v9i2h-wpengine.netdna-ssl.com/wp-content/uploads/sites/3/2016/11/GettyImages-173569324-650x450.jpg", clname: "cat dog", cldescription: "whatever this is", winner: "winnerchickendinner", clprice: 200, clusername: "dogggg"}];
+    var ulisting = [{ulimg: "https://cdn.vox-cdn.com/thumbor/Vvlyzrlf5dip-bFgfSa9vi7rzdk=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/66113368/EOaIPk4U4AANzxs.5.jpg", ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, },
+                    {ulimg: "https://cdn.vox-cdn.com/thumbor/Vvlyzrlf5dip-bFgfSa9vi7rzdk=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/66113368/EOaIPk4U4AANzxs.5.jpg", ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, },
+                    {ulimg: "https://cdn.vox-cdn.com/thumbor/Vvlyzrlf5dip-bFgfSa9vi7rzdk=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/66113368/EOaIPk4U4AANzxs.5.jpg", ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, },
+                    {ulimg: "https://cdn.vox-cdn.com/thumbor/Vvlyzrlf5dip-bFgfSa9vi7rzdk=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/66113368/EOaIPk4U4AANzxs.5.jpg", ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, },
+                    {ulimg: "https://cdn.vox-cdn.com/thumbor/Vvlyzrlf5dip-bFgfSa9vi7rzdk=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/66113368/EOaIPk4U4AANzxs.5.jpg", ulname: "byleth", uldescription: "best character", ulpricelow: 20, ulpricehigh: 50, }];
+    var plisting = [{plimg: "https://vignette.wikia.nocookie.net/p__/images/d/dc/Lucina_SSBU.png/revision/latest?cb=20180613135651&path-prefix=protagonist", plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
+                    {plimg: "https://vignette.wikia.nocookie.net/p__/images/d/dc/Lucina_SSBU.png/revision/latest?cb=20180613135651&path-prefix=protagonist", plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
+                    {plimg: "https://vignette.wikia.nocookie.net/p__/images/d/dc/Lucina_SSBU.png/revision/latest?cb=20180613135651&path-prefix=protagonist", plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
+                    {plimg: "https://vignette.wikia.nocookie.net/p__/images/d/dc/Lucina_SSBU.png/revision/latest?cb=20180613135651&path-prefix=protagonist", plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
+                    {plimg: "https://vignette.wikia.nocookie.net/p__/images/d/dc/Lucina_SSBU.png/revision/latest?cb=20180613135651&path-prefix=protagonist", plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350}];
+    var nlisting = [{nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
+                    {nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
+                    {nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
+                    {nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
+                    {nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250}];
 
     res.render('mylistings', {olisting: olisting, clisting: clisting, ulisting: ulisting, plisting: plisting, nlisting: nlisting});
 });
