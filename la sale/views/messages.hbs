@@ -18,64 +18,9 @@
     <script src="scripts/messages.js"></script>
 </head>
 <body>
-    <div id="clock">
-        <iframe scrolling="no" frameborder="no" clocktype="html5" style="overflow:hidden;border:0;margin:0;padding:0;width:240px;height:25px; position:fixed; bottom:0; right: 0;"src="https://www.clocklink.com/html5embed.php?clock=018&timezone=GMT0800&color=gray&size=240&Title=&Message=&Target=&From=2020,1,1,0,0,0&DateFormat=yyyy / mm / dd DDD&TimeFormat=hh:mm:ss TT&Color=gray"></iframe>
-    </div>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #DAE9CF; position: sticky; top:0; z-index: 9;">
-        <a class="navbar-brand" href="browselisting.html">
-            <img src="assets/logo.png" id="lasalelogo" style="height: 50px;">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    {{> clock}}
+    {{> navbar}}
     
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                <a class="nav-link" href="editprofile.html">profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="mylistings.html">my listings</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="createlisting.html">create listing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="messages.html">message</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="userlogin.html">logout</a>
-                </li>
-            </ul>
-            
-            <div class="dropdown" style="margin-right: 20px;">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  filter items
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">clothes</a>
-                    <a class="dropdown-item" href="#">food and drinks</a>
-                    <a class="dropdown-item" href="#">electronics</a>
-                    <a class="dropdown-item" href="#">tickets and coupons</a>
-                    <a class="dropdown-item" href="#">furniture</a>
-                    <a class="dropdown-item" href="#">beauty and wellness</a>
-                    <a class="dropdown-item" href="#">books</a>
-                    <a class="dropdown-item" href="#">hobbies and games</a>
-                    <a class="dropdown-item" href="#">sports</a>
-                    <a class="dropdown-item" href="#">accessories</a>
-                    <a class="dropdown-item" href="#">media</a>
-                    <a class="dropdown-item" href="#">music</a>
-                    <a class="dropdown-item" href="#">pets and accessories</a>
-                </div>
-            </div>
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="search for an item" aria-label="Search" style="width: 500px;">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
-
     <br><br><br>
     <div class="container">
 
