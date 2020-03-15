@@ -35,9 +35,16 @@ app.get('/editlisting', function(req, res) {
     res.render('editlisting', {});
 });
 app.get('/editprofile', function(req, res) {
-    res.render('editprofile', {});
+    var name = "Bryce";
+    var username = "baba";
+    var rating = 8;
+    var idnum = 118;
+    var college = "CCS";
+    var userdesc = "bryce anthgonyr ramirez lorem ipsum user description blahg blah";
+    res.render('editprofile', {name: name, username: username, rating: rating, idnum: idnum, college: college, userdesc: userdesc});
 });
 app.get('/listing', function(req, res) {
+
     res.render('listing', {});
 });
 app.get('/messages', function(req, res) {
