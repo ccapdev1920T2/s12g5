@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>signup</title>
+
+        
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+        <!-- BootstrapCDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="signup_style.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="scripts/signup_script.js"></script>
+    </head>
+
+    <body id="bodyid">
+        <div id="toplogo">
+            <a class="navbar-brand" href="userlogin.html">
+                <img src="assets/logo.png" id="lasalelogo" style="height: 50px;">
+            </a>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6" id="content">
+                    <h1 id="reg">Register.</h1>
+                    <h3>become an archer.</h3>
+                    <form id="signup">
+                
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="dlsu email">
+                        </div>
+                        <br>
+                        
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" id="fname" name="fname" placeholder="first name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" id="lname" name="lname" placeholder="last name">
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="username">
+                        </div>
+                        <br>
+
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="password">
+                        </div>
+                        <br>
+
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="confirm password">
+                        </div>
+                        <br>
+
+                        <div class="form-group" id="collegee">
+                            <select class="form-control" id="college" required> 
+                                <option value="" selected>college</option>
+                                <option value="CCS">College of Computer Studies</option>
+                                <option value="COB">College of Business</option>
+                                <option value="SOE">School of Economics</option>
+                                <option value="BAGCED">College of Education</option>
+                                <option value="GCOE">College of Engineering</option>
+                                <option value="COS">College of Science</option>
+                                <option value="COL">College of Law</option>
+                                <option value="CLA">College of Liberal Arts</option>
+                            </select>
+                        </div>
+                        <br>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="birthday" onfocus="(this.type='date')" name="bday" id="bday">
+                        </div>
+                        <br>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="idnum" name="idnum" placeholder="id number">
+                        </div>
+                        <br>
+
+                        <button type="button" class="btn btn-secondary btn-block registerbtn" id="register">register</button>
+                        <p id="msg"> </p>
+                        
+                    </form>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+
+        </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+
+</html>

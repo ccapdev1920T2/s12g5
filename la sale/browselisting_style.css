@@ -1,0 +1,56 @@
+#lasalelogo{
+    height: 50px;
+}
+
+
+body{
+    margin: 0;
+    min-width: 1440px;
+    min-height: 1024px;
+    background-color: #DAE9CF;
+    font-family: roboto;
+    margin-bottom: 500px;
+}
+
+#lasalenav{
+    background-color: #DAE9CF;
+}
+
+#browselistings {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+
+}
+
+.card {
+    margin-left: 12%;
+    background-color: #454545;
+    border: 0px;
+    color: #DAE9CF;
+}
+
+
+.card-text {
+    color: #999999;
+}
+
+.card-title, .prices {
+    text-align: center;
+}
+.card-img-top {
+    padding: 20px;
+}
+
+.bid {
+    background-color: #DAE9CF;
+    color: #454545;
+    font-weight: 500;
+    
+}
+
+#browse {
+    font-family: lobster;
+    font-size: 100px;
+    margin-bottom: 80px;
+}

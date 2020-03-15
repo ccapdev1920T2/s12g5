@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>editprofile</title>
+    <!-- BootstrapCDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="editprofile_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="scripts/editprofile_script.js"> </script>
+
+</head>
+<body>
+    <div id="clock">
+        <iframe scrolling="no" frameborder="no" clocktype="html5" style="overflow:hidden;border:0;margin:0;padding:0;width:240px;height:25px; position:fixed; bottom:0; right: 0;"src="https://www.clocklink.com/html5embed.php?clock=018&timezone=GMT0800&color=gray&size=240&Title=&Message=&Target=&From=2020,1,1,0,0,0&DateFormat=yyyy / mm / dd DDD&TimeFormat=hh:mm:ss TT&Color=gray"></iframe>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #DAE9CF; position: sticky; top:0; z-index: 9;">
+        <a class="navbar-brand" href="browselisting.html">
+            <img src="assets/logo.png" id="lasalelogo" style="height: 50px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                <a class="nav-link" href="editprofile.html">profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mylistings.html">my listings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="createlisting.html">create listing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="messages.html">message</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="userlogin.html">logout</a>
+                </li>
+            </ul>
+            
+            <div class="dropdown" style="margin-right: 20px;">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  filter items
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">clothes</a>
+                    <a class="dropdown-item" href="#">food and drinks</a>
+                    <a class="dropdown-item" href="#">electronics</a>
+                    <a class="dropdown-item" href="#">tickets and coupons</a>
+                    <a class="dropdown-item" href="#">furniture</a>
+                    <a class="dropdown-item" href="#">beauty and wellness</a>
+                    <a class="dropdown-item" href="#">books</a>
+                    <a class="dropdown-item" href="#">hobbies and games</a>
+                    <a class="dropdown-item" href="#">sports</a>
+                    <a class="dropdown-item" href="#">accessories</a>
+                    <a class="dropdown-item" href="#">media</a>
+                    <a class="dropdown-item" href="#">music</a>
+                    <a class="dropdown-item" href="#">pets and accessories</a>
+                </div>
+            </div>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="search for an item" aria-label="Search" style="width: 500px;">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Profile Details -->
+    <div id="details">
+        <div class="container" id="detailscontent">
+            <div class="row">
+                <div class="col-md-5"> 
+                    <!-- Profile Picture goes here -->
+                    <img src="https://scontent.fmnl4-6.fna.fbcdn.net/v/t1.0-9/48411393_2570480286301230_4225061867124424704_n.jpg?_nc_cat=107&_nc_ohc=pwaNt8PslLwAX9jqLua&_nc_ht=scontent.fmnl4-6.fna&oh=ae8e9e4c9ef965155caad04093272e3f&oe=5EBC2548" class="rounded-circle" id="profilepic">
+                </div>
+                <div class="col-md-7" id="textdetails">
+                    <div class="row">
+                        <!-- Name -->
+                        <div class="col-md">
+                            <h1 id="name">Bryce Ramirez</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Username and rating -->
+                        <div class="col-md-6">
+                            <h2 id="username">bryce.ramirez</h2>
+                        </div>
+                
+                    </div>
+                      
+                    <div class="row" id="minordetails">
+                        <div class="col-md" >
+                            <p id="rating">10.0</p>
+                        </div>
+                        <div class="col-md">
+                            <p id="idnum">118</p>
+                        </div>
+                        <div class="col-md">
+                            <p id="college">ccs</p>
+                        </div>
+                    </div>
+
+                    <div class="row" id="minordetails-label">
+                        <div class="col-md" >
+                            <p>rating</p>
+                        </div>
+                        <div class="col-md">
+                            <p>id</p>
+                        </div>
+                        <div class="col-md">
+                              <p>college</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="about">
+                <div class="col-md-10">
+                    <h2 id="about1">about you</h2>
+                    <p id="userdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br> <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6" id="content">
+                <form class="form-group">
+                    <div class="form-group form-c">
+                        <label for="images">Upload Profile Picture:</label>
+                        <input type="file" id="profilepici" name="profilepici" >
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="usernamei" name="usernamei" placeholder="Username">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <select class="form-control" id="collegei">
+                            <option value="CCS">College of Computer Studies</option>
+                            <option value="COB">College of Business</option>
+                            <option value="SOE">School of Economics</option>
+                            <option value="BAGCED">College of Education</option>
+                            <option value="GCOE">College of Engineering</option>
+                            <option value="COS">College of Science</option>
+                            <option value="COL">College of Law</option>
+                            <option value="CLA">College of Liberal Arts</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="5" id="abouti" name="abouti" placeholder="About"></textarea>
+                    </div> <br>
+                    <input type="button" class="btn btn-secondary btn-block savebtn" value="Save Changes">
+                    <p id="msg"> </p>
+                </form>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

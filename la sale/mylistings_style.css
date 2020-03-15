@@ -1,0 +1,122 @@
+#lasalelogo{
+    height: 50px;
+}
+
+body{
+    margin: 0;
+    min-width: 1440px;
+    min-height: 1024px;
+    background-color: #DAE9CF;
+    font-family: roboto;
+    margin-bottom: 500px;
+}
+
+#lasalenav{
+    background-color: #DAE9CF;
+}
+
+.mylistings {
+    margin-top: 200px;
+    margin-bottom: 100px;
+    text-align: center;
+
+}
+
+.card {
+    margin-left: 12%;
+    background-color: #454545;
+    border: 0px;
+    color: #DAE9CF;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.card-text {
+    color: #999999;
+}
+
+.card-title, .prices {
+    text-align: center;
+}
+
+.card-img-top {
+    padding: 20px;
+}
+
+.bid {
+    background-color: #DAE9CF;
+    color: #454545;
+    font-weight: 500;
+}
+
+#my {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 144px;
+    line-height: 169px;
+    margin-left: -650px;
+    margin-top: -150px;
+    color: #454545;
+}
+
+#listings{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 56px;
+    margin-top:-25px;
+    margin-left: -690px;
+    margin-bottom: 20px;
+    
+    color: #454545;
+}
+
+#listingparticipation{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 56px;
+    margin-top:-25px;
+    margin-left: -409px;
+    margin-bottom: 20px;
+    
+    color: #454545;
+}
+
+#pinnedl{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 56px;
+    margin-top:-25px;
+    margin-left: -533px;
+    margin-bottom: 20px;
+    
+    color: #454545;
+}
+
+.partItemLeft {
+    padding-left: 100px;
+    
+}
+
+.partItemRight {
+    padding-right: 100px;
+    
+}
+
+.carousel-control-prev-icon{
+    width: 35px;
+    height: 35px;
+    background-image: url('https://apufpel.com.br/assets/img/seta_prim.png')
+ }
+ .carousel-control-next-icon{
+    width: 35px;
+    height: 35px;
+    margin-left: 100px;
+    background-image: url('https://apufpel.com.br/assets/img/seta_ult.png')
+ }

@@ -1,0 +1,142 @@
+#lasalelogo{
+    height: 50px;
+}
+
+
+body{
+    margin: 0;
+    min-width: 1440px;
+    min-height: 1024px;
+    background-color: #DAE9CF;
+    font-family: roboto;
+    margin-bottom: 500px;
+}
+
+#lasalenav{
+    background-color: #DAE9CF;
+}
+
+#profilepic{
+    height: 650px;
+    position: absolute;
+    margin-top: -150px;
+    margin-left: -230px;
+
+}
+
+#detailscontent {
+    margin-top:10%;
+    margin-left: -15;
+    background-color: #3F3F3F;
+    padding: 80px;
+    color: white;
+}
+
+#textdetails {
+    margin-top: 100px;
+}
+
+#minordetails {
+    margin-top: 80px;
+    text-align: center;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 90px;
+
+    text-align: center;
+
+    color: #9F9F9F;
+
+}
+
+#username {
+    font-weight: 300;
+    /* ext-align: center;
+ */
+    margin-top: 10px;
+    margin-left: 50px;
+}
+#minordetails-label {
+    text-align: center;
+    line-height: 5px;
+    font-size: 40px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 56px;
+
+    color: #999999;
+}
+
+#rate {
+    background:  #706a6a;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 40px;
+   
+
+    color: #454545;
+
+}
+
+#msg{
+    font-family: roboto;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+#name {
+    font-family: lobster;
+    font-size: 80px;
+    margin-left: 50px;
+    /* text-align: center; */
+}
+
+#desc {
+    font-weight: 300;
+}
+
+#about {
+    margin-top: 100px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+
+    color: #999999;
+}
+
+#about1{
+    color: #98A38F;
+}
+
+#content {
+    margin-top: 20%;
+    margin-bottom: 20%;
+    padding: 50px;
+    background: white;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.savebtn {
+    background-color:  #454545;
+}
+
+input {
+    box-shadow: 3px 5px 3px #888888;
+}
+
+select {
+    box-shadow: 3px 5px 3px #888888;
+}
+
+textarea {
+    box-shadow: 3px 5px 3px #888888;
+}

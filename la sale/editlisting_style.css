@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    min-width: 1440px;
+    min-height: 1024px;
+    background-color: #DAE9CF;
+    font-family: roboto;
+}
+
+#toplogo {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    float: left;
+}
+
+#msg{
+    font-family: roboto;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+#lasale{
+    font-weight: 700;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    color:  #454545;
+}
+
+#logo {
+    width: 70px;
+    float: left;
+}
+
+.confirmbtn {
+    background-color:  #454545;
+}
+
+#content {
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+#editlisting {
+    padding: 50px;
+    background: white;
+    text-align: center;
+    border-radius: 25px;
+}
+
+#edit {
+    margin-left: 50px;
+    font-weight: 700;
+    font-size: 120px;
+    color:#454545;
+    line-height: 90px;
+}
+
+h3 {
+    font-size: 40px;
+    margin-left: 50px;
+    font-weight: 700;
+    color:#454545;
+}
+
+input {
+    box-shadow: 3px 5px 3px #888888;
+}
+
+select {
+    box-shadow: 3px 5px 3px #888888;
+}
+
+textarea {
+    box-shadow: 3px 5px 3px #888888;
+}

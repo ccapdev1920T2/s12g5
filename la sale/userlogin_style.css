@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    min-width: 1440px;
+    min-height: 1024px;
+    
+    font-family: roboto;
+}
+
+h2{
+    font-weight: 600;
+    color:  #454545;
+}
+h1 {
+    font-weight: 700;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    color:  #454545;
+}
+
+#msg{
+    font-family: roboto;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+#bodyid{
+    background-color: #DAE9CF;
+}
+
+#login {
+    padding: 50px;
+    background: white;
+    position: relative;
+    top: 50%;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.title {
+    font-size: 45px;
+    color:  #454545;
+}
+
+#username {
+    box-shadow: 3px 5px 3px #888888;
+}
+
+#password {
+    box-shadow: 3px 5px 3px #888888;
+}
+
+#signup {
+    margin-top: 50px;
+}
+
+.loginbtn {
+    background-color: #454545; 
+}
+
+#toplogo {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    float: left;
+}
+
+
+#logo {
+    width: 70px;
+    float: left;
+}
