@@ -8,10 +8,10 @@
     <link rel="stylesheet" type="text/css" href="styles/listing_style.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:300,400,500,700&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	
+
 	<!-- Countdown -->
-	<link rel="stylesheet" type="text/css" href="scripts/countdown//css/jquery.countdown.css"> 
-	<script type="text/javascript" src="scripts/countdown/js/jquery.plugin.js"></script> 
+	<link rel="stylesheet" type="text/css" href="scripts/countdown//css/jquery.countdown.css">
+	<script type="text/javascript" src="scripts/countdown/js/jquery.plugin.js"></script>
 	<script type="text/javascript" src="scripts/countdown/js/jquery.countdown.js"></script>
 
 	<script src="scripts/listing_script.js"></script>
@@ -20,12 +20,12 @@
     {{> clock}}
     {{> navbar}}
 
-    <div class="container"> 
-        <div class="row"> 
+    <div class="container">
+        <div class="row">
             <div class="col-md">
                 <h1 id="productname">{{productname}}</h1>
             </div>
-        </div> 
+        </div>
 		<div class="row">
 			<div class="col-md">
 				<p><span id="typelabel">product type:</span> <span id="producttype"> {{producttype}} </span></p>
@@ -36,16 +36,25 @@
 					<p id="username"> @{{username}} </p>
 				</div>
 			</a>
-		</div> 
+		</div>
 
 		<!-- Carousel -->
 		<div class="row">
 			<div class="col">
 			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-				<div class="carousel-inner">
+				<div class="carousel-inner" id="x">
+					<script> var x=0;</script>
 					{{#each photo}}
-						<div class="carousel-item active">
-						<img src="{{{img}}}" class="d-block w-100" alt="...">
+						<script>
+							if(x==0) {
+								$("#id").append("<div class=\"carousel-item active\">");
+							}
+							else {
+								$("#id").append("<div class=\"carousel-item\">");
+							}
+							x++;
+						</script>
+						<img src={{{img}}} class="d-block w-100" alt="...">
 						</div>
 					{{/each}}
 				</div>
@@ -103,19 +112,19 @@
 			<p><span id="highestbid"> {{highestbid}} </span> php</p>
 		</div>
 		</div>
-		
+
 		<!-- highest bidder -->
 		<div class="row info">
 			<div class="col-md">
 				<h2 id="highest">highest bidder</h2>
 			</div>
-	
+
 			<div class="col-md infoval">
 				<p><a id="highestbidder" href="profile.html"> @{{highestbidderun}} </a></p>
 			</div>
 			</div>
-    
-    
+
+
 	</div>
 
 	<br><br>
@@ -131,7 +140,7 @@
 		</div>
 
 		<div class="form-row" id="pinbuy">
-			
+
 		<div class="col-md">
 			<button class="btn btn-secondary btn-block" id="pin" name="pin">pin bid</button>
 		</div>
@@ -144,9 +153,9 @@
 	</div>
 
 
-    
+
 	<!-- Scripts -->
-	
+
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
