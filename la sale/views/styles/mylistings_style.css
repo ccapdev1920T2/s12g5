@@ -11,6 +11,11 @@ body{
     margin-bottom: 500px;
 }
 
+.card-img-top {
+    max-height: 400px;
+    max-width: 400px;
+}
+
 #lasalenav{
     background-color: #DAE9CF;
 }
