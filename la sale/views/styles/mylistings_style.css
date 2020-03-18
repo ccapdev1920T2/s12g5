@@ -32,8 +32,10 @@ body{
     background-color: #454545;
     border: 0px;
     color: #DAE9CF;
+    margin-top: 10px;
     margin-bottom: 10px;
     display: inline-block;
+    min-height: 495px;
 }
 
 .card-text {
@@ -46,6 +48,11 @@ body{
 
 .card-img-top {
     padding: 20px;
+}
+
+.card-button {
+    position: relative;
+    top: 35px;
 }
 
 .bid {

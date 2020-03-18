@@ -20,82 +20,84 @@
             <h1 id="listings">listings.</h1>
             
             <div class="row">
-            <script>var x=0;</script>
+                <script>var x=0;</script>
 
-            {{#each olisting}}
+                {{#each olisting}}
+                        <div class="col-md-6">
+                            <div class="card" style="width: 25rem;">
+                                <img src={{{olimg}}} class="card-img-top" alt="product">
+                                <div class="card-body">
+                                    <h5 class="card-title" > {{olname}} </h5>
+                                    <p class="card-text" > {{oldescription}}</p>
+                                    <h6 class="prices">highest bidder: @{{olusername}}</h6>
+                                    <h6 class="prices"><span>{{olprice}}</span>php</h6>
+                                    <a href="listing.html" class="btn btn-secondary btn-block bid"> Ongoing</a>  
+                                </div>
+                            </div>
+                        </div>
+                    <script>
+                        x++;
+                    if(x%2==0){
+                        $("#mylistings").append("</div> <div class=\"row\"");
+                        x=0;
+                    }
+                    </script>
+                {{/each}}
+
+                {{#each clisting}}
                     <div class="col-md-6">
-                        <div class="card" style="width: 25rem; ">
-                            <img src={{{olimg}}} class="card-img-top" alt="product">
-                            <div class="card-body" style="height: 200px">
-                                <h5 class="card-title" > {{olname}} </h5>
-                                <p class="card-text" > {{oldescription}}</p>
-                                <h6 class="prices">highest bidder: @{{olusername}}</h6>
-                                <h6 class="prices"><span>{{olprice}}</span>php</h6>
-                                <a href="listing.html" class="btn btn-secondary btn-block bid"> Ongoing</a>  
+                        <div class="card" style="width: 25rem;">
+                            <img src={{{climg}}} class="card-img-top" alt="product">
+                            <div class="card-body">
+                                <h5 class="card-title" > {{clname}} </h5>
+                                <p class="card-text" > {{cldescription}} </p>
+                                <h6 class="prices">winner: @{{clusername}} </h6>
+                                <h6 class="prices"><span> {{clprice}} </span>php</h6>
+                                <button class="btn btn-secondary btn-block bid" id="completed" disabled>Completed</a>
                             </div>
                         </div>
                     </div>
-                <script>
-                    x++;
-                if(x%2==0){
-                    $("#mylistings").append("</div> <div class=\"row\"");
-                    x=0;
-                }
-                </script>
-            {{/each}}
+                    <script>
+                        x++;
+                    if(x%2==0){
+                        $("#mylistings").append("</div> <div class=\"row\"");
+                        x=0;
+                    }
+                    </script>
+                {{/each}}
 
-            {{#each clisting}}
-                <div class="col-md-6">
-                    <div class="card" style="width: 25rem;">
-                        <img src={{{climg}}} class="card-img-top" alt="product">
-                        <div class="card-body">
-                            <h5 class="card-title" > {{clname}} </h5>
-                            <p class="card-text" > {{cldescription}} </p>
-                            <h6 class="prices">winner: @{{clusername}} </h6>
-                            <h6 class="prices"><span> {{clprice}} </span>php</h6>
-                            <button class="btn btn-secondary btn-block bid" id="completed" disabled>Completed</a>
-                        </div>
-                    </div>
-                </div>
-                <script>
-                    x++;
-                if(x%2==0){
-                    $("#mylistings").append("</div> <div class=\"row\"");
-                    x=0;
-                }
-                </script>
-            {{/each}}
-
-            {{#each ulisting}}
-                <div class="col-md-6">
-                    <div class="card" style="width: 25rem;">
-                        <img src={{{ulimg}}} class="card-img-top" alt="product">
-                        <div class="card-body">
-                            <h5 class="card-title" > {{ulname}}</h5>
-                            <p class="card-text" > {{uldescription}} </p>
-                            <h6 class="prices"><span> {{ulpricelow}} </span>php - <span> {{ulpricehigh}} </span>php</h6>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <a href="listing.html" class="btn btn-secondary btn-block bid">View</a> 
-                                </div>
-                                <div class="col-md-6">
-                                    <a href="/editlisting" class="btn btn-secondary btn-block bid"> Edit</a>  
+                {{#each ulisting}}
+                    <div class="col-md-6">
+                        <div class="card" style="width: 25rem;">
+                            <img src={{{ulimg}}} class="card-img-top" alt="product">
+                            <div class="card-body">
+                                <h5 class="card-title" > {{ulname}}</h5>
+                                <p class="card-text" > {{uldescription}} </p>
+                                <h6 class="prices"><span> {{ulpricelow}} </span>php - <span> {{ulpricehigh}} </span>php</h6>
+                                <div class="row">
+                                    <div class="col-md-6 card-button">
+                                        <a href="listing.html" class="btn btn-secondary btn-block bid">View</a> 
+                                    </div>
+                                    <div class="col-md-6 card-button">
+                                        <a href="/editlisting" class="btn btn-secondary btn-block bid"> Edit</a>  
+                                    </div>
+                                
                                 </div>
                             </div>
                         </div>
+                    <script>
+                        x++;
+                    if(x%2==0){
+                        $("#mylistings").append("</div> <div class=\"row\"");
+                        x=0;
+                    }
+                    </script>
                     </div>
-                </div>
-                <script>
-                    x++;
-                if(x%2==0){
-                    $("#mylistings").append("</div> <div class=\"row\"");
-                    x=0;
-                }
-                </script>
-            {{/each}}
+                {{/each}}
+                
             </div>
-        </div>
-    </div>    
+        </div> 
+    </div>   
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
