@@ -1,4 +1,5 @@
 const db = require('../models/db.js');
+const Archer = require('../models/Archer.js')
 
 const signinController = {
 	getSignIn: function(req,res){
@@ -10,11 +11,10 @@ const signinController = {
 
 		var projection = '';
 
-		db.findOne(___, query, projection, function (result){
+		db.findOne(Archer, query, projection, function (result){
 			if(result != null){
 				res.redirect('/browse?username=' + username)
 			}
 		})
-
 	}
 }

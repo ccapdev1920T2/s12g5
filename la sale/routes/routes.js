@@ -1,6 +1,7 @@
 const express = require('express');
 const controller = require('../controller/siginController.js');
-
+const browseController = require('../controller/browseController.js')
+const createListingController = require('../controller/createListingController.js')
 const app = express();
 
 
@@ -12,10 +13,11 @@ app.get('/', controller.getSignIn);
 
 app.post('/', controller.postSignIn);
 
+app.get('/browse', browseController.getBrowse);
 
+app.get('/createlisting', createListingController.getCreateListing);
 
-
-
+app.post('/createlisting', createListingController.postCreateListing);
 
 app.get('/logout', function(req, res) {
     res.render('userlogin', {});
@@ -23,17 +25,9 @@ app.get('/logout', function(req, res) {
 
 
 
-app.get('/browse', function(req, res) {
-    res.render('browselisting', {
-        products: [{photo: "https://scontent.fmnl9-1.fna.fbcdn.net/v/t1.0-9/p960x960/80349670_2593704224046877_8463542934363439104_o.jpg?_nc_cat=105&_nc_sid=85a577&_nc_ohc=AnbM8v7dPPcAX-8Oz4F&_nc_ht=scontent.fmnl9-1.fna&_nc_tp=6&oh=a68621843e23e0e374e5f2d2c2232f60&oe=5E954668", name:"kitty kat", statprice: 69, endprice:450},
-        {photo: "https://scontent.fmnl9-1.fna.fbcdn.net/v/t1.0-9/p960x960/80349670_2593704224046877_8463542934363439104_o.jpg?_nc_cat=105&_nc_sid=85a577&_nc_ohc=AnbM8v7dPPcAX-8Oz4F&_nc_ht=scontent.fmnl9-1.fna&_nc_tp=6&oh=a68621843e23e0e374e5f2d2c2232f60&oe=5E954668", name:"kitty kat", statprice: 69, endprice:450},
-        {photo: "https://scontent.fmnl9-1.fna.fbcdn.net/v/t1.0-9/p960x960/80349670_2593704224046877_8463542934363439104_o.jpg?_nc_cat=105&_nc_sid=85a577&_nc_ohc=AnbM8v7dPPcAX-8Oz4F&_nc_ht=scontent.fmnl9-1.fna&_nc_tp=6&oh=a68621843e23e0e374e5f2d2c2232f60&oe=5E954668", name:"kitty kat", statprice: 69, endprice:450}]
-    });
-});
 
-app.get('/createlisting', function(req, res) {
-    res.render('createlisting', {});
-});
+
+
 
 app.get('/editlisting', function(req, res) {
     res.render('editlisting', {});
