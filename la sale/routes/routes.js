@@ -2,10 +2,10 @@ const express = require('express');
 
 
 const controller = require('../controller/siginController.js');
-const browseController = require('../controller/browseController.js')
-const createListingController = require('../controller/createListingController.js')
-const signUpController = require('../controller/signupController.js')
-
+const browseController = require('../controller/browseController.js');
+const createListingController = require('../controller/createListingController.js');
+const signUpController = require('../controller/signupController.js');
+const editprofileController = require('../controller/editProfileController.js');
 const app = express();
 
 
@@ -27,6 +27,8 @@ app.get('/signup', signUpController.getSignUp);
 
 app.post('/signup', signupController.postSignUp);
 
+app.get('/editprofile', editprofileController.getEdit);
+app.post('/editprofile', editprofileController.portEdit);
 
 
 
