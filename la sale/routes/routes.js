@@ -1,7 +1,11 @@
 const express = require('express');
+
+
 const controller = require('../controller/siginController.js');
 const browseController = require('../controller/browseController.js')
 const createListingController = require('../controller/createListingController.js')
+const signUpController = require('../controller/signupController.js')
+
 const app = express();
 
 
@@ -19,14 +23,16 @@ app.get('/createlisting', createListingController.getCreateListing);
 
 app.post('/createlisting', createListingController.postCreateListing);
 
-app.get('/logout', function(req, res) {
-    res.render('userlogin', {});
+app.get('/signup', function(req, res) {
+    res.render('signup', {});
 });
 
 
 
 
-
+app.get('/logout', function(req, res) {
+    res.render('userlogin', {});
+});
 
 
 app.get('/editlisting', function(req, res) {
@@ -107,6 +113,3 @@ app.get('/profile', function(req, res) {
     res.render('profile', {});
 });
 
-app.get('/signup', function(req, res) {
-    res.render('signup', {});
-});
