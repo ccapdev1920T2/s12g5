@@ -51,8 +51,6 @@ var ArcherSchema = new mongoose.Schema({
         required: false
     }
 
-
-
 });
 
 module.exports = mongoose.model('Archer', ArcherSchema);

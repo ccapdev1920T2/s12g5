@@ -1,6 +1,11 @@
 const mongoose = require(mongoose);
 
-// const User = req
+const Archer = require('./ArcherModel.js');
+const Image = require('./ImageModel.js');
+const Listing = require('./ListingModel.js');
+const ListingParticipation = require('./ListingParticipationModel.js');
+const PinnedListing = require('./PinnedListingModel.js');
+const RatingModel = require('./RatingModel.js');
 
 const url = 'mongodb://localhost:27017/lasaledb';
 
