@@ -4,12 +4,13 @@ const express = require('express');
 const controller = require('../controller/siginController.js');
 const browseController = require('../controller/browseController.js')
 const createListingController = require('../controller/createListingController.js')
-const signUpController = require('../controller/signupController.js')
-const editListingController = require('../controller/editListingController.js')
-const listingController = require('../controller/listingController.js')
+const signUpController = require('../controller/signupController.js');
+const editprofileController = require('../controller/editProfileController.js');
+const editListingController = require('../controller/editListingController.js');
+const listingController = require('../controller/listingController.js');
+const logoutController = require('../controller/logoutController.js');
 const profileController = require('../controller/profileController.js')
 const messagesController = require('../controller/messagesController.js')
-const logoutController = require('../controller/logoutController.js')
 
 const app = express();
 
@@ -62,7 +63,7 @@ app.get('/messages', function(req, res) {
     res.render('messages', {});
 });
 app.get('/mylistings', function(req, res) {
-    var olisting = [{olimg: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/single-minded-royalty-free-image-997141470-1558379890.jpg?crop=0.671xw:1.00xh;0.0847xw,0&resize=640:*", olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100}, 
+    var olisting = [{olimg: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/single-minded-royalty-free-image-997141470-1558379890.jpg?crop=0.671xw:1.00xh;0.0847xw,0&resize=640:*", olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100},
                     {olimg: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/single-minded-royalty-free-image-997141470-1558379890.jpg?crop=0.671xw:1.00xh;0.0847xw,0&resize=640:*", olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100},
                     {olimg: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/single-minded-royalty-free-image-997141470-1558379890.jpg?crop=0.671xw:1.00xh;0.0847xw,0&resize=640:*", olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100},
                     {olimg: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/single-minded-royalty-free-image-997141470-1558379890.jpg?crop=0.671xw:1.00xh;0.0847xw,0&resize=640:*", olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100}];
@@ -107,4 +108,3 @@ app.get('/editlisting', function(req, res){
 app.get('/profile', function(req, res) {
     res.render('profile', {});
 });
-
