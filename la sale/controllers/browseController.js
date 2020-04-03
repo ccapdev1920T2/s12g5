@@ -1,5 +1,7 @@
 //import db and model
 //match the content of results to the hbs file
+const db = require('../models/db.js');
+const Listing = require('../models/ListingModel.js')
 
 const browseController = {
 	getBrowse: function (req,res) {

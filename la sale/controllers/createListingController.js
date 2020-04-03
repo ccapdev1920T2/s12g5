@@ -1,5 +1,6 @@
 //resolve all ???
-//import db
+const db = require('../models/db.js');
+const Listing = require('../models/ListingModel.js')
 
 const createListingController = {
 	getCreateListing: function(req, res) {
