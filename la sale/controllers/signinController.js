@@ -11,7 +11,7 @@ const signinController = {
 	postSignIn: function (req, res) {
 		var query = {username: req.params.username, password: req.params.password};
 
-		var projection = '';
+		var projection = null;
 
 		db.findOne(Archer, query, projection, function (result){
 			if(result != null){

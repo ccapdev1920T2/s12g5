@@ -23,9 +23,9 @@ app.get('/createlisting', createListingController.getCreateListing);
 
 app.post('/createlisting', createListingController.postCreateListing);
 
-app.get('/signup', function(req, res) {
-    res.render('signup', {});
-});
+app.get('/signup', signUpController.getSignUp);
+
+app.post('/signup', signupController.postSignUp);
 
 
 

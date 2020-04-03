@@ -9,7 +9,7 @@ const browseController = {
 
 		var projection = 'images name startPrice buyOutPrice'
 
-		db.find(Listing, query, projection, function(results){
+		db.findMany(Listing, query, projection, function(results){
 		    res.render('browselisting', {
 		    products: results});
 		});
