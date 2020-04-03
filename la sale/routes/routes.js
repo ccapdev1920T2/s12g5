@@ -7,6 +7,9 @@ const createListingController = require('../controller/createListingController.j
 const signUpController = require('../controller/signupController.js')
 const editListingController = require('../controller/editListingController.js')
 const listingController = require('../controller/listingController.js')
+const profileController = require('../controller/profileController.js')
+const messagesController = require('../controller/messagesController.js')
+const logoutController = require('../controller/logoutController.js')
 
 const app = express();
 
@@ -35,13 +38,11 @@ app.post('/editlisting', editListingController.postEditListing);
 
 app.get('/listing', listingController.getListing);
 
+app.get('/profile', profileController.getProfile);
 
+app.get('/messages', messagesController.getMessages);
 
-
-
-app.get('/logout', function(req, res) {
-    res.render('userlogin', {});
-});
+app.get('/logout', logoutController.getLogout);
 
 
 app.get('/editlisting', function(req, res) {

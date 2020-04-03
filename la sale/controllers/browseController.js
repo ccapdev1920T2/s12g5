@@ -7,11 +7,11 @@ const browseController = {
 	getBrowse: function (req,res) {
 		var query = {};
 
-		var projection = 'images name startPrice buyOutPrice'
+		var projection = 'images name startPrice buyOutPrice' //limit image to 1
 
 		db.findMany(Listing, query, projection, function(results){
 		    res.render('browselisting', {
-		    products: results});
+		    products: results}); //check parsing to an array of objects
 		});
 	}
 }
