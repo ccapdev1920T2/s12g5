@@ -35,6 +35,10 @@ $(document).ready(function() {
         }
             
     });
+
+    $("#signupsubmit").click(function() {
+        window.location.replace("/signup")
+    });
 });
 
 
