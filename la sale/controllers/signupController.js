@@ -4,7 +4,7 @@ const Archer = require('../models/ArcherModel.js');
 const signupController = {
 	getSignUp: function(req,res){
 		res.render('signup');
-	}
+	},
 
 	postSignUp: function(req,res){
 		var email = req.body.email;
