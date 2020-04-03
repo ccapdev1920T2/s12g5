@@ -51,6 +51,7 @@ const database = {
             return callback(result);
         });
     },
+    
 
     updateOne: function(model, filter, update) {
         model.updateOne(filter, update, function(error, result) {

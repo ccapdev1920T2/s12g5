@@ -9,9 +9,9 @@ const editprofileController = require('../controller/editProfileController.js');
 const editListingController = require('../controller/editListingController.js');
 const listingController = require('../controller/listingController.js');
 const logoutController = require('../controller/logoutController.js');
-const profileController = require('../controller/profileController.js')
-const messagesController = require('../controller/messagesController.js')
-
+const profileController = require('../controller/profileController.js');
+const messagesController = require('../controller/messagesController.js');
+const myListingController = require('../controller/myListingController.js');
 const app = express();
 
 
@@ -44,6 +44,13 @@ app.get('/profile', profileController.getProfile);
 app.get('/messages', messagesController.getMessages);
 
 app.get('/logout', logoutController.getLogout);
+
+app.get('/editprofile', editprofileController.getEditProfile);
+
+app.post('/editprofile', editprofileController.postEditProfile);
+
+app.get('/mylisting', myListingController.getMyListing);
+
 
 
 app.get('/editlisting', function(req, res) {
