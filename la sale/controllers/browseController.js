@@ -12,6 +12,6 @@ const browseController = {
 		db.find(Listing, query, projection, function(results){
 		    res.render('browselisting', {
 		    products: results});
-		}
+		});
 	}
 }

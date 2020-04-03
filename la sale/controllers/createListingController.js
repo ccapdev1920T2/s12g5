@@ -39,7 +39,7 @@ const createListingController = {
 
 		db.insertOne(Listing, listing, function(flag) {
 			if(flag) {
-				res.redirect('/browse?username'+ ???)
+				res.redirect('browselisting')
 			}
 		}
 	}

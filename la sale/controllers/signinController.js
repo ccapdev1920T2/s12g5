@@ -1,9 +1,11 @@
+//check efficient way on how to track username for all web pages
+
 const db = require('../models/db.js');
 const Archer = require('../models/Archer.js')
 
 const signinController = {
 	getSignIn: function(req,res){
-		res.render('/');
+		res.render('userlogin');
 	}
 
 	postSignIn: function (req, res) {
@@ -13,7 +15,7 @@ const signinController = {
 
 		db.findOne(Archer, query, projection, function (result){
 			if(result != null){
-				res.redirect('/browse?username=' + username)
+				res.redirect('browselisting')
 			}
 		})
 	}

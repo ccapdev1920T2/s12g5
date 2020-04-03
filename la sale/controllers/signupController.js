@@ -39,7 +39,7 @@ const signupController = {
 
 		db.insertOne(Archer, archer, function(flag){
 			if(flag){
-				res.redirect('/');
+				res.redirect('userlogin');
 			}
 		})
 	}
