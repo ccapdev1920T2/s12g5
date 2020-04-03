@@ -2,10 +2,12 @@ const express = require('express');
 
 
 const controller = require('../controller/siginController.js');
-const browseController = require('../controller/browseController.js');
-const createListingController = require('../controller/createListingController.js');
-const signUpController = require('../controller/signupController.js');
-const editprofileController = require('../controller/editProfileController.js');
+const browseController = require('../controller/browseController.js')
+const createListingController = require('../controller/createListingController.js')
+const signUpController = require('../controller/signupController.js')
+const editListingController = require('../controller/editListingController.js')
+const listingController = require('../controller/listingController.js')
+
 const app = express();
 
 
@@ -27,8 +29,13 @@ app.get('/signup', signUpController.getSignUp);
 
 app.post('/signup', signupController.postSignUp);
 
-app.get('/editprofile', editprofileController.getEdit);
-app.post('/editprofile', editprofileController.portEdit);
+app.get('/editlisting', editListingController.getEditListing);
+
+app.post('/editlisting', editListingController.postEditListing);
+
+app.get('/listing', listingController.getListing);
+
+
 
 
 
@@ -49,27 +56,12 @@ app.get('/editprofile', function(req, res) {
     var userdesc = "bryce anthgonyr ramirez lorem ipsum user description blahg blah";
     res.render('editprofile', {name: name, username: username, rating: rating, idnum: idnum, college: college, userdesc: userdesc});
 });
-app.get('/listing', function(req, res) {
-    var productname = "kitty kat";
-    var producttype = "pet";
-    var username = "katthecat";
-    var photos = [{img: "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg"}, 
-                {img: "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/reference_guide/cats_and_excessive_meowing_ref_guide/1800x1200_cats_and_excessive_meowing_ref_guide.jpg"}];
-   
-    var productdesc = "its a cat. thats it.";
-    var lowrange = 50;
-    var highrange = 500;
-    var highestbid = 200;
-    var highestbidderun = "trisha";
 
-    res.render('listing', {productname: productname, producttype: producttype, username: username,photo: photos, 
-                            productdesc: productdesc, lowrange: lowrange, highrange: highrange, highestbid: highestbid, highestbidderun: highestbidderun});
-});
 app.get('/messages', function(req, res) {
     res.render('messages', {});
 });
 app.get('/mylistings', function(req, res) {
-    var olisting = [{olimg: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/single-minded-royalty-free-image-997141470-1558379890.jpg?crop=0.671xw:1.00xh;0.0847xw,0&resize=640:*", olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100}, 
+    var olisting = [{olimg: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/single-minded-royalty-free-image-997141470-1558379890.jpg?crop=0.671xw:1.00xh;0.0847xw,0&resize=640:*", olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100},
                     {olimg: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/single-minded-royalty-free-image-997141470-1558379890.jpg?crop=0.671xw:1.00xh;0.0847xw,0&resize=640:*", olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100},
                     {olimg: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/single-minded-royalty-free-image-997141470-1558379890.jpg?crop=0.671xw:1.00xh;0.0847xw,0&resize=640:*", olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100},
                     {olimg: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/single-minded-royalty-free-image-997141470-1558379890.jpg?crop=0.671xw:1.00xh;0.0847xw,0&resize=640:*", olname: "dog cat", oldescription: "dog cat binaliktad kinurot pa", olusername: "jedtan", olprice: 100}];
@@ -114,4 +106,3 @@ app.get('/editlisting', function(req, res){
 app.get('/profile', function(req, res) {
     res.render('profile', {});
 });
-
