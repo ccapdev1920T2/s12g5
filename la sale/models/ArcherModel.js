@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var ArcherSchema = new mongoose.Schema({
     email: {
         type: String,
+        unique: true,
         required: true
     },
     firstname: {
@@ -11,6 +12,11 @@ var ArcherSchema = new mongoose.Schema({
     },
     lastname: {
         type: String,
+        required: true
+    },
+    username: {
+        type: String,
+        unique: true,
         required: true
     },
     password: {
@@ -50,8 +56,6 @@ var ArcherSchema = new mongoose.Schema({
         type: [String],
         required: false
     }
-
-
 
 });
 
