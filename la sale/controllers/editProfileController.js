@@ -8,7 +8,7 @@ const editProfileController = {
     },
 
     postEditProfile: function(req, res) {
-        var query = {username: req.params.listing}
+        var query = {username: req.params.username}
 
         var firstname = req.body.firstname;
         var lastname = req.body.lastname;

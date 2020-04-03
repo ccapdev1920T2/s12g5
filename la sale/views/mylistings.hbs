@@ -21,16 +21,16 @@
             
             <div class="row">
                 <script>var x=0;</script>
-
-                {{#each olisting}}
+                {{!-- ongoing --}}
+                {{#each olisting}} 
                         <div class="col-md-6">
                             <div class="card" style="width: 25rem;">
-                                <img src={{{olimg}}} class="card-img-top" alt="product">
+                                <img src={{{image}}} class="card-img-top" alt="product">
                                 <div class="card-body">
-                                    <h5 class="card-title" > {{olname}} </h5>
-                                    <p class="card-text" > {{oldescription}}</p>
-                                    <h6 class="prices">highest bidder: @{{olusername}}</h6>
-                                    <h6 class="prices"><span>{{olprice}}</span>php</h6>
+                                    <h5 class="card-title" > {{name}} </h5>
+                                    <p class="card-text" > {{description}}</p>
+                                    <h6 class="prices">highest bidder: @{{username}}</h6>
+                                    <h6 class="prices"><span>{{highestBid}}</span>php</h6>
                                     <a href="listing.html" class="btn btn-secondary btn-block bid"> Ongoing</a>  
                                 </div>
                             </div>
@@ -44,15 +44,16 @@
                     </script>
                 {{/each}}
 
+                {{!-- completed --}}
                 {{#each clisting}}
                     <div class="col-md-6">
                         <div class="card" style="width: 25rem;">
-                            <img src={{{climg}}} class="card-img-top" alt="product">
+                            <img src={{{images}}} class="card-img-top" alt="product">
                             <div class="card-body">
-                                <h5 class="card-title" > {{clname}} </h5>
-                                <p class="card-text" > {{cldescription}} </p>
-                                <h6 class="prices">winner: @{{clusername}} </h6>
-                                <h6 class="prices"><span> {{clprice}} </span>php</h6>
+                                <h5 class="card-title" > {{name}} </h5>
+                                <p class="card-text" > {{description}} </p>
+                                <h6 class="prices">winner: @{{highestBidder}} </h6>
+                                <h6 class="prices"><span> {{highestBid}} </span>php</h6>
                                 <button class="btn btn-secondary btn-block bid" id="completed" disabled>Completed</a>
                             </div>
                         </div>
@@ -66,14 +67,15 @@
                     </script>
                 {{/each}}
 
+                {{!--new listings --}}
                 {{#each ulisting}}
                     <div class="col-md-6">
                         <div class="card" style="width: 25rem;">
-                            <img src={{{ulimg}}} class="card-img-top" alt="product">
+                            <img src={{{images}}} class="card-img-top" alt="product">
                             <div class="card-body">
-                                <h5 class="card-title" > {{ulname}}</h5>
-                                <p class="card-text" > {{uldescription}} </p>
-                                <h6 class="prices"><span> {{ulpricelow}} </span>php - <span> {{ulpricehigh}} </span>php</h6>
+                                <h5 class="card-title" > {{name}}</h5>
+                                <p class="card-text" > {{description}} </p>
+                                <h6 class="prices"><span> {{startPrice}} </span>php - <span> {{buyOutPrice}} </span>php</h6>
                                 <div class="row">
                                     <div class="col-md-6 card-button">
                                         <a href="listing.html" class="btn btn-secondary btn-block bid">View</a> 
