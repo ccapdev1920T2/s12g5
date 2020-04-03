@@ -4,7 +4,7 @@ const Listing = require('../Listing/ListingModel.js');
 const editListingController = {
 	getEditListing: function(req, res){
 		res.render('editlisting')
-	}
+	},
 
 	postEditListing: function(req, res){
 		var query = {username: req.params.listingId}

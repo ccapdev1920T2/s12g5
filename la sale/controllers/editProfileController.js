@@ -3,11 +3,11 @@ const Listing = require('../models/ListingModel.js');
 
 
 const editProfileController = {
-    getEdit: function(req, res) {
+    getEditProfile: function(req, res) {
         res.render('editprofile');
     },
 
-    postEdit: function(req, res) {
+    postEditProfile: function(req, res) {
         var query = {username: req.params.listing}
 
         var firstname = req.body.firstname;

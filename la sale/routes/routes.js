@@ -4,9 +4,10 @@ const express = require('express');
 const controller = require('../controller/siginController.js');
 const browseController = require('../controller/browseController.js')
 const createListingController = require('../controller/createListingController.js')
-const signUpController = require('../controller/signupController.js')
-const editListingController = require('../controller/editListingController.js')
-const listingController = require('../controller/listingController.js')
+const signUpController = require('../controller/signupController.js');
+const editprofileController = require('../controller/editProfileController.js');
+const editListingController = require('../controller/editListingController.js');
+const listingController = require('../controller/listingController.js');
 
 const app = express();
 
@@ -35,6 +36,9 @@ app.post('/editlisting', editListingController.postEditListing);
 
 app.get('/listing', listingController.getListing);
 
+app.get('/editprofile', editprofileController.getEditProfile);
+
+app.post('/editprofile', editprofileController.postEditProfile);
 
 
 
