@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+mongoose.set("useCreateIndex", true);
 
 const Archer = require('./ArcherModel.js');
 const Image = require('./ImageModel.js');
