@@ -3,7 +3,7 @@ const Archer = require('../models/ArcherModel.js');
 
 const signupSuccessController = {
 	getSuccess: function(req,res){
-		firstname: req.params.firstname;
+		firstname= req.query.firstname;
 		res.render('signupsuccess', firstname);
 	}
 }

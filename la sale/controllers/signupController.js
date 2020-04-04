@@ -40,7 +40,7 @@ const signupController = {
 		db.insertOne(Archer, archer, function(flag){
 			if(flag){
 				console.log(archer);
-				res.redirect('/', archer.firstname);
+				res.redirect("/signupsuccess?firstname="+firstname);
 			}
 		})
 	}
