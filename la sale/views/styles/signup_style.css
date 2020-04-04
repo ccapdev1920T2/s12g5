@@ -22,6 +22,15 @@ body{
     color:  #454545;
 }
 
+#success{
+    margin-left: 50px;
+    font-weight: 700;
+    font-size: 120px;
+    color:#454545;
+    line-height: 90px;
+    margin-top: 10px;
+}
+
 .registerbtn {
     background-color:  #454545;
 }

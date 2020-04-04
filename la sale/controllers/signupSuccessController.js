@@ -3,8 +3,10 @@ const Archer = require('../models/ArcherModel.js');
 
 const signupSuccessController = {
 	getSuccess: function(req,res){
-		firstname= req.query.firstname;
-		res.render('signupsuccess', firstname);
+		var details = {
+			firstname: req.query.firstname
+		}
+		res.render('signupsuccess', details);
 	}
 }
 
