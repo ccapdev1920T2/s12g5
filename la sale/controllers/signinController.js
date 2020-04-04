@@ -9,7 +9,8 @@ const signinController = {
 	},
 
 	postSignIn: function (req, res) {
-		var query = {username: req.params.username, password: req.params.password};
+		var query = {username: req.body.username, password: req.body.password};
+		console.log(query);
 
 		var projection = null;
 
