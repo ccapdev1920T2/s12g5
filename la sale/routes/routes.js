@@ -12,12 +12,10 @@ const logoutController = require('../controllers/logoutController.js');
 const profileController = require('../controllers/profileController.js');
 const messagesController = require('../controllers/messagesController.js');
 const myListingController = require('../controllers/myListingController.js');
+const signupSuccessController = require('../controllers/signupSuccessController.js')
 const app = express();
 
-
 module.exports = app;
-
-
 
 app.get('/', controller.getSignIn);
 
@@ -50,6 +48,8 @@ app.get('/editprofile', editprofileController.getEditProfile);
 app.post('/editprofile', editprofileController.postEditProfile);
 
 app.get('/mylistings', myListingController.getMyListing);
+
+app.get('/signupsuccess', signupSuccessController.getSuccess);
 
 
 
