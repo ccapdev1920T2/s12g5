@@ -1,9 +1,9 @@
-const mongoose = require(mongoose);
+const mongoose = require('mongoose');
 
 const Archer = require('./ArcherModel.js');
 const Image = require('./ImageModel.js');
 const Listing = require('./ListingModel.js');
-const ListingParticipation = require('./ListingParticipationModel.js');
+const ListingParticipation = require('./ListingParticipantModel.js');
 const PinnedListing = require('./PinnedListingModel.js');
 const RatingModel = require('./RatingModel.js');
 
