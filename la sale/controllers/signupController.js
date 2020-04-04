@@ -7,6 +7,7 @@ const signupController = {
 	},
 
 	postSignUp: function(req,res){
+	
 		var email = req.body.email;
 		var firstname = req.body.fname;
 		var lastname = req.body.lname;
@@ -38,6 +39,7 @@ const signupController = {
 		}
 
 		db.insertOne(Archer, archer, function(flag){
+			console.log(archer);
 			if(flag){
 				res.redirect('/');
 			}
