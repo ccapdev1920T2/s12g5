@@ -18,7 +18,7 @@ app.use('/', routes);
 
 app.use(function(req,res) {
     res.render('error')
-})
+});
 
 db.connect();
 
