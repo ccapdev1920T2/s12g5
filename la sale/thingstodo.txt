@@ -1,0 +1,2 @@
+1. ajax validation on signuo
+2. ajax validation signin
