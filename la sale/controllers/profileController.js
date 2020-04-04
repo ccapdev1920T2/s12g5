@@ -1,6 +1,6 @@
 const db = require('../models/db.js');
 const Listing = require('../models/ListingModel.js')
-const Archer = require('../models/Archer.js')
+const Archer = require('../models/ArcherModel.js')
 
 const profileController = {
 	getProfile: function(req, res) {

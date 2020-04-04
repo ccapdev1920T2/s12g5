@@ -1,5 +1,5 @@
 const db = require('../models/db.js');
-const Listing = require('../Listing/ListingModel.js');
+const Listing = require('../models/ListingModel.js');
 
 
 const listingController = {
