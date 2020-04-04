@@ -16,7 +16,11 @@ const signinController = {
 
 		db.findOne(Archer, query, projection, function (result){
 			if(result != null){
-				res.redirect('browselisting')
+				console.log('login successful');
+				res.redirect('/browse');
+			}
+			else {
+				console.log("no user found");
 			}
 		})
 	}
@@ -24,4 +28,4 @@ const signinController = {
 	
 }
 
-module.exports = signinController
+module.exports = signinController;
