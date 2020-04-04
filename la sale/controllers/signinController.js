@@ -17,6 +17,8 @@ const signinController = {
 			if(result != null){
 				res.redirect('browselisting')
 			}
-		});
+		})
 	}
+
+	
 }
