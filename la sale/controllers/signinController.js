@@ -1,7 +1,7 @@
 //check efficient way on how to track username for all web pages
 
 const db = require('../models/db.js');
-const Archer = require('../models/Archer.js')
+const Archer = require('../models/ArcherModel.js')
 
 const signinController = {
 	getSignIn: function(req,res){
