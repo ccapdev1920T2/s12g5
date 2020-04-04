@@ -1,17 +1,17 @@
 const express = require('express');
 
 
-const controller = require('../controller/siginController.js');
-const browseController = require('../controller/browseController.js')
-const createListingController = require('../controller/createListingController.js')
-const signUpController = require('../controller/signupController.js');
-const editprofileController = require('../controller/editProfileController.js');
-const editListingController = require('../controller/editListingController.js');
-const listingController = require('../controller/listingController.js');
-const logoutController = require('../controller/logoutController.js');
-const profileController = require('../controller/profileController.js');
-const messagesController = require('../controller/messagesController.js');
-const myListingController = require('../controller/myListingController.js');
+const controller = require('../controllers/siginController.js');
+const browseController = require('../controllers/browseController.js')
+const createListingController = require('../controllers/createListingController.js')
+const signUpController = require('../controllers/signupController.js');
+const editprofileController = require('../controllers/editProfileController.js');
+const editListingController = require('../controllers/editListingController.js');
+const listingController = require('../controllers/listingController.js');
+const logoutController = require('../controllers/logoutController.js');
+const profileController = require('../controllers/profileController.js');
+const messagesController = require('../controllers/messagesController.js');
+const myListingController = require('../controllers/myListingController.js');
 const app = express();
 
 
