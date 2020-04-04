@@ -5,7 +5,7 @@ const Listing = require('../models/ListingModel.js')
 const createListingController = {
 	getCreateListing: function(req, res) {
     	res.render('createlisting', {});
-	}
+	},
 
 	postCreateListing: function(req,res) {
 		var name = req.body.name;

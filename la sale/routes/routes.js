@@ -1,7 +1,7 @@
 const express = require('express');
 
 
-const controller = require('../controllers/siginController.js');
+const controller = require('../controllers/signinController.js');
 const browseController = require('../controllers/browseController.js')
 const createListingController = require('../controllers/createListingController.js')
 const signUpController = require('../controllers/signupController.js');

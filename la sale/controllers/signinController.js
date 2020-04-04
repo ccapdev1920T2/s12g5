@@ -6,7 +6,7 @@ const Archer = require('../models/Archer.js')
 const signinController = {
 	getSignIn: function(req,res){
 		res.render('userlogin');
-	}
+	},
 
 	postSignIn: function (req, res) {
 		var query = {username: req.params.username, password: req.params.password};
