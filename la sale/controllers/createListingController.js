@@ -16,12 +16,12 @@ const createListingController = {
 		var images = req.body.images;
 		var startDate = req.body.startdate;
 		var endDate = req.body.enddate;
-		var listingOwner = ???;
+		// var listingOwner = ???;
 		var productType = req.body.type;
-		var status = ???;
+		// var status = ???;
 
 		var listing = {
-			listingId:????,
+			// listingId:????,
 			name: name,
 			brand: brand,
 			startPrice:startPrice,
@@ -32,16 +32,16 @@ const createListingController = {
 			endDate: endDate,
 			highestBidder: null,
 			highestBid: null,
-			listingOwner: ???;
-			productType: productType;
-			status: ???;
+			// listingOwner: ???;
+			productType: productType,
+			// status: ???;
 		}
 
 		db.insertOne(Listing, listing, function(flag) {
 			if(flag) {
 				res.redirect('browselisting')
 			}
-		}
+		});
 	}
 }
 

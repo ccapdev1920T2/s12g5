@@ -15,4 +15,4 @@ var RatingSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Rating', UserSchema);
+module.exports = mongoose.model('Rating', RatingSchema);
