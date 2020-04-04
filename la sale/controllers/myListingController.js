@@ -34,3 +34,5 @@ const myListingController = {
 
     }
 }
+
+module.exports = myListingController

@@ -31,7 +31,7 @@ app.post('/createlisting', createListingController.postCreateListing);
 
 app.get('/signup', signUpController.getSignUp);
 
-app.post('/signup', signupController.postSignUp);
+app.post('/signup', signUpController.postSignUp);
 
 app.get('/editlisting', editListingController.getEditListing);
 

@@ -22,3 +22,5 @@ const signinController = {
 
 	
 }
+
+module.exports = signinController

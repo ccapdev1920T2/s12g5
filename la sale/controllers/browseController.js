@@ -15,3 +15,5 @@ const browseController = {
 		});
 	}
 }
+
+module.exports = browseController

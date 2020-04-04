@@ -3,3 +3,5 @@ const logoutController = {
 		res.render('userlogin')
 	}
 }
+
+module.exports = logoutController

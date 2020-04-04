@@ -27,3 +27,5 @@ const editListingController = {
 
 	}
 }
+
+module.exports = editListingController

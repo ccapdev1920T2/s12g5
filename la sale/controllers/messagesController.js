@@ -3,3 +3,5 @@ const messagesController = {
         res.render('messages')
     }
 }
+
+module.exports = messagesController

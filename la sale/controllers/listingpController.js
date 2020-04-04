@@ -12,3 +12,5 @@ const browseController = {
 		where('listingId').in(db.find)
 	}
 }
+
+module.exports = browseController

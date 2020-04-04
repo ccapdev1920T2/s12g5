@@ -45,3 +45,4 @@ const createListingController = {
 	}
 }
 
+module.exports = createListingController

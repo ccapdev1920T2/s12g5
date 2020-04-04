@@ -25,3 +25,5 @@ const listingController = {
 
 	}
 }
+
+module.exports = listingController

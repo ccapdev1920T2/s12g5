@@ -30,3 +30,4 @@ const editProfileController = {
     }
 }
 
+module.exports = editProfileController
