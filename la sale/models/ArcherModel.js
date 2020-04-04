@@ -30,7 +30,7 @@ var ArcherSchema = new mongoose.Schema({
     },
     birthday: {
         type: Date,
-        required: false
+        required: true
     },
     idnum: {
         type: Number,
