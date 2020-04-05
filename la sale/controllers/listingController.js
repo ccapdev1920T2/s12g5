@@ -6,6 +6,7 @@ const listingController = {
 	getListing: function(req, res) {
 		var query = {listingId: req.query.listingid}; //verify where it comes from
 		db.findOne(Listing, query, projection=null, function(result){
+			console.log (req.query.listingid)
 			if(result!=null) {
 				var details = {
 					productname: result.name,
