@@ -7,9 +7,10 @@ const browseController = {
 	getBrowse: function (req,res) {
 		var query = {};
 
-		var projection = 'images name startPrice description buyOutPrice listingid' //limit image to 1
+		var projection = '_id images name startPrice description buyOutPrice' //limit image to 1
 
 		db.findMany(Listing, query, projection, function(results){
+			console.log(results)
 		    res.render('browselisting', {
 		    products: results}); //check parsing to an array of objects
 		});
