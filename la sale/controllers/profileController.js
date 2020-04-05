@@ -13,9 +13,11 @@ const profileController = {
 				name: result.firstname+result.lastname,
 				username: result.username,
 				rating: result.rating,
-				idnum: result.idnum,
-				college: result.college
+				idnum: result.idnum.toString().slice(0,3),
+				college: result.college,
+				description: result.description
 			}
+			console.log(details)
 
 			query = {listingOwner: req.query.username};
 			projection = 'images name description startPrice buyOutPrice' //limit images to 1
@@ -25,7 +27,7 @@ const profileController = {
 				res.render('profile', details);
 			});
 		});
-		
+
 	}
 }
 

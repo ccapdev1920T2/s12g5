@@ -18,10 +18,11 @@ body{
 
 #profilepic{
     height: 650px;
+    width: 650px;
     position: absolute;
     margin-top: -150px;
     margin-left: -230px;
-
+    object-fit: cover;
 }
 
 #collapserating {
