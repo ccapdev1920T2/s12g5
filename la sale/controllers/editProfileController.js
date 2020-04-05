@@ -33,7 +33,7 @@ const editProfileController = {
         var college = req.body.college;
         var description = req.body.description;
 
-        var archer
+        var archer = null
 
         if(firstname!=null)
             archer.firstname = firstname
@@ -48,7 +48,10 @@ const editProfileController = {
         if(description!=null)
             archer.description = description
 
-        db.updateOne(Archer, query, archer);
+        if(archer!=null)
+            db.updateOne(Archer, query, archer, function(result){
+                res.redirect("editprofile")
+            });
     }
 }
 
