@@ -25,7 +25,7 @@ const profileController = {
 		db.findMany(Listing, query, projection, function(result){
 			details.products = result
 
-			res.render('profile', details)
+			res.render('profile', details);
 		})
 	}
 }
