@@ -13,7 +13,7 @@ const editProfileController = {
                 name: result.firstname+result.lastname,
                 username: result.username,
                 rating: result.rating,
-                idnum: result.idnum,
+                idnum: result.idnum.toString().slice(0,3),
                 college: result.college,
                 userdesc: result.description
             }
@@ -24,7 +24,7 @@ const editProfileController = {
     },
 
     postEditProfile: function(req, res) {
-        var query = {username: req.params.username}
+        var query = {username: "lellings0"}
 
         var firstname = req.body.firstname;
         var lastname = req.body.lastname;
@@ -33,16 +33,22 @@ const editProfileController = {
         var college = req.body.college;
         var description = req.body.description;
 
-        var archer = {
-            firstname: firstname,
-            lastname: lastname,
-            username: username,
-            idnum: idnum,
-            college: college,
-            description: description
-        }
+        var archer
 
-        updateOne(Archer, query, archer);
+        if(firstname!=null)
+            archer.firstname = firstname
+        if(lastname!=null)
+            archer.lastname = lastname
+        if(username!=null)
+            archer.username = username
+        if(idnum!=null)
+            archer.idnum = idnum
+        if(college!=null)
+            archer.college = college
+        if(description!=null)
+            archer.description = description
+
+        db.updateOne(Archer, query, archer);
     }
 }
 
