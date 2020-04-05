@@ -34,6 +34,7 @@ var ArcherSchema = new mongoose.Schema({
     },
     idnum: {
         type: Number,
+        unique: true,
         required: true
     },
     ratings: {
