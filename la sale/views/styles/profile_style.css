@@ -22,7 +22,7 @@ body{
     position: absolute;
     margin-top: -150px;
     margin-left: -230px;
-
+    object-fit: cover;
 }
 
 #collapserating {
