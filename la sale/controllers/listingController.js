@@ -25,9 +25,12 @@ const listingController = {
 					highestbidderun: result.highestBidder
 				};
 
-
-				res.render('listing', details)
-			})
+				query = {username: result.listingOwner}
+					db.findOne(Archer, query, projection='profilePic', function(result){
+						details.userpic = result.profilePic;
+						res.render('listing', details)
+					})
+			}
 		})
 
 
