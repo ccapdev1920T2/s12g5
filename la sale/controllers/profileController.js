@@ -5,7 +5,6 @@ const Archer = require('../models/ArcherModel.js')
 const profileController = {
 	getProfile: function(req, res) {
 		var query = {username: req.query.username}; //check where it comes from
-
 		var projection = 'profilePic firstname lastname username rating idnum college description'
 
 		db.findOne(Archer, query, projection, function(result){
@@ -17,16 +16,16 @@ const profileController = {
 				idnum: idnum,
 				college: college
 			}
-		})
 
-		query = {listingOwner: req.params.username};
-		projection = 'images name description startPrice buyOutPrice' //limit images to 1
+			query = {listingOwner: req.query.username};
+			projection = 'images name description startPrice buyOutPrice' //limit images to 1
 
-		db.findMany(Listing, query, projection, function(result){
-			details.products = result
-
-			res.render('profile', details);
-		})
+			db.findMany(Listing, query, projection, function(result){
+				details.products = result;
+				res.render('profile', details);
+			});
+		});
+		
 	}
 }
 
