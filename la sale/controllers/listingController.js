@@ -4,7 +4,7 @@ const Listing = require('../models/ListingModel.js');
 
 const listingController = {
 	getListing: function(req, res) {
-		var query = {listingId: req.params.listingId}; //verify where it comes from
+		var query = {listingId: req.query.listingid}; //verify where it comes from
 		db.findOne(Listing, query, projection=null, function(result){
 			if(result!=null) {
 				var details = {
