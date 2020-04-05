@@ -7,25 +7,30 @@ const listingController = {
 		var query = {_id: req.query.listingid}; //verify where it comes from
 		db.findOne(Listing, query, projection=null, function(result){
 			console.log (req.query.listingid)
-			var details = {
-				productname: result.name,
-				producttype: result.type,
-				username: result.listingOwner,
-				photos: result.images,
-				productdesc: result.description,
-				lowrange: result.startPrice,
-				highrange: result.buyOutPrice,
-				highestbid: result.highestBid,
-				highestbidderun: result.highestBidder
-			};
-			query = {username: result.listingOwner}
-			db.findOne(Archer, query, projection='profilePic', function(result){
-				details.userpic = result.profilePic;
+			if(result!=null) {
+				var photos = [];
+				// console.log(result.images.length);
+				for(var i = 0; i < result.images.length; i++) {
+					photos[i] = {img: result.images[i]};
+				}
+				var details = {
+					productname: result.name,
+					producttype: result.type,
+					username: result.listingOwner,
+					photos: photos,
+					productdesc: result.description,
+					lowrange: result.startPrice,
+					highrange: result.buyOutPrice,
+					highestbid: result.highestBid,
+					highestbidderun: result.highestBidder
+				};
+
+
 				res.render('listing', details)
 			})
 		})
 
-		
+
 	}
 }
 
