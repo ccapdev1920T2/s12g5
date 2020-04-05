@@ -18,7 +18,6 @@ const signupController = {
 		var ratings = null;
 		var rating = null;
 		var description = null;
-		var profilePic = null;
 		var posted = null;
 
 		var archer = {
@@ -33,7 +32,6 @@ const signupController = {
 			ratings: ratings,
 			rating: rating,
 			description: description,
-			profilePic: profilePic,
 			posted: posted
 		}
 

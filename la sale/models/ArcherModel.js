@@ -51,7 +51,8 @@ var ArcherSchema = new mongoose.Schema({
     },
     profilePic: {
         type: String,
-        required: false
+        required: true,
+        default: 'https://coconuts.co/wp-content/uploads/2019/03/archer_4212_032118-960x540.jpg'
     },
     posted: {
         type: [String],
