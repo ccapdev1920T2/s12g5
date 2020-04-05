@@ -4,7 +4,7 @@ const Archer = require('../models/ArcherModel.js')
 
 const profileController = {
 	getProfile: function(req, res) {
-		var query = {username: req.params.username}; //check where it comes from
+		var query = {username: req.query.username}; //check where it comes from
 
 		var projection = 'profilePic firstname lastname username rating idnum college description'
 

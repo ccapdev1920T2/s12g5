@@ -53,6 +53,8 @@ app.get('/signupsuccess', signupSuccessController.getSuccess);
 
 
 
+
+
 app.get('/listingparticipation', function(req, res){
      var plisting = [{plimg: "https://vignette.wikia.nocookie.net/p__/images/d/dc/Lucina_SSBU.png/revision/latest?cb=20180613135651&path-prefix=protagonist", plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
                     {plimg: "https://vignette.wikia.nocookie.net/p__/images/d/dc/Lucina_SSBU.png/revision/latest?cb=20180613135651&path-prefix=protagonist", plname: "lucina", pldescription: "second best character", plusername: "mamamo", plprice: 350},
