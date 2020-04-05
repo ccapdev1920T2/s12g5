@@ -27,7 +27,7 @@ const profileController = {
 				res.render('profile', details);
 			});
 		});
-		
+
 	}
 }
 
