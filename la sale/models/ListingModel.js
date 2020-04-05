@@ -52,9 +52,9 @@ var ListingSchema = new mongoose.Schema({
     },
     productType: {
         type: String,
-        enum: ['clothes', 'food and drinks', 'electronics', 'tickets and coupons', 
-                'furniture', 'beauty and wellness', 'books', 'hobbies and games',
-                'sports', 'accessories', 'media', 'music', 'pets and accessories'],
+        enum: ['clothes', 'food', 'electronics', 'tickets', 
+                'furniture', 'beauty', 'books', 'hobbies',
+                'sports', 'accessories', 'media', 'music', 'pets'],
         required: true
     },
     status: {
