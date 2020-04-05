@@ -8,17 +8,23 @@ const listingController = {
 		db.findOne(Listing, query, projection=null, function(result){
 			console.log (req.query.listingid)
 			if(result!=null) {
+				var photos = [];
+				// console.log(result.images.length);
+				for(var i = 0; i < result.images.length; i++) {
+					photos[i] = {img: result.images[i]};
+				}
 				var details = {
 					productname: result.name,
 					producttype: result.type,
 					username: result.listingOwner,
-					photos: result.images,
+					photos: photos,
 					productdesc: result.description,
 					lowrange: result.startPrice,
 					highrange: result.buyOutPrice,
 					highestbid: result.highestBid,
 					highestbidderun: result.highestBidder
 				};
+			
 
 				res.render('listing', details)
 			}
