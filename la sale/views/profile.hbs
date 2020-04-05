@@ -101,7 +101,7 @@
               <div class="row" id="about">
                   <div class="col-md-10">
                     <h2 id="about1">about</h2>
-                    <p id="userdesc">{{userdesc}}</p>
+                    <p id="userdesc">{{description}}</p>
                   </div>
                   
               </div>
@@ -120,7 +120,7 @@
                 {{#each products}}
                     <div class="col-md-6">
                         <div class="card" style="width: 25rem;">
-                            <img src={{{photo}}} class="card-img-top" alt="product">
+                            <img src={{{images.[0]}}} class="card-img-top" alt="product">
                             <div class="card-body">
                                 <h5 class="card-title" >{{name}}</h5>
                                 <p class="card-text" >{{description}}</p>
