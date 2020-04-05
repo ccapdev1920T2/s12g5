@@ -44,6 +44,8 @@ body{
 }
 .card-img-top {
     padding: 20px;
+    height: 350px;
+    object-fit: cover;
 }
 
 .bid {
