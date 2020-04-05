@@ -11,10 +11,10 @@ const profileController = {
 			var details = {
 				img: result.profilePic,
 				name: result.firstname+result.lastname,
-				username: username,
-				rating: rating,
-				idnum: idnum,
-				college: college
+				username: result.username,
+				rating: result.rating,
+				idnum: result.idnum,
+				college: result.college
 			}
 
 			query = {listingOwner: req.query.username};

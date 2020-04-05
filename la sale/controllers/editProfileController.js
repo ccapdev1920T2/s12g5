@@ -1,10 +1,26 @@
 const db = require('../models/db.js');
 const Listing = require('../models/ListingModel.js');
-
+const Archer = require('../models/ArcherModel.js')
 
 const editProfileController = {
     getEditProfile: function(req, res) {
-        res.render('editprofile');
+        var query = {username: "lellings0"}; //check where it comes from
+        var projection = 'profilePic firstname lastname username rating idnum college description'
+
+        db.findOne(Archer, query, projection, function(result){
+            var details = {
+                img: result.profilePic,
+                name: result.firstname+result.lastname,
+                username: result.username,
+                rating: result.rating,
+                idnum: result.idnum,
+                college: result.college,
+                userdesc: result.description
+            }
+
+            res.render("editprofile",details)
+        });
+        
     },
 
     postEditProfile: function(req, res) {
