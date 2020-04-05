@@ -1,6 +1,6 @@
 const db = require('../models/db.js');
 const Listing = require('../models/ListingModel.js');
-
+const Archer = require('../models/ArcherModel.js')
 
 const listingController = {
 	getListing: function(req, res) {
@@ -24,11 +24,15 @@ const listingController = {
 					highestbid: result.highestBid,
 					highestbidderun: result.highestBidder
 				};
-			
 
-				res.render('listing', details)
+				query = {username: result.listingOwner}
+					db.findOne(Archer, query, projection='profilePic', function(result){
+						details.userpic = result.profilePic;
+						res.render('listing', details)
+					})
 			}
 		})
+
 
 	}
 }

@@ -107,3 +107,7 @@ body {
 #buyout {
     height: 50px;
 }
+
+.objfit {
+    object-fit: scale-down;
+}
