@@ -7,7 +7,7 @@ const listingpController = {
 
         var query = {archerUsername: "lellings0"}
 
-        db.findMany(ListingP, query, projection, function(result) {
+        db.findMany(ListingP, query, projection=null, function(result) {
             console.log(result)
             var listingIds = [];
             for(var i=0; i<result.length;i++) {//fix how to push results to listingIds

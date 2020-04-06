@@ -24,16 +24,22 @@
                 {{!-- ongoing --}}
                 <div class="title"><h1>Ongoing Listings</h1></div>
                 <br>
-                {{#each olisting}} 
-                        <div class="col-md-6">
-                            <div class="card" style="width: 25rem;">
-                                <img src={{{image.[0]}}} class="card-img-top" alt="product">
-                                <div class="card-body">
-                                    <h5 class="card-title" > {{name}} </h5>
-                                    <p class="card-text" > {{description}}</p>
-                                    <h6 class="prices">highest bidder: @{{username}}</h6>
-                                    <h6 class="prices"><span>{{highestBid}}</span>php</h6>
-                                    <a href="listing.html" class="btn btn-secondary btn-block bid"> Ongoing</a>  
+                {{#each olisting}}
+                    <div class="col-md-6">
+                        <div class="card" style="width: 25rem;">
+                            <img src={{{images.[0]}}} class="card-img-top" alt="product">
+                            <div class="card-body">
+                                <h5 class="card-title" > {{name}}</h5>
+                                <p class="card-text" > {{description}} </p>
+                                <h6 class="prices"><span> {{startPrice}} </span>php - <span> {{buyOutPrice}} </span>php</h6>
+                                <div class="row">
+                                    <div class="col-md-6 card-button">
+                                        <a href="listing.html" class="btn btn-secondary btn-block bid">View</a> 
+                                    </div>
+                                    <div class="col-md-6 card-button">
+                                        <a href="/editlisting" class="btn btn-secondary btn-block bid"> Edit</a>  
+                                    </div>
+                                
                                 </div>
                             </div>
                         </div>
@@ -44,6 +50,7 @@
                         x=0;
                     }
                     </script>
+                    </div>
                 {{/each}}
 
                 {{!-- completed --}}
