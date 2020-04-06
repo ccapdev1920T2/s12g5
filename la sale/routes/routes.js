@@ -15,6 +15,7 @@ const myListingController = require('../controllers/myListingController.js');
 const signupSuccessController = require('../controllers/signupSuccessController.js');
 const pinnedListingController = require('../controllers/pinListingController.js');
 const listingpController = require('../controllers/listingpController');
+const editProfileSuccessController = require('../controllers/editprofileSuccessController')
 const app = express();
 
 module.exports = app;
@@ -55,7 +56,9 @@ app.get('/signupsuccess', signupSuccessController.getSuccess);
 
 app.get('/pinnedlistings', pinnedListingController.getPinListing);
 
-app.get('/listingparticipation', listingpController.getListing)
+app.get('/listingparticipation', listingpController.getListing);
+
+app.get('/editprofileSuccess', editProfileSuccessController.getSuccess);
 
 
 

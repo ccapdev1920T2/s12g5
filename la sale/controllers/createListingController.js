@@ -16,12 +16,11 @@ const createListingController = {
 		var images = req.body.images;
 		var startDate = req.body.startdate;
 		var endDate = req.body.enddate;
-		// var listingOwner = ???;
+		var listingOwner = 'lellings0';
 		var productType = req.body.type;
-		// var status = ???;
+		var status = 'active';
 
 		var listing = {
-			// listingId:????,
 			name: name,
 			brand: brand,
 			startPrice:startPrice,
@@ -32,9 +31,9 @@ const createListingController = {
 			endDate: endDate,
 			highestBidder: null,
 			highestBid: null,
-			// listingOwner: ???;
+			listingOwner: listingOwner,
 			productType: productType,
-			// status: ???;
+			status: 'active'
 		}
 
 		db.insertOne(Listing, listing, function(flag) {

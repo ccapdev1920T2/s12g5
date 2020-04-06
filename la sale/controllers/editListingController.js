@@ -7,7 +7,7 @@ const editListingController = {
 	},
 
 	postEditListing: function(req, res){
-		var query = {username: req.params.listingId}
+		var query = {listingId: req.params.listingId}
 
 		var startPrice = req.body.startprice;
 		var buyOutPrice = req.body.buyout;
@@ -15,11 +15,21 @@ const editListingController = {
 		var images = req.body.images;
 		var endDate = req.body.enddate;
 
+		var img = [];
+
+		db.findOne(Listing, query, projection = 'images', function(result){
+			for(var i=0;i<result.length; i++){
+				img.push(result.images[i]);
+			}
+		})
+
+		img.push(images);
+
 		var listing = {
 			startPrice:startPrice,
 			buyOutPrice: buyOutPrice,
 			description: description,
-			images: images,
+			images: img,
 			endDate: endDate
 		}
 
