@@ -40,8 +40,35 @@ const signupController = {
 				console.log(archer);
 				res.redirect("/signupsuccess?firstname="+firstname);
 			}
+			else {
+				console.log('datatype error');
+			}
 		})
-	}
+	},
+	
+	uniqueIdnum: function(req, res) {
+		var idnum = req.query.idnum;
+
+		db.findOne(Archer, {idnum: idnum}, 'idnum', function(result){
+			res.send(result);
+		});
+	},
+
+	uniqueUsername: function(req, res) {
+		var username = req.query.username;
+
+		db.findOne(Archer, {username: username}, 'username', function(result){
+			res.send(result);
+		});
+	},
+
+	uniqueEmail: function(req, res) {
+		var email = req.query.email;
+
+		db.findOne(Archer, {email: email}, 'email', function(result){
+			res.send(result);
+		});
+	},
 }
 
 module.exports = signupController
