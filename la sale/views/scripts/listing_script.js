@@ -40,8 +40,7 @@ $(document).ready(function() {
     var day = $("#days").text();
     var hour = $("#hours").text();
     var min = $("#minutes").text();
-    console.log(year + " " + month + " " + day + " " + hour+":" +min);
-    console.log(day);
+
     
     var division = $("#countdown");
 
@@ -51,15 +50,14 @@ $(document).ready(function() {
     
     //update status when opened
     $.get('/getEndDate', {listingid: listingid}, function(result) {
-        // var enddate = new Date(result.endDate);
+        var enddate = new Date(result.endDate);
         var nowDate = new Date(Date.now());
-        console.log(result.endDate + " " + nowDate);
 
-        // if(nowDate.getTime() > enddate.getTime()) {
-        //     $.get('/endBidding', {listingid: listingid}, function(result) {
+        if(nowDate.getTime() > enddate.getTime()) {
+            $.get('/endBidding', {listingid: listingid}, function(result) {
 
-        //     });
-        // }
+            });
+        }
     });
     
 

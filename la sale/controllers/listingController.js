@@ -51,7 +51,9 @@ const listingController = {
 		var query = {_id: req.query.listingid};
 		var projection = 'endDate';
 		db.findOne(Listing, query, projection, function(result) {
+			console.log("result "+ result);
 			res.send(result);
+			
 		});
 	}
 }
