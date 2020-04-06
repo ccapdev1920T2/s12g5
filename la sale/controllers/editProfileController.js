@@ -10,7 +10,8 @@ const editProfileController = {
         db.findOne(Archer, query, projection, function(result){
             var details = {
                 img: result.profilePic,
-                name: result.firstname+result.lastname,
+                firstname: result.firstname,
+                lastname: result.lastname,
                 username: result.username,
                 rating: result.rating,
                 idnum: result.idnum.toString().slice(0,3),

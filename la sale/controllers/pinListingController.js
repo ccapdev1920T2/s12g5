@@ -6,21 +6,23 @@ const pinnedListingController = {
     getPinListing: function(req, res) {
 
         var username = "lellings0";
-        var query = {archerEmail: username}
+        var query = {archerUsername: username}
 
-        db.findMany(PinnedListing, query=null, projection ='listingId', function(result) {
+        db.findMany(PinnedListing, query, projection = null, function(result) {
             var listingIds = []
-            for(var i=0; i<result.size;i++) {//fix how to push results to listingIds
+            for(var i=0; i<result.length;i++) {//fix how to push results to listingIds
                 listingIds.push(result[i].listingId)
-                console.log(result[i].listingId)
+                console.log(result[i])
             }
+            // console.log(listingIds)
 
-            query = {listingId: listingIds} 
-            console.log(listingIds)
+            query = {_id: listingIds} 
 
             db.findMany(Listing, query, projection = null, function(results){
-                var listing = results
-                res.render('pinnedlistings', listing)
+                console.log(query)
+                var details = {listing: results}
+                console.log(results)
+                res.render('pinnedlistings', details)
             })
 
         })

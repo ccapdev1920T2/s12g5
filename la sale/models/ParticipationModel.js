@@ -1,18 +1,22 @@
 var mongoose = require('mongoose');
 
 var ParticipationSchema = new mongoose.Schema({
-    username: {
+    id2: {
         type: String,
         unique: true,
+        required: false
+    },
+    archerUsername: {
+        type: String,
         required: true
     },
     listingId: {
-        type: Number,
+        type: String,
         required: true
     },
     bid: {
         type: Number,
-        require: true
+        required: true
     }
 });
 

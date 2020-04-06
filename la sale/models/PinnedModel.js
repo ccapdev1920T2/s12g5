@@ -1,19 +1,23 @@
 var mongoose = require('mongoose');
 
 var PinnedSchema = new mongoose.Schema({
-    username: {
+    id: {
         type: String,
         unique: true,
+        required: false
+    },
+    archerUsername: {
+        type: String,
         required: true
     },
     listingId: {
-        type: Number,
+        type: String,
         required: true
     },
     pinStatus: {
         type: String,
         enum: ['active', 'inactive'],
-        require: true
+        required: true
     }
 });
 

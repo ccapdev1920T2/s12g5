@@ -6,7 +6,7 @@ const Pinned = require('./PinnedModel.js');
 const Archer = require('./ArcherModel.js');
 const Listing = require('./ListingModel.js');
 
-const url = 'mongodb://localhost:27017/lasaledb';
+const url = 'mongodb+srv://admin:admin@lasale-wb0sj.azure.mongodb.net/local_library?retryWrites=true&w=majority';
 
 const options = {
     useUnifiedTopology: true,

@@ -18,9 +18,11 @@ body{
 
 #profilepic{
     height: 650px;
+    width: 650px;
     position: absolute;
     margin-top: -150px;
     margin-left: -230px;
+    object-fit: cover;
 
 }
 
@@ -91,10 +93,11 @@ body{
     margin-top: 10px;
 }
 
-#name {
+.name {
     font-family: lobster;
     font-size: 80px;
     margin-left: 50px;
+    margin-top: 2px;
     /* text-align: center; */
 }
 
