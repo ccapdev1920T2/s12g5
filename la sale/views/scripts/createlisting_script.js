@@ -79,7 +79,7 @@ $(document).ready(function() {
         console.log("hello");
 
         if(flag) {
-            window.location.replace("mylistings.html");
+            window.location.replace("/browse");
         }
         else {
             $("#msg").text("Highlighted fields are not valid");
