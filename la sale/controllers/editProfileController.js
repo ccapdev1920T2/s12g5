@@ -27,33 +27,21 @@ const editProfileController = {
     postEditProfile: function(req, res) {
         var query = {username: "lellings0"}
 
-        var firstname = req.body.firstname;
-        var lastname = req.body.lastname;
-        var username = req.body.username;
-        var idnum =  req.body.idnum;
-        var college = req.body.college;
-        var description = req.body.description;
+        var profilePic = req.body.profilepici;
+        var password = req.body.password;
+        var description = req.body.abouti;
 
-        var archer = null
-
-        if(firstname!=null)
-            archer.firstname = firstname
-        if(lastname!=null)
-            archer.lastname = lastname
-        if(username!=null)
-            archer.username = username
-        if(idnum!=null)
-            archer.idnum = idnum
-        if(college!=null)
-            archer.college = college
-        if(description!=null)
-            archer.description = description
-
-        if(archer!=null){
-            db.updateOne(Archer, query, archer, function(result){
-                res.redirect("editprofile")
-            });
+        if(profilePic!=''){
+            db.updateOne(Archer, query, {profilePic:profilePic})
         }
+        if(password!=''){
+            db.updateOne(Archer, query, {password:password})
+        }
+        if(description!=''){
+            db.updateOne(Archer, query, {description:description})
+        }
+
+        res.redirect("/editprofileSuccess")
     }
 }
 

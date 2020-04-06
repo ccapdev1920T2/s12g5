@@ -23,8 +23,21 @@ const signinController = {
 				console.log("no user found");
 			}
 		})
-	}
+	},
 
+	getCheckID: function(req, res) {
+		var username = req.query.username;
+		db.findOne(Archer, {username:username}, 'username', function(result) {
+			res.send(result);
+		}) 
+	},
+
+	getCheckPW: function(req, res) {
+		var password = req.query.password;
+		db.findOne(Archer, {password:password}, 'password', function(result) {
+			res.send(result);
+		}) 
+	}
 	
 }
 

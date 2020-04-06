@@ -22,60 +22,12 @@
             <div class="row">
                 <script>var x=0;</script>
                 {{!-- ongoing --}}
-                <h1 style="margin-right: 500px">Ongoing Listings</h1>
+                <div class="title"><h1>Ongoing Listings</h1></div>
                 <br>
-                {{#each olisting}} 
-                        <div class="col-md-6">
-                            <div class="card" style="width: 25rem;">
-                                <img src={{{image}}} class="card-img-top" alt="product">
-                                <div class="card-body">
-                                    <h5 class="card-title" > {{name}} </h5>
-                                    <p class="card-text" > {{description}}</p>
-                                    <h6 class="prices">highest bidder: @{{username}}</h6>
-                                    <h6 class="prices"><span>{{highestBid}}</span>php</h6>
-                                    <a href="listing.html" class="btn btn-secondary btn-block bid"> Ongoing</a>  
-                                </div>
-                            </div>
-                        </div>
-                    <script>
-                        x++;
-                    if(x%2==0){
-                        $("#mylistings").append("</div> <div class=\"row\"");
-                        x=0;
-                    }
-                    </script>
-                {{/each}}
-
-                {{!-- completed --}}
-                <h1>Completed Listings</h1>
-                {{#each clisting}}
+                {{#each olisting}}
                     <div class="col-md-6">
                         <div class="card" style="width: 25rem;">
-                            <img src={{{images}}} class="card-img-top" alt="product">
-                            <div class="card-body">
-                                <h5 class="card-title" > {{name}} </h5>
-                                <p class="card-text" > {{description}} </p>
-                                <h6 class="prices">winner: @{{highestBidder}} </h6>
-                                <h6 class="prices"><span> {{highestBid}} </span>php</h6>
-                                <button class="btn btn-secondary btn-block bid" id="completed" disabled>Completed</a>
-                            </div>
-                        </div>
-                    </div>
-                    <script>
-                        x++;
-                    if(x%2==0){
-                        $("#mylistings").append("</div> <div class=\"row\"");
-                        x=0;
-                    }
-                    </script>
-                {{/each}}
-
-                {{!--new listings --}}
-                <h1>New Listings</h1>
-                {{#each ulisting}}
-                    <div class="col-md-6">
-                        <div class="card" style="width: 25rem;">
-                            <img src={{{images}}} class="card-img-top" alt="product">
+                            <img src={{{images.[0]}}} class="card-img-top" alt="product">
                             <div class="card-body">
                                 <h5 class="card-title" > {{name}}</h5>
                                 <p class="card-text" > {{description}} </p>
@@ -100,6 +52,31 @@
                     </script>
                     </div>
                 {{/each}}
+
+                {{!-- completed --}}
+                <div class="title"><h1>Completed Listings</h1></div>
+                {{#each clisting}}
+                    <div class="col-md-6">
+                        <div class="card" style="width: 25rem;">
+                            <img src={{{images.[0]}}} class="card-img-top" alt="product">
+                            <div class="card-body">
+                                <h5 class="card-title" > {{name}} </h5>
+                                <p class="card-text" > {{description}} </p>
+                                <h6 class="prices">winner: @{{highestBidder}} </h6>
+                                <h6 class="prices"><span> {{highestBid}} </span>php</h6>
+                                <button class="btn btn-secondary btn-block bid" id="completed" disabled>Completed</a>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        x++;
+                    if(x%2==0){
+                        $("#mylistings").append("</div> <div class=\"row\"");
+                        x=0;
+                    }
+                    </script>
+                {{/each}}
+
                 
             </div>
         </div> 
