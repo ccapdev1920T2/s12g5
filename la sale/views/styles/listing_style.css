@@ -62,7 +62,7 @@ body {
     visibility: hidden;
 }
 
-#pricerange, #bidduration, #highest {
+#pricerange, #bidduration, #highest, .leftinfo {
     font-weight: 700;
     text-align: center;
 }

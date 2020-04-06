@@ -1,6 +1,7 @@
 const db = require('../models/db.js');
 const Listing = require('../models/ListingModel.js');
-const Archer = require('../models/ArcherModel.js')
+const Archer = require('../models/ArcherModel.js');
+const moment = require('moment');
 
 const listingController = {
 	getListing: function(req, res) {
@@ -24,6 +25,12 @@ const listingController = {
 					highestbid: result.highestBid,
 					highestbidderun: result.highestBidder
 				};
+				var date = new Date(result.endDate);
+				console.log(moment(result.endDate).format('YYYY-DD-MM HH:mm A'));
+				details.endDate = {year: moment(date).format('YYYY'), month: moment(date).format('MM'), day: moment(date).format('DD'), hours: moment(date).format('HH'), minutes: moment(date).format('mm')};
+			
+		
+
 
 				query = {username: result.listingOwner}
 					db.findOne(Archer, query, projection='profilePic', function(result){

@@ -1,9 +1,11 @@
+
 $(document).ready(function() {
     var bidrange = new Array;
     bidrange[0] = parseFloat($("#lb").text());
     bidrange[1] = parseFloat($("#ub").text());
 
     $("#raisebid").click(function() {
+        console.log("hello");
         var hbid = $("#highestbid");
         var price = $("#price");
         var ihbid = parseFloat(hbid.text());
@@ -29,10 +31,17 @@ $(document).ready(function() {
         
     });
 
+    var year = $("#year").text();
+    var month = $("#month").text();
+    var day = $("#days").text();
+    var hour = $("#hours").text();
+    var min = $("#minutes").text();
+    console.log(year + " " + month + " " + day + " " + hour+":" +min);
+    console.log(day);
     
     var division = $("#countdown");
 
-    countdown(division,2020, 3, 23, 00, 43);
+    countdown(division,year, month, day, hour, min);
     
     
     
