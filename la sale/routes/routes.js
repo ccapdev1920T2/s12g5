@@ -57,10 +57,11 @@ app.get('/pinnedlistings', pinnedListingController.getPinListing);
 
 app.get('/listingparticipation', listingpController.getListing);
 
-app.get('/getCheckID', controller.getCheckID);
+app.get('/uniqueIdnum',signUpController.uniqueIdnum);
 
-app.get('/getCheckPW', controller.getCheckPW);
+app.get('/uniqueEmail',signUpController.uniqueEmail);
 
+app.get('/uniqueUsername',signUpController.uniqueUsername);
 
 
 
