@@ -1,5 +1,5 @@
 const db = require('../models/db.js');
-const PinnedListing = require('../models/PinnedListingModel.js');
+const PinnedListing = require('../models/PinnedModel.js');
 const Listing = require('../models/ListingModel.js');
 
 const pinnedListingController = {
@@ -10,11 +10,13 @@ const pinnedListingController = {
 
         db.findMany(PinnedListing, query=null, projection ='listingId', function(result) {
             var listingIds = []
-            for(var i=0; i<result.size;i++) //fix how to push results to listingIds
-                listingIds.push(result[i])
+            for(var i=0; i<result.size;i++) {//fix how to push results to listingIds
+                listingIds.push(result[i].listingId)
+                console.log(result[i].listingId)
+            }
 
             query = {listingId: listingIds} 
-            console.log(result)
+            console.log(listingIds)
 
             db.findMany(Listing, query, projection = null, function(results){
                 var listing = results
