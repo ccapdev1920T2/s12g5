@@ -55,8 +55,11 @@ app.get('/signupsuccess', signupSuccessController.getSuccess);
 
 app.get('/pinnedlistings', pinnedListingController.getPinListing);
 
-app.get('/listingparticipation', listingpController.getListing)
+app.get('/listingparticipation', listingpController.getListing);
 
+app.get('/getCheckID', controller.getCheckID);
+
+app.get('/getCheckPW', controller.getCheckPW);
 
 
 
