@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
 
-var PinnedListingSchema = new mongoose.Schema({
+var PinnedSchema = new mongoose.Schema({
     username: {
         type: String,
+        unique: true,
         required: true
     },
     listingId: {
@@ -12,8 +13,9 @@ var PinnedListingSchema = new mongoose.Schema({
     pinStatus: {
         type: String,
         enum: ['active', 'inactive'],
-        required: true
+        require: true
     }
 });
 
-module.exports = mongoose.model('PinnedListing', PinnedListingSchema);
+
+module.exports = mongoose.model('Pinned', PinnedSchema);

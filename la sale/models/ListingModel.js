@@ -64,4 +64,4 @@ var ListingSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Listing', ListingSchema)
+module.exports = mongoose.model('Listing', ListingSchema);

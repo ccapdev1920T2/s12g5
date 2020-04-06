@@ -22,6 +22,8 @@
             <div class="row">
                 <script>var x=0;</script>
                 {{!-- ongoing --}}
+                <h1 style="margin-right: 500px">Ongoing Listings</h1>
+                <br>
                 {{#each olisting}} 
                         <div class="col-md-6">
                             <div class="card" style="width: 25rem;">
@@ -45,6 +47,7 @@
                 {{/each}}
 
                 {{!-- completed --}}
+                <h1>Completed Listings</h1>
                 {{#each clisting}}
                     <div class="col-md-6">
                         <div class="card" style="width: 25rem;">
@@ -68,6 +71,7 @@
                 {{/each}}
 
                 {{!--new listings --}}
+                <h1>New Listings</h1>
                 {{#each ulisting}}
                     <div class="col-md-6">
                         <div class="card" style="width: 25rem;">

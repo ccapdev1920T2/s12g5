@@ -1,12 +1,10 @@
 const mongoose = require('mongoose');
 mongoose.set("useCreateIndex", true);
 
+const Participation = require('./ParticipationModel.js');
+const Pinned = require('./PinnedModel.js');
 const Archer = require('./ArcherModel.js');
-const Image = require('./ImageModel.js');
 const Listing = require('./ListingModel.js');
-const ListingParticipation = require('./ListingParticipantModel.js');
-const PinnedListing = require('./PinnedListingModel.js');
-const RatingModel = require('./RatingModel.js');
 
 const url = 'mongodb://localhost:27017/lasaledb';
 
@@ -14,6 +12,8 @@ const options = {
     useUnifiedTopology: true,
     useNewUrlParser: true
 };
+
+
 
 const database = {
     connect: function () {

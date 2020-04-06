@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
 
-var ListingParticipantSchema = new mongoose.Schema({
+var ParticipationSchema = new mongoose.Schema({
     username: {
         type: String,
+        unique: true,
         required: true
     },
     listingId: {
@@ -11,8 +12,9 @@ var ListingParticipantSchema = new mongoose.Schema({
     },
     bid: {
         type: Number,
-        required: true
+        require: true
     }
 });
 
-module.exports = mongoose.model('ListingParticipant', ListingParticipantSchema);
+
+module.exports = mongoose.model('Participation', ParticipationSchema);
