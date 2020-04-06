@@ -1,11 +1,6 @@
 var mongoose = require('mongoose');
 
 var ListingSchema = new mongoose.Schema({
-    listingid: {
-        type: Number,
-        required: true,
-        unique: true
-    },
     name: {
         type: String,
         required: true

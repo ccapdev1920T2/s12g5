@@ -17,16 +17,19 @@ const createListingController = {
 		var startDate = req.body.startdate;
 		var endDate = req.body.enddate;
 		var listingOwner = 'lellings0';
-		var productType = req.body.type;
+		var productType = 'electronics';
 		var status = 'active';
+
+		var img = []
+		img.push(images)
 
 		var listing = {
 			name: name,
 			brand: brand,
-			startPrice:startPrice,
-			buyOutPrice: buyOutPrice,
+			startPrice:Number(startPrice),
+			buyOutPrice: Number(buyOutPrice),
 			description: description,
-			images: images,
+			images: img,
 			startDate: startDate,
 			endDate: endDate,
 			highestBidder: null,
@@ -35,6 +38,7 @@ const createListingController = {
 			productType: productType,
 			status: 'active'
 		}
+		console.log(listing)
 
 		db.insertOne(Listing, listing, function(flag) {
 			if(flag)

@@ -12,9 +12,6 @@ const myListingController = {
 
         var query = {listingOwner: username, status: 'active'};
         var query2 = {listingOwner: username, status: 'inactive'};
-        var olprojection = 'images name description username highestBid'; //ongoing listings
-        var clprojection = 'images name description highestBidder username' //completed listings
-        var ulprojection = 'images name description startPrice buyOutPrice' //new listings (no bidders yet)
         db.findMany(Listing, query, projection=null, function(results) {
             result.olisting = results;
            
