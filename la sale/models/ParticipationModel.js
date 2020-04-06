@@ -1,10 +1,9 @@
 var mongoose = require('mongoose');
 
 var ParticipationSchema = new mongoose.Schema({
-    id2: {
+    _id: {
         type: String,
-        unique: true,
-        required: false
+        required:false
     },
     archerUsername: {
         type: String,

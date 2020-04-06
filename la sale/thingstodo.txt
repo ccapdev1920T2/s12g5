@@ -4,4 +4,3 @@
 
 3. listing pages
 4. messages
-5. update if bidding is finished / raise bid

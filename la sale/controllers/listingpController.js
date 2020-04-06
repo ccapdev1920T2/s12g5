@@ -5,8 +5,7 @@ const ListingP = require('../models/ParticipationModel.js')
 const listingpController = {
 	getListing: function (req,res) {
 
-        var query = { archerUsername: 'lellings0'};
-        var projection = 'archerUsername listingId bid';
+        var query = {archerUsername: "lellings0"}
 
         db.findMany(ListingP, query, projection, function(result) {
             console.log(result)
