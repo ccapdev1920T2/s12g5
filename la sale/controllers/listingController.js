@@ -41,6 +41,18 @@ const listingController = {
 		})
 
 
+	},
+	endBidding: function(req, res) {
+		var query = {_id: req.query.listingid};
+		var update = {status: 'inactive'};
+		db.updateOne(Listing, query,update);
+	},
+	getEndDate: function(req, res) {
+		var query = {_id: req.query.listingid};
+		var projection = 'endDate';
+		db.findOne(Listing, query, projection, function(result) {
+			res.send(result);
+		});
 	}
 }
 

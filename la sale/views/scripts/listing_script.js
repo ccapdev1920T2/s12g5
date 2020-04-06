@@ -1,5 +1,9 @@
 
+var listingid;
 $(document).ready(function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    listingid = urlParams.get('listingid');
+
     var bidrange = new Array;
     bidrange[0] = parseFloat($("#lb").text());
     bidrange[1] = parseFloat($("#ub").text());
@@ -41,9 +45,22 @@ $(document).ready(function() {
     
     var division = $("#countdown");
 
+
     countdown(division,year, month, day, hour, min);
     
     
+    //update status when opened
+    $.get('/getEndDate', {listingid: listingid}, function(result) {
+        // var enddate = new Date(result.endDate);
+        var nowDate = new Date(Date.now());
+        console.log(result.endDate + " " + nowDate);
+
+        // if(nowDate.getTime() > enddate.getTime()) {
+        //     $.get('/endBidding', {listingid: listingid}, function(result) {
+
+        //     });
+        // }
+    });
     
 
     
@@ -53,7 +70,13 @@ $(document).ready(function() {
 function countdown(division,year, month, day, hour, min) {
     var endDate = new Date(); 
     endDate = new Date(year, month - 1, day, hour, min); 
-    $(division).countdown({until: endDate, format: 'DHMS', onExpiry: function() {$("#useractions").css("visibility", "hidden")} , expiryText: "Bidding Expired"}
+    $(division).countdown({until: endDate, format: 'DHMS', onExpiry: function() {
+        $("#useractions").css("visibility", "hidden");
+        $.get('/endBidding', {listingid: listingid}, function(result) {
+
+        });
+    } ,
+         expiryText: "Bidding Expired"}
     );
 
     checkTime(division);
@@ -71,7 +94,7 @@ function checkTime(division) {
     }
     
     if(flag){
-        console.log(flag + "yea");
+        console.log(flag + " bidding ended");
         $("#useractions").css("visibility", "hidden");
     }
 }
