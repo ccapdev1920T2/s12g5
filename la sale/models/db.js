@@ -52,7 +52,7 @@ const database = {
             return callback(result);
         });
     },
-    
+
 
     updateOne: function(model, filter, update, callback) {
         model.updateOne(filter, update, function(error, result) {
@@ -78,7 +78,7 @@ const database = {
         });
     },
 
-  
+
     deleteMany: function(model, conditions) {
         model.deleteMany(conditions, function (error, result) {
             if(error) return callback(false);

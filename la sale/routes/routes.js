@@ -12,7 +12,8 @@ const logoutController = require('../controllers/logoutController.js');
 const profileController = require('../controllers/profileController.js');
 const messagesController = require('../controllers/messagesController.js');
 const myListingController = require('../controllers/myListingController.js');
-const signupSuccessController = require('../controllers/signupSuccessController.js')
+const signupSuccessController = require('../controllers/signupSuccessController.js');
+const pinnedListingController = require('../controllers/pinListingController.js');
 const app = express();
 
 module.exports = app;
@@ -51,6 +52,8 @@ app.get('/mylistings', myListingController.getMyListing);
 
 app.get('/signupsuccess', signupSuccessController.getSuccess);
 
+app.get('/pinnedlistings', pinnedListingController.getPinListing);
+
 
 
 
@@ -64,11 +67,11 @@ app.get('/listingparticipation', function(req, res){
     res.render('listingparticipation', {listing: plisting});
 });
 
-app.get('/pinnedlistings', function(req, res){
-    var nlisting = [{nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
-                    {nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
-                    {nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
-                    {nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
-                    {nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250}];
-    res.render('pinnedlistings', {listing: nlisting});
-});
+// app.get('/pinnedlistings', function(req, res){
+//     var nlisting = [{nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
+//                     {nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
+//                     {nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
+//                     {nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250},
+//                     {nlimg:"https://serenesforest.net/wiki/images/thumb/d/d1/Male_Corrin_%28FEW%29.png/379px-Male_Corrin_%28FEW%29.png", nlname: "corrin", nldescription: "third best character", nlusername: "hehehe", nlprice: 250}];
+//     res.render('pinnedlistings', {listing: nlisting});
+// });

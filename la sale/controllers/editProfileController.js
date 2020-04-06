@@ -48,10 +48,11 @@ const editProfileController = {
         if(description!=null)
             archer.description = description
 
-        if(archer!=null)
+        if(archer!=null){
             db.updateOne(Archer, query, archer, function(result){
                 res.redirect("editprofile")
             });
+        }
     }
 }
 
