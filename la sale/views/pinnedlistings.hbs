@@ -25,12 +25,12 @@
             {{#each listing}}
                     <div class="col-md-6">
                         <div class="card" style="width: 25rem;">
-                            <img src={{{nlimg}}} class="card-img-top" alt="product">
+                            <img src={{{images.[0]}}} class="card-img-top" alt="product">
                             <div class="card-body">
-                                <h5 class="card-title" > {{nlname}} </h5>
-                                <p class="card-text" > {{nldescription}} </p>
-                                <h6 class="prices">highest bidder: @{{nlusername}} </h6>
-                                <h6 class="prices"><span> {{nlprice}} </span>php</h6>
+                                <h5 class="card-title" > {{name}} </h5>
+                                <p class="card-text" > {{description}} </p>
+                                <h6 class="prices">highest bidder: @{{highestBidder}} </h6>
+                                <h6 class="prices"><span> {{highestBid}} </span>php</h6>
                                 <a href="listing.html" class="btn btn-secondary btn-block bid"> View</a>  
                                 <button class="btn btn-secondary btn-block bid delete remove" id="test"> Remove Pin</a>  
                             </div>

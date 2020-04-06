@@ -4,7 +4,7 @@ mongoose.set("useCreateIndex", true);
 const Archer = require('./ArcherModel.js');
 const Image = require('./ImageModel.js');
 const Listing = require('./ListingModel.js');
-const ListingParticipation = require('./ListingParticipantModel.js');
+const Listingp = require('./ListingParticipantModel.js');
 const PinnedListing = require('./PinnedListingModel.js');
 const RatingModel = require('./RatingModel.js');
 

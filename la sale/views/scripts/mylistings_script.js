@@ -4,5 +4,5 @@ $(".delete").on("click", function() {
 });
 
 $(document).on("click", ".remove", function() {
-  $(this).parent().parent().parent().parent().remove();
+  $(this).parent().parent().parent().remove();
 });
