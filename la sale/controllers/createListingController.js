@@ -37,10 +37,8 @@ const createListingController = {
 		}
 
 		db.insertOne(Listing, listing, function(flag) {
-			conaole.log(listing.image);
-			if(flag) {
-				res.redirect('browselisting')
-			}
+			if(flag)
+				res.redirect('browse')
 		});
 	}
 }
