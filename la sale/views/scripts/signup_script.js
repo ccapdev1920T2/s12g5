@@ -103,55 +103,16 @@ function validate() {
         email.css("background-color", "#e39494");
         flag = false;
     }
-
-
-
-    //Unique Field Validation
     
-    // var email = $('#email').val();
-    // var username = $('#username').val();
-    // var idnum = $('#idnum').val();
-
-
-    // $.get('/uniqueIdnum', {idnum: idnum}, function(result) {
-    //     if(result.idnum == idnum) {
-    //         $('#idnum').css("background-color", "#e39494");
-    //         flag = false;
-    //     }
-    //     else {
-    //         $('#idnum').css("background-color", "white");
-    //     }
-        
-    // });
-
-    // $.get('/uniqueUsername', {username: username}, function(result) {
-    //     if(result.username == username) {
-    //         $('#username').css("background-color", "#e39494");
-    //         flag = false;
-    //     };
-        
-    // });
-
-    // $.get('/uniqueEmail', {email: email}, function(result) {
-    //     if(result.email == email) {
-    //         $('#email').css("background-color", "#e39494");
-    //         flag = false;
-    //     };
-        
-    // });
-    // This is for ajax
     return flag;
 }
 
 $(document).ready(function() {
-
-    
     
     $("#register").click(function () {
         var flag;
-        flag = validate(); //syntax validation
+        flag = validate();
 
-        
         if(flag) {
             window.location.replace("/");
         }
