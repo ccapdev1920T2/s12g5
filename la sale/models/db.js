@@ -72,9 +72,9 @@ const database = {
 
     deleteOne: function(model, conditions) {
         model.deleteOne(conditions, function (error, result) {
-            if(error) return callback(false);
+           // if(error) return callback(false);
             console.log('Document deleted: ' + result.deletedCount);
-            return callback(true);
+           // return callback(true);
         });
     },
 

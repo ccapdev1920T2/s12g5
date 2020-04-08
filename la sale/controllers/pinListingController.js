@@ -12,21 +12,26 @@ const pinnedListingController = {
             var listingIds = []
             for(var i=0; i<result.length;i++) {//fix how to push results to listingIds
                 listingIds.push(result[i].listingId)
-                console.log(result[i])
+                //console.log(result[i])
             }
             // console.log(listingIds)
 
             query = {_id: listingIds} 
 
             db.findMany(Listing, query, projection = null, function(results){
-                console.log(query)
+                //console.log(query)
                 var details = {listing: results}
-                console.log(results)
+                //console.log(results)
                 res.render('pinnedlistings', details)
             })
 
-        })
-       
+        })  
+    },
+
+    deletePin: function(req, res) {
+        var query = {listingId: req.query._id, archerUsername: "lellings0"}
+        console.log(query)
+        db.deleteOne(PinnedListing, query)
     }
 }
 

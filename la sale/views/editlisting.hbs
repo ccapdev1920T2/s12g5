@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="styles/editlisting_style.css">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="scripts/editlisting_script.js"> </script>
+        <script src="scripts/navbar_script.js"> </script>
     </head>
 
     <body id="bodyid">
@@ -24,13 +25,8 @@
                 <div class="col-md-6" id="content">
                     <h1 id="edit">edit.</h1>
                     <h3>a listing.</h3>
-                    <form id="editlisting">
+                    <form id="editlisting" method="post">
                 
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="startprice" name="startprice" placeholder="Starting Price">
-                        </div>
-                        <br>
-
                         <div class="form-group">
                             <input type="text" class="form-control" id="buyout" name="buyout" placeholder="Buy-out Price">
                         </div>
@@ -51,10 +47,11 @@
                             <label for="enddate">Bid End Date and Time:</label>
                             <input type="datetime-local" class="form-control" id="enddate" name="enddate">
                         </div>
+                        <input type="hidden" name="_id" value="{{_id}}">
                         <br>
 
-                        <button type="button" class="btn btn-secondary btn-block confirmbtn" id="confirm">confirm</button>
-                        <button type="submit" class="btn btn-danger btn-block" formaction="/mylistings" id="delete">delete</button>
+                        <button type="submit" class="btn btn-secondary btn-block confirmbtn" formaction="/editlisting" id="confirm">confirm</button>
+                        <button type="submit" class="btn btn-danger btn-block" formaction="/deletelisting?_id={{_id}}" id="delete">delete</button>
                         <p id="msg"> </p>
                         
                         

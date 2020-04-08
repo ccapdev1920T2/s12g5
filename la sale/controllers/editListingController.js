@@ -3,13 +3,15 @@ const Listing = require('../models/ListingModel.js');
 
 const editListingController = {
 	getEditListing: function(req, res){
-		res.render('editlisting')
+		console.log(req.query.listingid)
+		res.render('editlisting', {_id: req.query.listingid})
+		
 	},
 
 	postEditListing: function(req, res){
-		var query = {listingId: req.params.listingId}
+		var query = {_id: req.body._id}
+		console.log(query)
 
-		var startPrice = req.body.startprice;
 		var buyOutPrice = req.body.buyout;
 		var description = req.body.desc;
 		var images = req.body.images;
@@ -17,24 +19,35 @@ const editListingController = {
 
 		var img = [];
 
-		db.findOne(Listing, query, projection = 'images', function(result){
-			for(var i=0;i<result.length; i++){
-				img.push(result.images[i]);
-			}
-		})
+		console.log(images)
+		console.log(buyOutPrice)
+		console.log(description)
+		console.log(endDate)
 
-		img.push(images);
-
-		var listing = {
-			startPrice:startPrice,
-			buyOutPrice: buyOutPrice,
-			description: description,
-			images: img,
-			endDate: endDate
+		if(buyOutPrice!=''){
+			db.updateOne(Listing, query, {buyOutPrice: buyOutPrice})
+		}
+		if(description!=''){
+			db.updateOne(Listing, query, {description: description})
+		}
+		if(endDate!=''){
+			db.updateOne(Listing, query, {endDate: endDate})
+		}
+		if(images!=''){
+			db.updateOne(Listing, query, {$push: {images: images}})
 		}
 
-		updateOne(Listing, query, listing)
+		res.redirect('/mylistings');
+	},
 
+	deleteListing: function(req, res){
+		var query = {_id: req.query._id}
+
+		db.deleteOne(Listing, query)
+
+		console.log(query);
+
+		res.redirect('/mylistings')
 	}
 }
 

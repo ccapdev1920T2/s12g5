@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:300,400,500,700&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="scripts/mylistings_script.js"> </script>
+    <script src="scripts/navbar_script.js"> </script>
 </head>
 <body>
     {{> clock}}
@@ -34,10 +35,10 @@
                                 <h6 class="prices"><span> {{startPrice}} </span>php - <span> {{buyOutPrice}} </span>php</h6>
                                 <div class="row">
                                     <div class="col-md-6 card-button">
-                                        <a href="listing.html" class="btn btn-secondary btn-block bid">View</a> 
+                                        <a href="/listing?listingid={{_id}}" class="btn btn-secondary btn-block bid">View</a> 
                                     </div>
                                     <div class="col-md-6 card-button">
-                                        <a href="/editlisting" class="btn btn-secondary btn-block bid"> Edit</a>  
+                                        <a href="/editlisting?listingid={{_id}}" class="btn btn-secondary btn-block bid"> Edit</a>  
                                     </div>
                                 
                                 </div>

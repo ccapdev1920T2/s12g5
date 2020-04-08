@@ -9,7 +9,7 @@ function validate() {
     var numbers = /^[+-]?\d+(\.\d+)?$/;
 
     // Check for empty strings
-    if(sprice.val()=="" || !sprice.val().match(numbers)) {
+    if(sprice.val()!="" && !sprice.val().match(numbers)) {
         sprice.css("background-color", "#e39494");
         flag = false;
     }
@@ -17,28 +17,24 @@ function validate() {
         sprice.css("background-color", "white");
     }
 
-    if(buyout.val()=="" || !buyout.val().match(numbers)) {
+    if(buyout.val()!="" && !buyout.val().match(numbers)) {
+        buyout.css("background-color", "#e39494");
+        flag = false;
+    }
+
+    if(sprice.val() <= buyout.val()){
+        sprice.css("background-color", "#e39494");
         buyout.css("background-color", "#e39494");
         flag = false;
     }
     else{
+        sprice.css("background-color", "white");
         buyout.css("background-color", "white");
     }
 
-    if(desc.val()=="") {
-        desc.css("background-color", "#e39494");
-        flag = false;
-    }
+    
     else{
-        desc.css("background-color", "white");
-    }
-
-    if(datetime.val()=="") {
-        datetime.css("background-color", "#e39494");
-        flag = false;
-    }
-    else{
-        datetime.css("background-color", "white");
+        buyout.css("background-color", "white");
     }
 
     return flag;
@@ -52,7 +48,7 @@ $(document).ready(function() {
         console.log("hello");
 
         if(flag) {
-            window.location.replace("mylistings.html");
+            window.location.replace("/mylistings?_id={{_id}}");
         }
         else {
             $("#msg").text("Highlighted fields are not valid");

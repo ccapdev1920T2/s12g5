@@ -15,6 +15,7 @@
 	<script type="text/javascript" src="scripts/countdown/js/jquery.plugin.js"></script>
 	<script type="text/javascript" src="scripts/countdown/js/jquery.countdown.js"></script>
 	<script src="scripts/listing_script.js"></script>
+	<script src="scripts/navbar_script.js"> </script>
 </head>
 <body>
     {{> clock}}
@@ -132,7 +133,7 @@
 			</div>
 
 			<div class="col-md infoval">
-				<p><a id="highestbidder" href="profile.html"> @{{highestbidderun}} </a></p>
+				<p><a id="highestbidder" href="/profile?username={{highestbidderun}}"> @{{highestbidderun}} </a></p>
 			</div>
 			</div>
 
