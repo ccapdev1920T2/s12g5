@@ -4,33 +4,55 @@ $(document).ready(function() {
     var urlParams = new URLSearchParams(window.location.search);
     listingid = urlParams.get('listingid');
 
+    var sessionUsername = 'lellings0';
+
     var bidrange = new Array;
     bidrange[0] = parseFloat($("#lb").text());
-    bidrange[1] = parseFloat($("#ub").text());
+    bidrange[1] = parseFloat($("#ub").text()); // buyout price
 
-    $("#raisebid").click(function() {
-        console.log("hello");
-        var hbid = $("#highestbid");
-        var price = $("#price");
-        var ihbid = parseFloat(hbid.text());
+    var hbid = $("#highestbid");
+    var price = $("#price");
+    var ihbid = parseFloat(hbid.text());
+
+
+
+    updatePinned(sessionUsername, listingid);
+
     
-        
-        if(price.val() > bidrange[1] || price.val() < bidrange[0]) {
+    $("#raisebid").click(function() {
+ 
+        if(price.val() > bidrange[1] || price.val() < bidrange[0]) { // Bid is not valid
             price.css("background-color", "#e39494");
             alert("Your bid is not in range of the valid amount");
         }
         else { 
-            if (price.val() <= ihbid){
+            if (price.val() <= ihbid){ // lower than current highest
                 price.css("background-color", "#e39494");
                 alert("You can not bid lower than the highest bid");
             }
             else { 
-                $("#highestbid").text(price.val());
-                price.css("background-color", "white");
+                var highestBid = parseFloat(price.val());
+                
+                if(bidrange[1] == highestBid) { //buyout if max range
+                    buyOut(listingid, sessionUsername, bidrange[1]);
+                }
+                else {
+                    price.css("background-color", "white");
+                    $.get('/raiseBid', {highestBid: highestBid, listingid: listingid, highestBidder: sessionUsername}, function() { // update db
+                        $("#highestbid").text(price.val());
+                        $("highestbidder").text(sessionUsername);
+                    });
+                    price.val("");
+                }  
             }
         }
+
         
         
+        
+
+
+
 
         
     });
@@ -61,9 +83,46 @@ $(document).ready(function() {
     });
     
 
-    
+    $("#buyout").click(function() {
+        buyOut(listingid, sessionUsername, bidrange[1]);
+        $("#useractions").css("visibility", "hidden");
+        $("#highestbid").text(bidrange[1]);
+        $("#highestbidder").text("@"+sessionUsername);
+    });
+
+    $("#pin").click(function() {
+
+        pinListing(sessionUsername, listingid);
+    });
     
 });
+
+
+function updatePinned(sessionUsername, listingid) {
+
+    $.get('/updatePin', {listingid: listingid, archerUsername: sessionUsername}, function(result) {
+        
+        console.log('res ' + result);
+        if(result.listingid == listingid && result.status.toLowerCase() == 'active') {
+            console.log("matched " + result.listingid); 
+            $("#pin").prop('disabled', true);
+        }
+    });
+ 
+}
+
+function pinListing(sessionUsername, listingid) {
+    $.get('/pinListing', {listingid: listingid, archerUsername: sessionUsername}, function() {
+        $("#pin").prop('disabled', true);
+    });
+}
+
+
+function buyOut(listingid, sessionUsername, buyOutPrice) {
+    $.get('/buyOut', {listingid: listingid, highestBidder: sessionUsername, buyOutPrice: buyOutPrice}, function(result) {
+        
+    });
+}
 
 function countdown(division,year, month, day, hour, min) {
     var endDate = new Date(); 
@@ -92,7 +151,6 @@ function checkTime(division) {
     }
     
     if(flag){
-        console.log(flag + " bidding ended");
         $("#useractions").css("visibility", "hidden");
     }
 }
