@@ -1,7 +1,15 @@
 $(document).ready(function() {
     $("#search_nav").click(function() {
     	var item = $("#search_item").val()
-    	console.log('hello')
-        window.location.replace("/searchnav?search=" + item)
+        var url = "/searchnav?=" + item;
+        console.log(url);
+        window.location.href=  url;
     });
+
+    $("#test").click(function() {
+    	var item = $("#search_item").val()
+    	console.log('hello');
+        window.location.replace("/browse")
+    });
+    
 })

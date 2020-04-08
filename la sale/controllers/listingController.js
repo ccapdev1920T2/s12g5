@@ -70,7 +70,7 @@ const listingController = {
 		var query = {listingId: req.query.listingid, archerUsername: req.query.archerUsername};
 		var projection = 'archerUsername listingId pinStatus';
 		db.findOne(PinnedListing, query, projection, function(result){
-			console.log(result);
+			
 			res.send(result);
 		});
 	},
