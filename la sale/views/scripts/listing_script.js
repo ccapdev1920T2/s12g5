@@ -102,9 +102,9 @@ function updatePinned(sessionUsername, listingid) {
 
     $.get('/updatePin', {listingid: listingid, archerUsername: sessionUsername}, function(result) {
         
-        console.log('res ' + result);
-        if(result.listingid == listingid && result.status.toLowerCase() == 'active') {
-            console.log("matched " + result.listingid); 
+       
+        if(result.listingId == listingid && result.pinStatus.toLowerCase() == 'active') {
+            console.log("matched " + result.listingId); 
             $("#pin").prop('disabled', true);
         }
     });

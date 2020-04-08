@@ -27,7 +27,6 @@ const listingController = {
 					highestbidderun: result.highestBidder
 				};
 				var date = new Date(result.endDate);
-		
 				details.endDate = {year: moment(date).format('YYYY'), month: moment(date).format('MM'), day: moment(date).format('DD'), hours: moment(date).format('HH'), minutes: moment(date).format('mm')};
 			
 		
@@ -68,11 +67,10 @@ const listingController = {
 		db.updateOne(Listing, query, update);
 	},
 	updatePin: function(req, res) {
-		var query = {archerUsername: req.query.archerUsername, listingId: req.query.listingid };
-		var projection = 'archerUsername listingId status';
-		console.log(query);
+		var query = {listingId: req.query.listingid, archerUsername: req.query.archerUsername};
+		var projection = 'archerUsername listingId pinStatus';
 		db.findOne(PinnedListing, query, projection, function(result){
-			console.log("found: " + result);
+			console.log(result);
 			res.send(result);
 		});
 	},
