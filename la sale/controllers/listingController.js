@@ -2,6 +2,8 @@ const db = require('../models/db.js');
 const Listing = require('../models/ListingModel.js');
 const Archer = require('../models/ArcherModel.js');
 const PinnedListing = require('../models/PinnedModel.js');
+const Participation =  require('../models/ParticipationModel.js');
+
 const moment = require('moment');
 
 const listingController = {
@@ -59,6 +61,12 @@ const listingController = {
 		var query = {_id: req.query.listingid};
 		var update = {highestBid: req.query.highestBid, highestBidder: req.query.highestBidder};
 		db.updateOne(Listing, query, update);
+		
+		var participation = {archerUsername: req.query.highestBidder, listingId: req.query.listingid, bid:req.query.highestBid};
+		console.log(participation);
+		db.insertOne(Participation, participation, function(flag) {
+
+		});
 	},
 	buyOut: function(req, res) {
 		var query = {_id: req.query.listingid};
@@ -70,7 +78,6 @@ const listingController = {
 		var query = {listingId: req.query.listingid, archerUsername: req.query.archerUsername};
 		var projection = 'archerUsername listingId pinStatus';
 		db.findOne(PinnedListing, query, projection, function(result){
-			
 			res.send(result);
 		});
 	},

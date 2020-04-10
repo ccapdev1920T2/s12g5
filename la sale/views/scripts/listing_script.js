@@ -44,7 +44,10 @@ $(document).ready(function() {
                     $.get('/raiseBid', {highestBid: highestBid, listingid: listingid, highestBidder: sessionUsername}, function() { // update db
                         $("#highestbid").text(price.val());
                         $("highestbidder").text(sessionUsername);
+                        windows.location.replace(location);
                     });
+
+                    
                     price.val("");
                 }  
             }

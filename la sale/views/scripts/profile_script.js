@@ -12,7 +12,7 @@ $(document).ready(function() {
         });        
 
         $.get('/getRating', {username: username}, function(result) {
-            console.log("result " + result);
+            console.log("result " + result.rating);
             $("#rating").text(result.rating); 
         })
     });
