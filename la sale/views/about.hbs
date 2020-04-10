@@ -9,26 +9,41 @@
 
         <!-- BootstrapCDN -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="styles/signup_style.css">
+        <link rel="stylesheet" type="text/css" href="styles/about_style.css">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="scripts/signup_script.js"></script>
         <script src="scripts/navbar_script.js"> </script>
     </head>
 
     <body id="bodyid">
-        <div id="toplogo">
-            <a class="navbar-brand" href="/">
-                <img src="assets/logo.png" id="lasalelogo" style="height: 50px;">
-            </a>
-        </div>
+            {{> clock}}
+            {{> navbar}}
         
         <div class="container">
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6" id="content">
                     <h1 id="reg">About.</h1>
-                    <h3>libraries used.</h3>
                     <br> <br>
+                    <h3>developers.</h3>
+                    <ul class="list-group list-group-flush" id="msg">
+                      <li class="list-group-item">Trisha Gail Pelagio</li>
+                      <li class="list-group-item">Bryce Anthony Ramirez</li>
+                      <li class="list-group-item">Jed Edriane Tan</li>
+                    </ul>
+                    <br> <br> <br>
+                    <h3>libraries & imports.</h3>
+                    <ul class="list-group list-group-flush" id="msg">
+                      <li class="list-group-item">Express</li>
+                      <li class="list-group-item">Jquery</li>
+                      <li class="list-group-item">Jquery Countdown</li>
+                      <li class="list-group-item">Bootstrap</li>
+                      <li class="list-group-item">Mongoose</li>
+                      <li class="list-group-item">Mongodb</li>
+                      <li class="list-group-item">Google Fonts</li>
+                    </ul>
+                    
+                    
                              
                     
                         
