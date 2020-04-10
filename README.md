@@ -6,10 +6,10 @@ The web application is provides online bidding opportunities for users. This too
 ## Contents
 The folders found in the project directory provides appropriate organization for the codes and their specific functions.
 - [controllers](https://github.com/ccapdev1920T2/s12g5/tree/master/la%20sale/controllers) - Comprises the files that provides callback functions for the request of a particular user.
-- [models] (https://github.com/ccapdev1920T2/s12g5/tree/master/la%20sale/models) - Contains the files for the database models, such as defining the schema, and defines the needed functions for organizing data.
-- [routes] (https://github.com/ccapdev1920T2/s12g5/tree/master/la%20sale/routes) - The responses of the created server for a client request are specified in the routes fule.
-- [views] (https://github.com/ccapdev1920T2/s12g5/tree/master/la%20sale/views) - The front-end aspect of the project are placed in this folder. This includes the hbs files, and their corresponding css and script information.
-- [index.js] - (https://github.com/ccapdev1920T2/s12g5/blob/master/la%20sale/index.js) - Represents the primary entry point of the website,
+- [models](https://github.com/ccapdev1920T2/s12g5/tree/master/la%20sale/models) - Contains the files for the database models, such as defining the schema, and defines the needed functions for organizing data.
+- [routes](https://github.com/ccapdev1920T2/s12g5/tree/master/la%20sale/routes) - The responses of the created server for a client request are specified in the routes fule.
+- [views](https://github.com/ccapdev1920T2/s12g5/tree/master/la%20sale/views) - The front-end aspect of the project are placed in this folder. This includes the hbs files, and their corresponding css and script information.
+- [index.js](https://github.com/ccapdev1920T2/s12g5/blob/master/la%20sale/index.js) - Represents the primary entry point of the website,
 
 ## Current Limitations (Phase 2 - 4/11/2020)
 Most of the essential features for a bid experience has been implemented. 
