@@ -16,6 +16,7 @@ const signupSuccessController = require('../controllers/signupSuccessController.
 const pinnedListingController = require('../controllers/pinListingController.js');
 const listingpController = require('../controllers/listingpController');
 const editProfileSuccessController = require('../controllers/editprofileSuccessController');
+const ratingSuccessController = require('../controllers/ratingSuccessController');
 const app = express();
 
 module.exports = app;
@@ -84,4 +85,4 @@ app.get('/submitRating', profileController.submitRating);
 
 app.get('/getRating', profileController.getRating);
 
-
+app.get('/ratingsuccess', ratingSuccessController.getSuccess)
