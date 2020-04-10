@@ -33,13 +33,15 @@ const profileController = {
 
 	submitRating: function(req, res) {
 		var query = {username: req.query.username};
+		console.log("username " + req.query.username);
+		var send = 0;
 
-		db.findOne(Archer, query, projection=null, function(result){
+		db.findOne(Archer, query, 'rating ratings', function(result){
 			var ratings = result.ratings;
 			ratings.push(req.query.rating);
 			var sum = 0;
 			for( var i = 0; i < ratings.length; i++ ){
-			    sum += parseInt( elmt[i], 10 ); //don't forget to add the base
+			    sum += parseInt( ratings[i], 10 ); //don't forget to add the base
 			}
 
 			var avg = sum/ratings.length;
@@ -47,14 +49,13 @@ const profileController = {
 				ratings: ratings,
 				rating: avg
 			}
-			console.log(ratings)
-			console.log(avg)
+			
 
 			db.updateOne(Archer, query, arch);
-			res.send(avg);
+			send = send + avg;
 		})
-
-		
+		console.log(send);
+		res.send(send);
 
 		
 	}
