@@ -91,7 +91,7 @@ $(document).ready(function() {
     });
 
     $("#pin").click(function() {
-
+        $("#pin").prop('disabled', true);
         pinListing(sessionUsername, listingid);
     });
     
@@ -113,7 +113,6 @@ function updatePinned(sessionUsername, listingid) {
 
 function pinListing(sessionUsername, listingid) {
     $.get('/pinListing', {listingid: listingid, archerUsername: sessionUsername}, function() {
-        $("#pin").prop('disabled', true);
     });
 }
 
