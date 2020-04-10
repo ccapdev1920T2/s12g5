@@ -3,9 +3,8 @@ $(document).ready(function() {
     	var item = $("#search_item").val()
 
         var url = "/searchnav?search=" + item;
-        console.log(url + " watttt");
-        window.location.replace(url)
-        // window.location.href=  url;
+        console.log(url);
+        window.location.href=  url;
 
    
     });
@@ -15,5 +14,5 @@ $(document).ready(function() {
     	console.log('hello');
         window.location.replace("/browse")
     });
-    
+
 })
