@@ -1,5 +1,3 @@
-//import db and model
-//match the content of results to the hbs file
 const db = require('../models/db.js');
 const Listing = require('../models/ListingModel.js');
 
@@ -7,19 +5,18 @@ const browseController = {
 	getBrowse: function (req,res) {
 		var query = {status: "active"};
 
-		var projection = '_id images name startPrice description buyOutPrice' //limit image to 1
+		var projection = '_id images name startPrice description buyOutPrice'
 
 		db.findMany(Listing, query, projection, function(results){
-			//console.log(results)
 		    res.render('browselisting', {
-		    products: results}); //check parsing to an array of objects
+		    products: results}); 
 		});
 	},
 
 	searchNav: function(req, res) {
 		var query = {}
 
-		var projection = '_id images name startPrice description buyOutPrice' //limit image to 1
+		var projection = '_id images name startPrice description buyOutPrice'
 
 		console.log(req.query.search)
 
@@ -34,7 +31,20 @@ const browseController = {
 			}
 			console.log(items)
 		    res.render('browselisting', {
-		    products: items}); //check parsing to an array of objects
+		    products: items}); 
+		});
+	},
+
+
+	filter: function(req, res) {
+		var query = {productType: req.query.category}
+
+		var projection = '_id images name startPrice description buyOutPrice'
+
+		console.log(req.query.category)
+
+		db.findMany(Listing, query, projection, function(result){
+		    res.render('browselisting', {products: result}); 
 		});
 	}
 }

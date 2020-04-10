@@ -77,3 +77,7 @@ app.get('/raiseBid', listingController.raiseBid);
 app.get('/updatePin', listingController.updatePin);
 
 app.get('/pinListing', listingController.pinListing);
+
+app.get('/filter', browseController.filter);
+
+app.get('/submitRating', profileController.submitRating);

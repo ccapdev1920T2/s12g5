@@ -5,14 +5,6 @@ $(document).ready(function() {
         var url = "/searchnav?search=" + item;
         console.log(url);
         window.location.href=  url;
-
-   
-    });
-
-    $("#test").click(function() {
-    	var item = $("#search_item").val()
-    	console.log('hello');
-        window.location.replace("/browse")
     });
 
 })

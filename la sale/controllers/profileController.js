@@ -29,6 +29,34 @@ const profileController = {
 			});
 		});
 
+	},
+
+	submitRating: function(req, res) {
+		var query = {username: req.query.username};
+
+		db.findOne(Archer, query, projection=null, function(result){
+			var ratings = result.ratings;
+			ratings.push(req.query.rating);
+			var sum = 0;
+			for( var i = 0; i < ratings.length; i++ ){
+			    sum += parseInt( elmt[i], 10 ); //don't forget to add the base
+			}
+
+			var avg = sum/ratings.length;
+			var arch = {
+				ratings: ratings,
+				rating: avg
+			}
+			console.log(ratings)
+			console.log(avg)
+
+			db.updateOne(Archer, query, arch);
+			res.send(avg);
+		})
+
+		
+
+		
 	}
 }
 
