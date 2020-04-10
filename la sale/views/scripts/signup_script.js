@@ -114,7 +114,7 @@ $(document).ready(function() {
         flag = validate();
 
         if(flag) {
-            window.location.replace("/");
+            window.location.replace("/signupsuccess");
         }
         else {
             $("#msg").text("Highlighted fields are not valid");

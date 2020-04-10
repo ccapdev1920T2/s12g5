@@ -24,17 +24,17 @@ function validate() {
 
 
 $(document).ready(function() {
-    // $("#submitlogin").click(function () {
-    //     var flag;
-    //     flag = validate();
+    $("#submitlogin").click(function () {
+        var flag;
+        flag = validate();
 
-    //     if(flag)
-    //         window.location.replace("browselisting.html");
-    //     else {
-    //         $("#msg").text("The username or password is not valid");
-    //     }
+        if(flag)
+            window.location.replace("/browse");
+        else {
+            $("#msg").text("The username or password is not valid");
+        }
             
-    // });
+    });
 
     // $("#signupsubmit").click(function() {
     //     window.location.replace("/signup")
