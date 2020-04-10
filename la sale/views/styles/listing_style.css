@@ -29,7 +29,7 @@ body {
 
 #username:hover{
     color: rgb(77, 76, 76);
-    text-transform: capitalize;
+    text-decoration: underline;
 }
 
 #username {
