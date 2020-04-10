@@ -8,9 +8,13 @@ $(document).ready(function() {
         var username = urlParams.get('username');;
         console.log("script " +username + " " + value);
         $.get('/submitRating', {rating:value, username: username}, function(result){
-            console.log("result " + result);
-            $("#rating").text(result); 
+            
         });        
+
+        $.get('/getRating', {username: username}, function(result) {
+            console.log("result " + result);
+            $("#rating").text(result.rating); 
+        })
     });
 
 });

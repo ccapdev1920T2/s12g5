@@ -52,13 +52,18 @@ const profileController = {
 			
 
 			db.updateOne(Archer, query, arch);
-			send*= avg;
-			console.log(send);
+			
+			
 		})
-		console.log(send);
-		res.sendStatus(send);
 
-		
+	},
+
+	getRating: function(req, res) {
+		var query = {username: req.query.username};
+
+		db.findOne(Archer, query, 'rating', function(result) {
+			res.send(result);
+		});
 	}
 }
 
