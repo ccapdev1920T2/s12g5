@@ -4,6 +4,8 @@ $(document).ready(function() {
     var urlParams = new URLSearchParams(window.location.search);
     listingid = urlParams.get('listingid');
 
+    var activeStatus = null;
+
     var sessionUsername = 'lellings0';
 
     var bidrange = new Array;
@@ -13,6 +15,7 @@ $(document).ready(function() {
     var hbid = $("#highestbid");
     var price = $("#price");
     var ihbid = parseFloat(hbid.text());
+    
 
 
 
@@ -88,12 +91,20 @@ $(document).ready(function() {
         $("#useractions").css("visibility", "hidden");
         $("#highestbid").text(bidrange[1]);
         $("#highestbidder").text("@"+sessionUsername);
+        $(division).countdown('destroy');
+        $(division).text('Bidding Closed');
     });
 
     $("#pin").click(function() {
         $("#pin").prop('disabled', true);
         pinListing(sessionUsername, listingid);
     });
+
+    if(parseFloat($("#highestbid").text()) == bidrange[1]) { // If bought out
+        $("#useractions").css("visibility", "hidden");
+        $(division).countdown('destroy');
+        $(division).text('Bidding Closed');
+    }
     
 });
 
@@ -121,6 +132,7 @@ function buyOut(listingid, sessionUsername, buyOutPrice) {
     $.get('/buyOut', {listingid: listingid, highestBidder: sessionUsername, buyOutPrice: buyOutPrice}, function(result) {
         
     });
+    activeStatus = false;
 }
 
 function countdown(division,year, month, day, hour, min) {
@@ -135,6 +147,7 @@ function countdown(division,year, month, day, hour, min) {
          expiryText: "Bidding Expired"}
     );
 
+    
     checkTime(division);
 }
 
@@ -148,6 +161,7 @@ function checkTime(division) {
             flag = false 
         }   
     }
+    
     
     if(flag){
         $("#useractions").css("visibility", "hidden");
