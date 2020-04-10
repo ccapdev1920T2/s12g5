@@ -14,5 +14,5 @@ $(document).ready(function() {
     	console.log('hello');
         window.location.replace("/browse")
     });
-    
+
 })
