@@ -41,26 +41,15 @@ $(document).ready(function() {
                 }
                 else {
                     price.css("background-color", "white");
-                    $.get('/raiseBid', {highestBid: highestBid, listingid: listingid, highestBidder: sessionUsername}, function() { // update db
-                        $("#highestbid").text(price.val());
-                        $("highestbidder").text(sessionUsername);
-                        windows.location.replace(location);
+                    $.get('/raiseBid', {highestBid: highestBid, listingid: listingid, highestBidder: sessionUsername}, function() { // update db       
                     });
-
+                    $("#highestbid").text(price.val());
+                    $("#highestbidder").text(sessionUsername);
                     
                     price.val("");
                 }  
             }
-        }
-
-        
-        
-        
-
-
-
-
-        
+        } 
     });
 
     var year = $("#year").text();
