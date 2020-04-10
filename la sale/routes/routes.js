@@ -81,3 +81,6 @@ app.get('/pinListing', listingController.pinListing);
 app.get('/filter', browseController.filter);
 
 app.get('/submitRating', profileController.submitRating);
+
+app.get('/getRating', profileController.getRating);
+

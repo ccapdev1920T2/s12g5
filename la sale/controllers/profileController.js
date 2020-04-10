@@ -34,7 +34,7 @@ const profileController = {
 	submitRating: function(req, res) {
 		var query = {username: req.query.username};
 		console.log("username " + req.query.username);
-		var send = 0;
+		var send = 1;
 
 		db.findOne(Archer, query, 'rating ratings', function(result){
 			var ratings = result.ratings;
@@ -49,13 +49,21 @@ const profileController = {
 				ratings: ratings,
 				rating: avg
 			}
-			
+
 
 			db.updateOne(Archer, query, arch);
 
+
 		})
 
+	},
 
+	getRating: function(req, res) {
+		var query = {username: req.query.username};
+
+		db.findOne(Archer, query, 'rating', function(result) {
+			res.send(result);
+		});
 	}
 }
 
