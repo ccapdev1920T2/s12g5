@@ -6,5 +6,4 @@ $(document).ready(function() {
         console.log(url);
         window.location.href=  url;
     });
-
 })

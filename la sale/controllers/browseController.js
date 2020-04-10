@@ -14,7 +14,7 @@ const browseController = {
 	},
 
 	searchNav: function(req, res) {
-		var query = {}
+		var query = {status: "active"}
 
 		var projection = '_id images name startPrice description buyOutPrice'
 
@@ -37,7 +37,7 @@ const browseController = {
 
 
 	filter: function(req, res) {
-		var query = {productType: req.query.category}
+		var query = {productType: req.query.category, status: "active"}
 
 		var projection = '_id images name startPrice description buyOutPrice'
 
