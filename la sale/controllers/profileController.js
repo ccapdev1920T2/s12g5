@@ -13,12 +13,12 @@ const profileController = {
 				firstname: result.firstname,
 				lastname: result.lastname,
 				username: result.username,
-				rating: result.rating,
+				rating: result.rating.toFixed(2),
 				idnum: result.idnum.toString().slice(0,3),
 				college: result.college,
 				description: result.description
 			}
-			console.log(details)
+			//console.log(details)
 
 			query = {listingOwner: req.query.username};
 			projection = 'images name description startPrice buyOutPrice' //limit images to 1
@@ -52,12 +52,10 @@ const profileController = {
 			
 
 			db.updateOne(Archer, query, arch);
-			send = send + avg;
-		})
-		console.log(send);
-		res.send(send);
 
-		
+		})
+
+
 	}
 }
 

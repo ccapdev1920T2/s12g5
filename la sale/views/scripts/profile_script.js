@@ -8,7 +8,9 @@ $(document).ready(function() {
         $.get('/submitRating', {rating:value, username: username}, function(result){
             console.log("result " + result);
             $("#rating").text(result); 
-        });        
+            window.location.assign(location)  
+        });
+        
     });
 
 });
