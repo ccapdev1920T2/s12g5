@@ -33,6 +33,7 @@ const profileController = {
 
 	submitRating: function(req, res) {
 		var query = {username: req.query.username};
+		var username = req.query.username;
 		console.log("username " + req.query.username);
 		var send = 1;
 
@@ -50,10 +51,7 @@ const profileController = {
 				rating: avg
 			}
 
-
 			db.updateOne(Archer, query, arch);
-
-
 		})
 
 	},
