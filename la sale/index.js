@@ -4,7 +4,7 @@ const routes = require('./routes/routes.js');
 const db = require('./models/db.js');
 
 const app = express();
-const port = 9090;
+const port = 3000;
 
 
 app.set('view engine', 'hbs');
