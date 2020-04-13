@@ -76,11 +76,11 @@ These are the listings in which the user has placed a bid
 ![alt text](https://media.discordapp.net/attachments/696739033371508777/698205288053866576/unknown.png?width=1343&height=677)
 Create listings allows a user to post a product or service. The necessary details must be filled in order to successfully post a listing.
 
-**For testing purposes** You may create a listing with the deadline set a few minutes from now. With this, you may view and interact with it in the browse page. Also, you may search for it using the filter drop down or the search bar. This will be tagged as inactive once the bidding expires, therefore removing all possible functions.
+**For testing purposes** You may create a listing with the deadline set a few minutes from now. With this, you may view and interact with it in the browse page. Also, you may search for it using the filter drop down or the search bar. This will be tagged as inactive once the bidding expires, therefore removing all possible functions. Magic!
 
 ### Listing
 ![alt text](https://media.discordapp.net/attachments/696739033371508777/698213732794237048/unknown.png?width=850&height=431)
-A listing page contains the information about a product, and the interactions that may be conducted. This includes raising the current bid, saving the bid as pin for future references, and buy out which indicates that the user will buy the listing at the highest price possible.
+A listing page contains the information about a product, and the interactions that may be conducted. This includes raising the current bid, saving the bid as pin for future references, and buy out which indicates that the user will buy the listing at the highest price possible. Try inputting invalid amounts such as a bid lower or higher than the bid range or a value not higher than current highest bid.
 
 ### Send Message
 ![alt text](https://media.discordapp.net/attachments/696739033371508777/698205601661976626/unknown.png?width=1348&height=677)
