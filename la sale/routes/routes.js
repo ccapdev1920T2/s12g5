@@ -46,7 +46,7 @@ app.get('/profile', profileController.getProfile);
 
 app.get('/messages', messagesController.getMessages);
 
-app.get('/logout', logoutController.getLogout);
+app.get('/logout', controller.getSignIn);
 
 app.get('/editprofile', editprofileController.getEditProfile);
 
