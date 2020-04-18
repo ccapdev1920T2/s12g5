@@ -5,13 +5,14 @@ const Archer = require('../models/ArcherModel.js')
 const profileController = {
 	getProfile: function(req, res) {
 		var query = {username: req.query.username}; //check where it comes from
-		var projection = 'profilePic firstname lastname username rating idnum college description'
+		var projection = 'profilePic firstname lastname email username rating idnum college description'
 
 		db.findOne(Archer, query, projection, function(result){
 			var details = {
 				img: result.profilePic,
 				firstname: result.firstname,
 				lastname: result.lastname,
+				email: result.email,
 				username: result.username,
 				rating: result.rating.toFixed(2),
 				idnum: result.idnum.toString().slice(0,3),
