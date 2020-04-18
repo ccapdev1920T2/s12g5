@@ -30,6 +30,7 @@ $(document).ready(function() {
     function isValidEmail(field, callback) {
         var email = validator.trim($('#email').val());
         var isValidEmail = validator.isEmail(email);
+        var flag = true;
 
         if(isValidEmail) {
             $.get('/getCheckEmail', {email: email}, function (result) {
@@ -45,7 +46,8 @@ $(document).ready(function() {
                         $('#emailError').text('looks good!');
                         
                     }
-                    return callback(true);
+                   return callback(true);
+                   
                 }
                 else {
                     if(field.is($('#email'))) {
@@ -187,7 +189,7 @@ $(document).ready(function() {
         });
     }
 
-    function isValidPassword(field, callback) {
+    function isValidPassword(field) {
         var password = validator.trim($('#password').val());
         var confirmpassword = validator.trim($('#confirmpassword').val());
         
@@ -206,9 +208,8 @@ $(document).ready(function() {
                 // $('#passwordError').text('looks good!');
                 $('#confirmPasswordError').text('looks good!');
             }
-            
-            
-            return callback(true);
+
+            return true;
         }
         else {
             if(field.is($('#confirmpassword'))) {
@@ -226,7 +227,7 @@ $(document).ready(function() {
                 $('#confirmPasswordError').text('passwords should not be empty and should match.');
             }
 
-            return callback(false);
+            return false;
         }
     
     }
@@ -265,19 +266,23 @@ $(document).ready(function() {
         }
 
         var filled = isFilled();
+        var validPassword = isValidPassword(field);
 
     
-        var validPassword = isValidPassword(field);
-        var validEmail = isValidEmail(field);
-        var validUsername = isValidUsername(field);
-        var validID = isValidID(field);
-        console.log(filled + " " + validPassword + " " + validEmail + " " + validUsername + " " + validID);
-        if(filled && validPassword && validEmail && validUsername && validID) {
-            $("#register").prop('disabled', false);
-        }
-        else {
-            $("#register").prop('disabled', true);
-        }
+        isValidEmail(field, function(validEmail) {
+            isValidUsername(field, function(validUsername){
+                isValidID(field, function(validID) {
+                    if(filled && validPassword && validEmail && validUsername && validID) {
+                        $("#register").prop('disabled', false);
+                    }
+                    else {
+                        $("#register").prop('disabled', true);
+                    }
+                });
+            });
+        });
+
+       
     }
 
 
