@@ -1,5 +1,5 @@
 //check efficient way on how to track username for all web pages
-
+const bcrypt = require('bcrypt');
 const db = require('../models/db.js');
 const Archer = require('../models/ArcherModel.js')
 
@@ -9,15 +9,26 @@ const signinController = {
 	},
 
 	postSignIn: function (req, res) {
-		var query = {username: req.body.username, password: req.body.password};
+		var query = {username: req.body.username};
+		var password = req.body.password;
 		console.log(query);
 
 		var projection = null;
 
 		db.findOne(Archer, query, projection, function (result){
 			if(result != null){
-				console.log('login successful');
-				res.redirect('/browse');
+				bcrypt.compare(password, result.password, function(err, equal) {
+					if(equal){
+						console.log('login successful');
+						req.session.username = req.body.username;
+						res.redirect('/browse');
+					}
+                     
+                    else {
+                    	console.log('wrong password');
+                    }
+
+                });	
 			}
 			else {
 				console.log("no user found");

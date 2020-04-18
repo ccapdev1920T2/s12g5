@@ -1,6 +1,11 @@
 const logoutController = {
 	getLogout: function(req, res){
-		res.redirect('/userlogin')
+		req.session.destroy(function(err){
+			if(err) throw err;
+
+			res.redirect('/userlogin')
+		})
+		
 	}
 }
 

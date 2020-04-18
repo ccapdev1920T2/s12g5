@@ -16,8 +16,8 @@ const createListingController = {
 		var images = req.body.images;
 		var startDate = req.body.startdate;
 		var endDate = req.body.enddate;
-		var listingOwner = 'lellings0';
-		var productType = 'electronics';
+		var listingOwner = req.session.username;
+		var productType = req.body.type;
 		var status = 'active';
 
 		var img = []

@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     var activeStatus = null;
 
-    var sessionUsername = 'lellings0';
+    var sessionUsername = $("#sessionun").val();
 
     var bidrange = new Array;
     bidrange[0] = parseFloat($("#lb").text());
@@ -45,6 +45,7 @@ $(document).ready(function() {
                     });
                     $("#highestbid").text(price.val());
                     $("#highestbidder").text(sessionUsername);
+                    $("#highestbidder").attr("href", "/profile?username="+sessionUsername);
                     
                     price.val("");
                 }  

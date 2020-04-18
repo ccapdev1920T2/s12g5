@@ -1,5 +1,7 @@
 const db = require('../models/db.js');
 const Archer = require('../models/ArcherModel.js');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 const signupController = {
 	getSignUp: function(req,res){
@@ -20,12 +22,16 @@ const signupController = {
 		var description = null;
 		var posted = null;
 
-		var archer = {
+		
+
+		bcrypt.hash(password, saltRounds, function(err, hash) {
+
+            var archer = {
 			email: email,
 			firstname: firstname,
 			lastname: lastname,
 			username: username,
-			password: password,
+			password: hash,
 			college: college,
 			birthday: birthday,
 			idnum: idnum,
@@ -33,14 +39,21 @@ const signupController = {
 			rating: rating,
 			description: description,
 			posted: posted
-		}
-
-		db.insertOne(Archer, archer, function(flag){
-			if(flag){
-				console.log(archer);
-				res.redirect("/signupsuccess?firstname="+firstname);
 			}
-		})
+
+            /*
+                calls the function insertOne()
+                defined in the `database` object in `../models/db.js`
+                this function adds a document to collection `users`
+            */
+            db.insertOne(Archer, archer, function(flag){
+				if(flag){
+					console.log(archer);
+					res.redirect("/signupsuccess?firstname="+firstname);
+				}
+			})
+        });
+		
 	}
 }
 

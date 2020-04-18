@@ -5,7 +5,7 @@ const Listing = require('../models/ListingModel.js');
 const pinnedListingController = {
     getPinListing: function(req, res) {
 
-        var username = "lellings0";
+        var username = req.session.username;
         var query = {archerUsername: username}
 
         db.findMany(PinnedListing, query, projection = null, function(result) {
