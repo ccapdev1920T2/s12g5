@@ -17,7 +17,8 @@ const pinnedListingController = require('../controllers/pinListingController.js'
 const listingpController = require('../controllers/listingpController');
 const editProfileSuccessController = require('../controllers/editprofileSuccessController');
 const ratingSuccessController = require('../controllers/ratingSuccessController');
-const aboutController = require('../controllers/aboutController')
+const aboutController = require('../controllers/aboutController');
+const validation = require('../controllers/helpers/signupValidation.js');
 const app = express();
 
 module.exports = app;
@@ -34,7 +35,7 @@ app.post('/createlisting', createListingController.postCreateListing);
 
 app.get('/signup', signUpController.getSignUp);
 
-app.post('/signup', signUpController.postSignUp);
+app.post('/signup', validation.signupValidation(), signUpController.postSignUp);
 
 app.get('/editlisting', editListingController.getEditListing);
 

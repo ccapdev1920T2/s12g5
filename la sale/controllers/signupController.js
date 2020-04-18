@@ -2,6 +2,7 @@ const db = require('../models/db.js');
 const Archer = require('../models/ArcherModel.js');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
+const { validationResult } = require('express-validator');
 
 const signupController = {
 	getSignUp: function(req,res){
@@ -9,6 +10,7 @@ const signupController = {
 	},
 
 	postSignUp: function(req,res){
+		var errors = validationResult(req);
 		var email = req.body.email;
 		var firstname = req.body.fname;
 		var lastname = req.body.lname;
@@ -26,33 +28,45 @@ const signupController = {
 
 		bcrypt.hash(password, saltRounds, function(err, hash) {
 
-            var archer = {
-			email: email,
-			firstname: firstname,
-			lastname: lastname,
-			username: username,
-			password: hash,
-			college: college,
-			birthday: birthday,
-			idnum: idnum,
-			ratings: ratings,
-			rating: rating,
-			description: description,
-			posted: posted
-			}
+			
+			if(!errors.isEmpty()) {
+				errors = errors.errors;
 
-            /*
-                calls the function insertOne()
-                defined in the `database` object in `../models/db.js`
-                this function adds a document to collection `users`
-            */
-		   db.insertOne(Archer, archer, function(flag){
-			if(flag){
-				console.log(archer);
-				res.redirect("/signupsuccess?firstname="+firstname);
+				var details = {};
+				for(i = 0; i < errors.length; i++)
+					details[errors[i].param + 'Error'] = errors[i].msg;
+
+				res.render('signup', details);
 			}
-		})
-	});
+			else {
+				var archer = {
+					email: email,
+					firstname: firstname,
+					lastname: lastname,
+					username: username,
+					password: hash,
+					college: college,
+					birthday: birthday,
+					idnum: idnum,
+					ratings: ratings,
+					rating: rating,
+					description: description,
+					posted: posted
+					}
+		
+					/*
+						calls the function insertOne()
+						defined in the `database` object in `../models/db.js`
+						this function adds a document to collection `users`
+					*/
+				   db.insertOne(Archer, archer, function(flag){
+						if(flag){
+							console.log(archer);
+							res.redirect("/signupsuccess?firstname="+firstname);
+						}
+					})
+			}
+		});
 	},
 
 	getCheckID: function(req, res) {
