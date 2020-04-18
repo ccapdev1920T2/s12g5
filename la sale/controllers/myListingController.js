@@ -4,7 +4,7 @@ const Listing = require('../models/ListingModel.js');
 
 const myListingController = {
     getMyListing: function(req, res) {
-        var username = "lellings0"; // hard-coded until phase 3
+        var username = req.session.username; // hard-coded until phase 3
 
         var olisting, clisting, ulisting;
         var result = {olisting: null, clisting: null, ulisting: null};

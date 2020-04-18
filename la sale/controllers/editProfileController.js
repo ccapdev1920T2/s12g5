@@ -4,7 +4,7 @@ const Archer = require('../models/ArcherModel.js')
 
 const editProfileController = {
     getEditProfile: function(req, res) {
-        var query = {username: "lellings0"}; //check where it comes from
+        var query = {username: req.session.username}; //check where it comes from
         var projection = 'profilePic firstname lastname username rating idnum college description'
 
         db.findOne(Archer, query, projection, function(result){
@@ -25,7 +25,7 @@ const editProfileController = {
     },
 
     postEditProfile: function(req, res) {
-        var query = {username: "lellings0"}
+        var query = {username: req.session.username}
 
         var profilePic = req.body.profilepici;
         var password = req.body.password;

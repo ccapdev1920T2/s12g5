@@ -26,7 +26,8 @@ const listingController = {
 					lowrange: result.startPrice,
 					highrange: result.buyOutPrice,
 					highestbid: result.highestBid,
-					highestbidderun: result.highestBidder
+					highestbidderun: result.highestBidder,
+					sessionun: req.session.username
 				};
 				var date = new Date(result.endDate);
 				details.endDate = {year: moment(date).format('YYYY'), month: moment(date).format('MM'), day: moment(date).format('DD'), hours: moment(date).format('HH'), minutes: moment(date).format('mm')};
