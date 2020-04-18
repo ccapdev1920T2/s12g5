@@ -89,3 +89,9 @@ app.get('/getRating', profileController.getRating);
 app.get('/ratingsuccess', ratingSuccessController.getSuccess);
 
 app.get('/about', aboutController.about);
+
+app.get('/getCheckEmail', signUpController.getCheckEmail);
+
+app.get('/getCheckID', signUpController.getCheckID);
+
+app.get('/getCheckUsername', signUpController.getCheckUsername);

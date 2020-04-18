@@ -4,3 +4,12 @@
 
 3. listing pages
 4. messages
+
+
+- You should have input validation, especially in the `Create Listing` feature. The user should not be allowed to enter a buy-out price lower than the starting price. Input validation should be implemented in both server-side and client side. I have pushed a GitHub repository tutorial on this.
+- Restrict the user to enter alphabet on the price text fields by setting the field to input type number.
+- For the images, you need to store the image files as buffer in the database. 
+- In phase 3, passwords should be hashed. Sessions should also be implemented. I have published repositories on these :))
+- The rating menu might be implemented better if a visual scale is used instead of pre-defined numbers.
+- When visiting the user profile and clicking the message button, the user should be redirected to the message page with the email or username of the visited user in the `to` text field, instead of a blank text field.
+- The price text field in the bidding page should also be converted to input type number, to restrict the user to entering only numeric values.

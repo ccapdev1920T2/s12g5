@@ -10,9 +10,11 @@
         <!-- BootstrapCDN -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="styles/signup_style.css">
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        {{!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> --}}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="scripts/signup_script.js"></script>
         <script src="scripts/navbar_script.js"> </script>
+        <script src="scripts/validator.min.js" type="text/javascript"></script>
     </head>
 
     <body id="bodyid">
@@ -31,8 +33,9 @@
                     <form id="signup" method="post">
                 
                         <div class="form-group">
-                            <input type="text" class="form-control" id="email" name="email" placeholder="dlsu email">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="dlsu email">  
                         </div>
+                        <p class="error" id="emailError">{{emailError}}</p>
                         <br>
                         
                         <div class="form-row">
@@ -42,22 +45,28 @@
                             <div class="form-group col-md-6">
                                 <input type="text" class="form-control" id="lname" name="lname" placeholder="last name">
                             </div>
+                            
                         </div>
+                        <p class="error" id="fNameError">{{fNameError}}</p>
+                        <p class="error" id="lNameError">{{lNameError}}</p>
                         <br>
 
                         <div class="form-group">
                             <input type="text" class="form-control" id="username" name="username" placeholder="username">
                         </div>
+                        <p class="error" id="usernameError">{{usernameError}}</p>
                         <br>
 
                         <div class="form-group">
                             <input type="password" class="form-control" id="password" name="password" placeholder="password">
                         </div>
+                        <p class="error" id="passwordError">{{passwordError}}</p>
                         <br>
 
                         <div class="form-group">
                             <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="confirm password">
                         </div>
+                        <p class="error" id="confirmPasswordError">{{confirmPasswordError}}</p>
                         <br>
 
                         <div class="form-group" id="collegee">
@@ -73,16 +82,19 @@
                                 <option value="CLA">College of Liberal Arts</option>
                             </select>
                         </div>
+                        <p class="error" id="collegeError">{{collegeError}}</p>
                         <br>
 
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="birthday" onfocus="(this.type='date')" name="bday" id="bday">
                         </div>
+                        <p class="error" id="birthdayError">{{birthdayError}}</p>
                         <br>
 
                         <div class="form-group">
                             <input type="text" class="form-control" id="idnum" name="idnum" placeholder="id number">
                         </div>
+                        <p class="error" id="idnumError">{{idnumError}}</p>
                         <br>
                         <input type="submit" class="btn btn-secondary btn-block registerbtn" value="register" id="register">
 

@@ -41,6 +41,31 @@ const signupController = {
 				res.redirect("/signupsuccess?firstname="+firstname);
 			}
 		})
+	},
+
+	getCheckID: function(req, res) {
+		var idnum = req.query.idnum;
+
+		db.findOne(Archer, {idnum: idnum}, 'idnum', function (result) {
+            res.send(result);
+        });
+	},
+
+	getCheckEmail: function(req, res) {
+		var email = req.query.email;
+
+		db.findOne(Archer, {email: email}, 'email', function (result) {
+            res.send(result);
+        });
+
+	},
+
+	getCheckUsername: function (req, res) {
+		var username = req.query.username;
+
+		db.findOne(Archer, {username: username}, 'username', function (result) {
+            res.send(result);
+        });
 	}
 }
 
