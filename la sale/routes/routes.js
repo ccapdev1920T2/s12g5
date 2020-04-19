@@ -97,4 +97,8 @@ app.get('/getCheckID', signUpController.getCheckID);
 
 app.get('/getCheckUsername', signUpController.getCheckUsername);
 
+app.get('/getCheckBuyOut', editListingController.getCheckBuyOut);
+
+app.get('/getCheckEndDate', editListingController.getCheckEndDate);
+
 app.get('/getCheckLogin', controller.getCheckLogin);

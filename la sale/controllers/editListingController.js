@@ -48,6 +48,22 @@ const editListingController = {
 		console.log(query);
 
 		res.redirect('/mylistings')
+	},
+
+	getCheckBuyOut: function(req, res) {
+		var _id = req.query._id;
+
+		db.findOne(Listing, {_id: _id}, 'buyOutPrice', function (result) {
+            res.send(result);
+        });
+	},
+
+	getCheckEndDate: function(req, res) {
+		var _id = req.query._id;
+
+		db.findOne(Listing, {_id: _id}, 'endDate', function (result) {
+            res.send(result);
+        });
 	}
 }
 

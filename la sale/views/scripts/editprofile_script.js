@@ -88,7 +88,6 @@ $(document).ready(function() {
 
     $('#password').keyup(function(){
         isValidPassword();
-        console.log("hello?");
     });
 
     $('#confirmpassword').keyup(function(){
