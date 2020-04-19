@@ -17,6 +17,7 @@
     "hbs": "^4.1.0",
     "moment": "^2.24.0",
     "mongoose": "^5.9.7",
+    "nodemailer": "^6.4.6",
     "validator": "^13.0.0"
   },
   "description": ""
