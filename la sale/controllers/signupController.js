@@ -89,7 +89,7 @@ const signupController = {
 	getCheckUsername: function (req, res) {
 		var username = req.query.username;
 
-		db.findOne(Archer, {username: username}, 'username', function (result) {
+		db.findOne(Archer, {username: username}, 'username password', function (result) {
             res.send(result);
 		});
 

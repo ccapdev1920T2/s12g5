@@ -13,6 +13,7 @@
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="scripts/createlisting_script.js"> </script>
         <script src="scripts/navbar_script.js"> </script>
+        <script src="scripts/validator.min.js" type="text/javascript"></script>
     </head>
 
     <body id="bodyid">
@@ -31,6 +32,7 @@
                         <div class="form-group">
                             <input type="text" class="form-control" id="name" name="name" placeholder="Product Name">
                         </div>
+                        <p class="error" id="nameError">{{nameError}}</p>
                         <br>
 
                         <div class="form-group" id="producttype">
@@ -51,44 +53,45 @@
                                 <option value="pets">pets</option>
                             </select>
                         </div>
+                        <p class="error" id="typeError">{{typeError}}</p>
                         <br>
                         
                         <div class="form-group">
                             <input type="text" class="form-control" id="brand" name="brand" placeholder="Brand">
                         </div>
+                        <p class="error" id="brandError">{{brandError}}</p>
                         <br>
 
                         <div class="form-group">
                             <input type="number" class="form-control" id="startprice" name="startprice" placeholder="Starting Price">
                         </div>
+                        <p class="error" id="startpriceError">{{startpriceError}}</p>
                         <br>
 
                         <div class="form-group">
                             <input type="number" class="form-control" id="buyout" name="buyout" placeholder="Buy-out Price">
                         </div>
+                        <p class="error" id="buyoutError">{{buyoutError}}</p>
                         <br>
 
                         <div class="form-group">
                             <textarea class="form-control" rows="5" id="desc" name="desc" placeholder="Description"></textarea>
                         </div>
+                        <p class="error" id="descError">{{descError}}</p>
                         <br>
 
                         <div class="form-group">
                             <label for="images">Image Link:</label>
                             <input type="text" class="form-control" id="images" name="images" placeholder="Image Link/s">
                         </div>
-                        <br>
-
-                        <div class="form-group">
-                            <label for="startdate">Bid Start Date and Time:</label>
-                            <input type="datetime-local" class="form-control" id="startdate" name="startdate">
-                        </div>
+                        <p class="error" id="imagesError">{{imagesError}}</p>
                         <br>
 
                         <div class="form-group">
                             <label for="enddate">Bid End Date and Time:</label>
                             <input type="datetime-local" class="form-control" id="enddate" name="enddate">
                         </div>
+                        <p class="error" id="enddateError">{{enddateError}}</p>
                         <br>
 
                         <button type="submit" class="btn btn-secondary btn-block createbtn" id="createbtnn">create</button>

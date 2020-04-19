@@ -1,7 +1,7 @@
 //resolve all ???
 const db = require('../models/db.js');
 const Listing = require('../models/ListingModel.js')
-
+const moment = require('moment');
 const createListingController = {
 	getCreateListing: function(req, res) {
     	res.render('createlisting', {});
@@ -14,7 +14,7 @@ const createListingController = {
 		var buyOutPrice = req.body.buyout;
 		var description = req.body.desc;
 		var images = req.body.images;
-		var startDate = req.body.startdate;
+		var startDate = moment(new Date()).format('YYYY-MM-DD[T00:00:00.000Z]');
 		var endDate = req.body.enddate;
 		var listingOwner = req.session.username;
 		var productType = req.body.type;
