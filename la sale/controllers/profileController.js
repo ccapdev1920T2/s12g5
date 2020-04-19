@@ -7,14 +7,22 @@ const profileController = {
 		var query = {username: req.query.username}; //check where it comes from
 		var projection = 'profilePic firstname lastname email username rating idnum college description'
 
+
 		db.findOne(Archer, query, projection, function(result){
+
+			if(result.rating != null) {
+				var rate = result.rating.toFixed(2)
+			}
+			else{
+				var rate = 'none'
+			}
 			var details = {
 				img: result.profilePic,
 				firstname: result.firstname,
 				lastname: result.lastname,
 				email: result.email,
 				username: result.username,
-				rating: result.rating.toFixed(2),
+				rating: rate,
 				idnum: result.idnum.toString().slice(0,3),
 				college: result.college,
 				description: result.description
