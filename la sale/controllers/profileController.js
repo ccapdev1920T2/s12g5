@@ -48,10 +48,12 @@ const profileController = {
 
 		db.findOne(Archer, query, 'rating ratings', function(result){
 			var ratings = result.ratings;
+			if(ratings == null)
+				var ratings = []
 			ratings.push(req.query.rating);
 			var sum = 0;
 			for( var i = 0; i < ratings.length; i++ ){
-			    sum += parseInt( ratings[i], 10 ); //don't forget to add the base
+				sum += parseInt( ratings[i], 10 ); //don't forget to add the base
 			}
 
 			var avg = sum/ratings.length;
