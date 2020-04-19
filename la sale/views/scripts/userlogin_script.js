@@ -1,68 +1,52 @@
-function validate() {
-    var username = $("#username");
-    var password = $("#password");
-
-    var flag = true;
-
-    if(username.val()=="") {
-        username.css("background-color", "#e39494");
-        flag = false;
-    }
-    else{
-        username.css("background-color", "white");
-    }
-    if(password.val()==""){
-        password.css("background-color", "#e39494");
-        flag = false;
-    }
-    else{
-        password.css("background-color", "white");
-    }
-
-    return flag;
-}
-
-
 $(document).ready(function() {
-    $("#submitlogin").click(function () {
-        var flag;
-        flag = validate();
+    function isFilled() {
+        var username = validator.trim($("#username").val());
+        var password = validator.trim($("#password").val());
 
-        if(flag)
-            window.location.replace("/browse");
-        else {
+        var usernameEmpty = validator.isEmpty(username);
+        var passwordEmpty = validator.isEmpty(password);
+
+        return !usernameEmpty && !passwordEmpty;
+    }
+
+    function isValidUser(callback) {
+        var username = validator.trim($('#username').val());
+        var password = validator.trim($('#password').val());
+
+
+        $.get('/getCheckLogin', {username: username, password: password}, function (result) {
+            console.log(result)
+            return callback(result);
+        });
+    }
+
+    function validateField(field){
+        var value = validator.trim(field.val());
+        var empty = validator.isEmpty(value);
+        if(empty){
             $("#msg").text("The username or password is not valid");
         }
-            
-    });
+        else
+            $("#msg").text("");
 
-    // $("#signupsubmit").click(function() {
-    //     window.location.replace("/signup")
-    //     console.log("helo");
-    // });
-
-    $("#username").keyup(function {
-        var username = $("#username").val();
-        $.get('/getCheckID', {username:username}, function(result){
-            if(result.username!=username) {
-                $("#msg").text("The username or password is not valid");
+        isValidUser(function (validUser){
+            if(validUser && isFilled()){
+                $("#submitlogin").prop('disabled', false);
             }
-            else{
-                $("#msg").text('');
+            else {
+                $("#submitlogin").prop('disabled', true);
+                
             }
         })
+    }
+
+
+    $("#username").keyup(function(){
+        validateField($('#username'));
     })
 
-    $("#password").keyup(function {
-        var password = $("#password").val();
-        $.get('/getCheckPW', {password:password}, function(result){
-            if(result.password!=password) {
-                $("#msg").text("Wrong Username of Password");
-            }
-            else{
-                $("#msg").text('');
-            }
-        })
+    $("#password").keyup(function(){
+        validateField($('#password'));
     })
 });
 

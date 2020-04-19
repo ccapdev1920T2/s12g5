@@ -96,3 +96,5 @@ app.get('/getCheckEmail', signUpController.getCheckEmail);
 app.get('/getCheckID', signUpController.getCheckID);
 
 app.get('/getCheckUsername', signUpController.getCheckUsername);
+
+app.get('/getCheckLogin', controller.getCheckLogin);

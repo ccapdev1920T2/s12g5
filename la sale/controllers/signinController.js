@@ -43,11 +43,28 @@ const signinController = {
 		}) 
 	},
 
-	getCheckPW: function(req, res) {
-		var password = req.query.password;
-		db.findOne(Archer, {password:password}, 'password', function(result) {
-			res.send(result);
-		}) 
+	getCheckLogin: function(req, res) {
+		var query = {username: req.query.username};
+		var password = req.query.password
+		var projection = null;
+
+		db.findOne(Archer, query, projection, function (result){
+			if(result != null){
+				bcrypt.compare(password, result.password, function(err, equal) {
+					if(equal){
+						res.send(true)
+					}
+                     
+                    else {
+                    	res.send(false)
+                    }
+
+                });	
+			}
+			else {
+				res.send(false)
+			}
+		})
 	}
 	
 }
