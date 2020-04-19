@@ -62,6 +62,33 @@ $(document).ready(function() {
 
     }
 
+    function isValidDate(field, callback) {
+        var enddate = new Date(validator.trim($('#enddate').val()));
+
+        if(enddate > Date.now()) {
+            if(field.is($('#enddate'))) {
+                $('#enddate').removeClass('is-invalid');
+                $('#enddate').addClass('is-valid');
+
+                // $('#endDateError').removeClass('invalid-feedback');
+                // $('#endDateError').addClass('valid-feedback');
+                $('#enddateError').text('looks good!');
+            }
+            return callback(true);
+        }
+        else {
+            if(field.is($('#enddate'))) {
+                $('#enddate').removeClass('is-valid');
+                $('#enddate').addClass('is-invalid');
+
+                // $('#endDateError').removeClass('valid-feedback');
+                // $('#endDateError').addClass('invalid-feedback');
+                $('#enddateError').text('The new date should be greater than the current date.');
+            }
+            return callback(false);
+        }
+    }
+
 
     function validateField(field, fieldName, error){
         var value = validator.trim(field.val());
@@ -88,15 +115,20 @@ $(document).ready(function() {
         var filled = isFilled();
         var validPrice = isValidPrice(field);
 
-        console.log(validPrice)
+        console.log(validPrice);
 
-        if(filled && validPrice){
-            $("#createbtnn").prop('disabled', false);
-        }
-        else {
-            $("#createbtnn").prop('disabled', true);
-        }
+        isValidDate(field, function(validDate) {
+            if(filled && validPrice && validDate){
+                $("#createbtnn").prop('disabled', false);
+            }
+            else {
+                $("#createbtnn").prop('disabled', true);
+            }
+        });
+        
     }
+
+    
 
     $('#name').keyup(function () {
     validateField($('#name'), 'name', $('#nameError'));
