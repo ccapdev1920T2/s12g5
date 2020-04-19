@@ -102,3 +102,5 @@ app.get('/getCheckBuyOut', editListingController.getCheckBuyOut);
 app.get('/getCheckEndDate', editListingController.getCheckEndDate);
 
 app.get('/getCheckLogin', controller.getCheckLogin);
+
+app.get('/getSendMessage', messagesController.getSendMessage);

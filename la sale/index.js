@@ -5,6 +5,7 @@ const db = require('./models/db.js');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+const nodemailer = require("nodemailer");
 
 const app = express();
 const port = 3000;
