@@ -6,7 +6,7 @@ const messagesController = {
     		res.render('messages', details)
     	}
     	else{
-        	res.render('messages', {email:'to'})
+        	res.render('messages', {email:'to (username)'})
     	}
     }
 }
