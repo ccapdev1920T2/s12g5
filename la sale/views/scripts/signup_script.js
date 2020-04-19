@@ -30,8 +30,7 @@ $(document).ready(function() {
     function isValidEmail(field, callback) {
         var email = validator.trim($('#email').val());
         var isValidEmail = validator.isEmail(email);
-  
-
+     
         if(isValidEmail) {
             $.get('/getCheckEmail', {email: email}, function (result) {
 

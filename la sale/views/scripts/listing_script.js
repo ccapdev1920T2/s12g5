@@ -16,8 +16,10 @@ $(document).ready(function() {
     var price = $("#price");
     var ihbid = parseFloat(hbid.text());
     
+    var seller = $("#seller").val()
 
-
+    if(sessionUsername == seller)
+        $("#useractions").css("visibility", "hidden");
 
     updatePinned(sessionUsername, listingid);
 

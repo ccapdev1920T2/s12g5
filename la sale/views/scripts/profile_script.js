@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	
+
 	$(':radio').change(function() {
 		var value = this.value;
 
