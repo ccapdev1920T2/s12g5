@@ -25,7 +25,8 @@ const profileController = {
 				rating: rate,
 				idnum: result.idnum.toString().slice(0,3),
 				college: result.college,
-				description: result.description
+				description: result.description,
+				session: req.session.username
 			}
 			//console.log(details)
 
