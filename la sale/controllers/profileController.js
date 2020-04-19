@@ -21,7 +21,7 @@ const profileController = {
 			}
 			//console.log(details)
 
-			query = {listingOwner: req.query.username};
+			query = {listingOwner: req.query.username, status:'active'};
 			projection = 'images name description startPrice buyOutPrice' //limit images to 1
 
 			db.findMany(Listing, query, projection, function(result){
