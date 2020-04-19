@@ -1,57 +1,98 @@
 
-function validate() {
-    var username = $("#usernamei");
-    var pass = $("#password");
-    var cpass = $("#confirmpassword");
-    var college = $("#collegei");
-    var about = $("#abouti");
-    var flag = true;    
-
-    // Check for empty strings
-    if(pass.val() != cpass.val()) {
-        pass.css("background-color", "#e39494");
-        cpass.css("background-color", "#e39494");
-        flag = false;
-    }
-    else{
-        pass.css("background-color", "white");
-        cpass.css("background-color", "white");
-    }
-    
-    return flag;
-}
 
 $(document).ready(function() {
     
     $(".savebtn").click(function () {
         var username = $("#usernamei");
-        var pass = $("#password");
-        var cpass = $("#confirmpassword");
-        var college = $("#collegei");
         var about = $("#abouti");
-        var flag = validate();
+      
+        if(username.val() !="") {
+            $("#username").text(username.val());
+        }
 
-        if(flag){
+        if(about.val() !="") {
+            $("#about").text(about.val());
+        }
 
-            if(username.val() !="") {
-                $("#username").text(username.val());
-            }
 
-            if(college.val() !="") {
-                $("#college").text(college.val());
-            }
+    });
 
-            if(about.val() !="") {
-                $("#about").text(about.val());
-            }
 
-            $("#msg").text("");
+    function isValidPassword() {
+        var password = validator.trim($('#password').val());
+        var confirmpassword = validator.trim($('#confirmpassword').val());
+    
+        if(password == confirmpassword && (!validator.isEmpty(password) && !validator.isEmpty(confirmpassword))){ // cpass matches pass
             
-            // insert change password here
+            $('#password').removeClass('is-invalid');
+            $('#password').addClass('is-valid');
+            $('#confirmpassword').removeClass('is-invalid');
+            $('#confirmpassword').addClass('is-valid');
+
+           
+            $('#confirmPasswordError').removeClass('invalid-feedback');
+            $('#confirmPasswordError').addClass('valid-feedback');
+            $("#savesubmit").prop('disabled', false);
+            $('#confirmPasswordError').text('tamas');
+            return true;
+        }
+        else if (validator.isEmpty(password) && validator.isEmpty(confirmpassword)){
+            $('#password').removeClass('is-invalid');
+            $('#password').removeClass('is-valid');
+            $('#confirmpassword').removeClass('is-invalid');
+            $('#confirmpassword').removeClass('is-valid');
+            $('#confirmPasswordError').removeClass('invalid-feedback');
+            $('#confirmPasswordError').removeClass('valid-feedback');
+            $('#confirmPasswordError').text('');
+            $("#savesubmit").prop('disabled', false);
+            return true;
         }
         else {
-            $("#msg").text("Highlighted fields are not valid");
+            $('#password').removeClass('is-valid');
+            $('#password').addClass('is-invalid');
+            $('#confirmpassword').removeClass('is-valid');
+            $('#confirmpassword').addClass('is-invalid');
+
+            $('#passwordError').removeClass('is-valid');
+            $('#passwordError').addClass('is-invalid');
+            $('#confirmPasswordError').removeClass('valid-feedback');
+            $('#confirmPasswordError').addClass('invalid-feedback');
+
+            $('#confirmPasswordError').text('passwords should match.');
+            $("#savesubmit").prop('disabled', true);
+            return false;
         }
-            
+    }
+
+    function hasEdits() {
+        var profilepic = validator.trim($("#profilepici").val());
+        var password = validator.trim($("#password").val());
+        var confirmpassword = validator.trim($("#confirmpassword").val());
+        var about = validator.trim($("#abouti").val());
+
+        var profilepicEmpty = validator.isEmpty(profilepic);
+        var passwordEmpty = validator.isEmpty(password);
+        var confirmpasswordEmpty = validator.isEmpty(confirmpassword);
+        var aboutEmpty = validator.isEmpty(about);
+
+        var flag = !profilepicEmpty || !confirmpasswordEmpty || !aboutEmpty;
+
+        if(flag) {
+            $("#savesubmit").prop('disabled', false);
+        }
+        else {
+            $("#savesubmit").prop('disabled', true);
+        }
+    }   
+
+
+    $('#password').keyup(function(){
+        isValidPassword();
+        console.log("hello?");
     });
+
+    $('#confirmpassword').keyup(function(){
+        isValidPassword();
+    });
+
 });

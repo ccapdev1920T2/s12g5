@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles/editprofile_style.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:300,400,500,700&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    {{!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="scripts/editprofile_script.js"> </script>
     <script src="scripts/navbar_script.js"> </script>
+    <script src="scripts/validator.min.js" type="text/javascript"></script>
 
 </head>
 <body>
@@ -77,7 +79,7 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6" id="content">
-                <form class="form-group" method="post">
+                <form class="form-group" method="post"> 
                     <div class="form-group form-c">
                         <input type="text" class="form-control" id="profilepici" name="profilepici" placeholder="Picture Link">
                     </div>
@@ -85,16 +87,17 @@
                     <div class="form-group">
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                     </div>
+                    <p class="error" id="passwordError">{{passwordError}}</p>
                     <br>
                     <div class="form-group">
                         <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password">
                     </div>
+                    <p class="error" id="confirmPasswordError">{{confirmPasswordError}}</p>
                     <br>
                     <div class="form-group">
                         <textarea class="form-control" rows="5" id="abouti" name="abouti" placeholder="About"></textarea>
                     </div> <br>
-                    <input type="submit" class="btn btn-secondary btn-block savebtn" value="Save Changes">
-                    <p id="msg"> </p>
+                    <input type="submit" id ="savesubmit" class="btn btn-secondary btn-block savebtn" value="Save Changes">
                 </form>
             </div>
             <div class="col-md-3"></div>

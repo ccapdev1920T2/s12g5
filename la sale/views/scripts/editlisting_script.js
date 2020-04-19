@@ -33,9 +33,6 @@ function validate() {
     }
 
     
-    else{
-        buyout.css("background-color", "white");
-    }
 
     return flag;
 }
