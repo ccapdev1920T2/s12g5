@@ -25,7 +25,7 @@ const messagesController = {
         	res.render('messages', {username:''})
     	}
 	},
-	
+
 	getSendMessage: function(req, res) {
 		var message = req.query.message;
 		var username = req.query.username;
@@ -34,7 +34,7 @@ const messagesController = {
 				res.send(false)
 				return false;
 			}
-				
+
 			toEmail = result.email;
 			var mailOptions = {
 				from: 'delasalebids@gmail.com',
@@ -42,7 +42,7 @@ const messagesController = {
 				subject:'De La Sale | Message from: ' + req.session.username,
 				text: message
 			};
-			
+
 			transporter.sendMail(mailOptions, function(error, info) {
 				if(error) {
 					console.log(error);
