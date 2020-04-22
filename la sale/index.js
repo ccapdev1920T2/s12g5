@@ -14,6 +14,7 @@ const port = 3000;
 
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/uploads'));
 hbs.registerPartials(__dirname + '/views/partials');
 
 app.use(express.urlencoded({extended:true}));

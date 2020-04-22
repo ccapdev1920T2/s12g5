@@ -40,11 +40,9 @@ const editProfileController = {
         }
         if(password!=''){
             bcrypt.hash(password, saltRounds, function(err, hash) {
-            if(!errors.isEmpty()) {
-            }
-            else {
+           
                 db.updateOne(Archer, query, {password:hash})
-            }
+           
         });
         }
         if(description!=''){

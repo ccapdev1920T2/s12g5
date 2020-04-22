@@ -20,7 +20,7 @@ const editProfileSuccessController = require('../controllers/editprofileSuccessC
 const ratingSuccessController = require('../controllers/ratingSuccessController');
 const aboutController = require('../controllers/aboutController');
 const validation = require('../controllers/helpers/signupValidation.js');
-const upload = multer({ dest: '../uploads' });
+const upload = multer({ dest: 'uploads/' });
 const app = express();
 
 module.exports = app;
