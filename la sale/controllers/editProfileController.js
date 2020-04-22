@@ -2,7 +2,8 @@ const db = require('../models/db.js');
 
 const Listing = require('../models/ListingModel.js');
 const Archer = require('../models/ArcherModel.js');
-
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 const editProfileController = {
     getEditProfile: function(req, res) {
@@ -23,7 +24,7 @@ const editProfileController = {
 
             res.render("editprofile",details)
         });
-        
+
     },
 
     postEditProfile: function(req, res) {
@@ -38,7 +39,13 @@ const editProfileController = {
             db.updateOne(Archer, query, {profilePic:profilePic})
         }
         if(password!=''){
-            db.updateOne(Archer, query, {password:password})
+            bcrypt.hash(password, saltRounds, function(err, hash) {
+            if(!errors.isEmpty()) {
+            }
+            else {
+                db.updateOne(Archer, query, {password:hash})
+            }
+        });
         }
         if(description!=''){
             db.updateOne(Archer, query, {description:description})
