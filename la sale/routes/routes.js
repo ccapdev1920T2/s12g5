@@ -1,5 +1,6 @@
 const express = require('express');
 const multer  = require('multer');
+const path = require('path')
 
 
 const controller = require('../controllers/signinController.js');
@@ -20,8 +21,17 @@ const editProfileSuccessController = require('../controllers/editprofileSuccessC
 const ratingSuccessController = require('../controllers/ratingSuccessController');
 const aboutController = require('../controllers/aboutController');
 const validation = require('../controllers/helpers/signupValidation.js');
-const upload = multer({ dest: 'uploads/' });
 const app = express();
+
+
+var storage = multer.diskStorage({
+    destination:'uploads/',
+    filename: function(req, file, cb) {
+        cb(null, file.originalname);
+    }
+    
+});
+const upload = multer({ storage: storage });
 
 module.exports = app;
 

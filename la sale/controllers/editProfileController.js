@@ -12,7 +12,7 @@ const editProfileController = {
 
         db.findOne(Archer, query, projection, function(result){
             var details = {
-                img: result.profilePic,
+                img: 'uploads/'+result.profilePic,
                 firstname: result.firstname,
                 lastname: result.lastname,
                 username: result.username,
@@ -31,7 +31,7 @@ const editProfileController = {
         var query = {username: req.session.username};
 
         if(req.file != null)
-            var profilePic = req.file.path;
+            var profilePic =  req.file.path;
         var password = req.body.password;
         var description = req.body.abouti;
 
