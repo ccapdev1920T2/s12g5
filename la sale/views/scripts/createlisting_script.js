@@ -26,7 +26,7 @@ $(document).ready(function() {
         var sprice = validator.trim($("#startprice").val());
         var buyout = validator.trim($("#buyout").val());
         console.log('sprice:' + sprice + ' buyout:' + buyout)
-        if((!validator.isEmpty(sprice) && !validator.isEmpty(buyout)) && buyout > sprice){
+        if((!validator.isEmpty(sprice) && !validator.isEmpty(buyout)) && parseFloat(buyout) > parseFloat(sprice)){
             if(field.is($('#buyout')) || field.is($('#startprice'))){
                 $('#startprice').removeClass('is-invalid');
                 $('#startprice').addClass('is-valid');

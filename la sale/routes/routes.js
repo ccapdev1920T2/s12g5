@@ -25,9 +25,10 @@ const app = express();
 
 
 var storage = multer.diskStorage({
-    destination:'uploads/',
+    destination:'views/uploads/',
     filename: function(req, file, cb) {
-        cb(null, file.originalname);
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9) + '-';
+        cb(null, uniqueSuffix + file.originalname);
     }
     
 });
@@ -43,7 +44,7 @@ app.get('/browse', browseController.getBrowse);
 
 app.get('/createlisting', createListingController.getCreateListing);
 
-app.post('/createlisting', createListingController.postCreateListing);
+app.post('/createlisting', upload.single('images'),createListingController.postCreateListing);
 
 app.get('/signup', signUpController.getSignUp);
 
@@ -51,7 +52,7 @@ app.post('/signup', validation.signupValidation(), signUpController.postSignUp);
 
 app.get('/editlisting', editListingController.getEditListing);
 
-app.post('/editlisting', editListingController.postEditListing);
+app.post('/editlisting',upload.single('images'), editListingController.postEditListing);
 
 app.get('/listing', listingController.getListing);
 

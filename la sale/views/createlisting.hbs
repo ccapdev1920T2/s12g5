@@ -27,7 +27,7 @@
                 <div class="col-md-6" id="content">
                     <h1 id="create">create.</h1>
                     <h3>a listing.</h3>
-                    <form id="createlisting" method="post">
+                    <form id="createlisting" method="post" enctype="multipart/form-data">
                 
                         <div class="form-group">
                             <input type="text" class="form-control" id="name" name="name" placeholder="Product Name">
@@ -82,7 +82,7 @@
 
                         <div class="form-group">
                             <label for="images">Image Link:</label>
-                            <input type="text" class="form-control" id="images" name="images" placeholder="Image Link/s">
+                            <input type="file" class="form-control" id="images" name="images" placeholder="Image Link/s" accept='image/x-ong,image/gif,image/jpeg'>
                         </div>
                         <p class="error" id="imagesError">{{imagesError}}</p>
                         <br>

@@ -14,7 +14,8 @@ const editListingController = {
 
 		var buyOutPrice = req.body.buyout;
 		var description = req.body.desc;
-		var images = req.body.images;
+		if(req.file != null)
+			var images = 'uploads/'+req.file.filename;
 		var endDate = req.body.enddate;
 
 		var img = [];

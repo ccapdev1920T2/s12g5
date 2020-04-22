@@ -30,12 +30,12 @@
                 <div class="col-md-6" id="content">
                     <h1 id="edit">edit.</h1>
                     <h3>a listing.</h3>
-                    <form id="editlisting" method="post">
+                    <form id="editlisting" method="post" enctype="multipart/form-data">
                 
                         <div class="form-group">
                             <input type="number" class="form-control" id="buyout" name="buyout" placeholder="Buy-out Price">
                         </div>
-                        <p class="error" id="buyoutError">meron</p>
+                        <p class="error" id="buyoutError"></p>
                         <br>
 
                         <div class="form-group">
@@ -45,7 +45,7 @@
 
                         <div class="form-group">
                             <label for="images">Upload Image Link/s:</label>
-                            <input type="text" class="form-control" id="images" name="images" placeholder="Image Link/s">
+                            <input type="file" accept='image/x-ong,image/gif,image/jpeg' class="form-control" id="images" name="images" placeholder="Image Link/s">
                         </div>
                         <br>
 

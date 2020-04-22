@@ -152,7 +152,7 @@ $(document).ready(function() {
     $('#desc').keyup(function () {
         validateField($('#desc'));
     });
-    $('#images').keyup(function () {
+    $('#images').blur(function () {
         validateField($('#images'));
     });
     $('#enddate').blur(function () {
@@ -160,17 +160,5 @@ $(document).ready(function() {
     });
  
     
-    $("#confirm").click(function () {
-        var flag;
-        // flag = validate();
-        console.log("hello");
-
-        if(flag) {
-            window.location.replace("/mylistings?_id={{_id}}");
-        }
-        else {
-            $("#msg").text("Highlighted fields are not valid");
-        }
-            
-    });
+   
 });
