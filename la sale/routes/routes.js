@@ -1,4 +1,5 @@
 const express = require('express');
+const multer  = require('multer');
 
 
 const controller = require('../controllers/signinController.js');
@@ -19,6 +20,7 @@ const editProfileSuccessController = require('../controllers/editprofileSuccessC
 const ratingSuccessController = require('../controllers/ratingSuccessController');
 const aboutController = require('../controllers/aboutController');
 const validation = require('../controllers/helpers/signupValidation.js');
+const upload = multer({ dest: '../uploads' });
 const app = express();
 
 module.exports = app;
@@ -51,7 +53,7 @@ app.get('/logout', controller.getSignIn);
 
 app.get('/editprofile', editprofileController.getEditProfile);
 
-app.post('/editprofile', editprofileController.postEditProfile);
+app.post('/editprofile', upload.single('profilepici'), editprofileController.postEditProfile);
 
 app.get('/mylistings', myListingController.getMyListing);
 

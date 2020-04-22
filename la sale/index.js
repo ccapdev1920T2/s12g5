@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const nodemailer = require("nodemailer");
+const multer = require('multer');
 
 const app = express();
 const port = 3000;

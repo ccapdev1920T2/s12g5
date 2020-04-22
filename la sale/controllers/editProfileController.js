@@ -1,6 +1,8 @@
 const db = require('../models/db.js');
+
 const Listing = require('../models/ListingModel.js');
-const Archer = require('../models/ArcherModel.js')
+const Archer = require('../models/ArcherModel.js');
+
 
 const editProfileController = {
     getEditProfile: function(req, res) {
@@ -25,9 +27,10 @@ const editProfileController = {
     },
 
     postEditProfile: function(req, res) {
-        var query = {username: req.session.username}
+        var query = {username: req.session.username};
 
-        var profilePic = req.body.profilepici;
+        if(req.file != null)
+            var profilePic = req.file.path;
         var password = req.body.password;
         var description = req.body.abouti;
 
@@ -41,8 +44,9 @@ const editProfileController = {
             db.updateOne(Archer, query, {description:description})
         }
 
+        console.log(req.file);
         res.redirect("/editprofileSuccess")
-    }
+    },
 }
 
 module.exports = editProfileController
