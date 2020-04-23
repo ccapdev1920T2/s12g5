@@ -38,7 +38,7 @@ $(document).ready(function() {
                 $('#buyoutError').removeClass('is-invalid');
                 $('#buyoutError').addClass('is-valid');
 
-                $('#buyoutError').text('looks good!');
+                $('#buyoutError').text('');
             }
             return true;
         }
@@ -72,7 +72,7 @@ $(document).ready(function() {
 
                 // $('#endDateError').removeClass('invalid-feedback');
                 // $('#endDateError').addClass('valid-feedback');
-                $('#enddateError').text('looks good!');
+                $('#enddateError').text('');
             }
             return callback(true);
         }
@@ -109,7 +109,7 @@ $(document).ready(function() {
 
             error.removeClass('is-invalid')
             error.addClass('is-valid')
-            error.text('looks good!');
+            error.text('');
         }
 
         var filled = isFilled();

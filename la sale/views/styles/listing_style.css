@@ -113,5 +113,5 @@ body {
 
 .objfit {
     height: 500px;
-    object-fit: scale-down;
+    object-fit: contain;
 }

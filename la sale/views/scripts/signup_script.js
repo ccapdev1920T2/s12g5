@@ -40,10 +40,9 @@ $(document).ready(function() {
                         $('#email').removeClass('is-invalid');
                         $('#email').addClass('is-valid');
 
-                        $('#emailError').removeClass('is-invalid')
-                        $('#emailError').addClass('is-valid')
-                        $('#emailError').text('looks good!');
-                        
+                        $('#emailError').removeClass('is-invalid');
+                        $('#emailError').addClass('is-valid');
+                        $('#emailError').text('');
                     }
                    return callback(true);
                    
@@ -83,6 +82,7 @@ $(document).ready(function() {
                     $('#emailError').removeClass('is-valid');
                     $('#emailError').addClass('is-invalid');
                     $('#emailError').text('Please enter a valid e-mail.');
+
                 }
                
             }
@@ -107,9 +107,9 @@ $(document).ready(function() {
                         $('#idnum').removeClass('is-invalid');
                         $('#idnum').addClass('is-valid');
 
-                        $('#idnumError').removeClass('is-invalid')
-                        $('#idnumError').addClass('is-valid')
-                        $('#idnumError').text('looks good!');
+                        $('#idnumError').removeClass('is-invalid');
+                        $('#idnumError').addClass('is-valid');
+                        $('#idnumError').text('');
                     }
                     return callback(true);
                 }
@@ -119,8 +119,8 @@ $(document).ready(function() {
                         $('#idnum').removeClass('is-valid');
                         $('#idnum').addClass('is-invalid');
 
-                        $('#idnumError').removeClass('is-valid')
-                        $('#idnumError').addClass('is-invalid')
+                        $('#idnumError').removeClass('is-valid');
+                        $('#idnumError').addClass('is-invalid');
                         $('#idnumError').text('ID number has already been used.');
                     }
                     return callback(false);
@@ -134,8 +134,8 @@ $(document).ready(function() {
                 $('#idnum').removeClass('is-valid');
                 $('#idnum').addClass('is-invalid');
 
-                $('#idnumError').removeClass('is-valid')
-                $('#idnumError').addClass('is-invalid')
+                $('#idnumError').removeClass('is-valid');
+                $('#idnumError').addClass('is-invalid');
                 $('#idnumError').text('ID should be 8 digits.');
             }
                 
@@ -157,7 +157,7 @@ $(document).ready(function() {
 
                     $('#usernameError').removeClass('is-invalid');
                     $('#usernameError').addClass('is-valid');
-                    $('#usernameError').text('looks good!');
+                    $('#usernameError').text('');
                 }
                 return callback(true);
             }
@@ -179,8 +179,8 @@ $(document).ready(function() {
                     $('#username').removeClass('is-valid');
                     $('#username').addClass('is-invalid');
 
-                    $('#usernameError').removeClass('is-valid')
-                    $('#usernameError').addClass('is-invalid')
+                    $('#usernameError').removeClass('is-valid');
+                    $('#usernameError').addClass('is-invalid');
                     $('#usernameError').text('username has already been used.');
                 }
                 return callback(false);
@@ -203,9 +203,7 @@ $(document).ready(function() {
                 $('#passwordError').addClass('is-valid');
                 $('#confirmPasswordError').removeClass('is-invalid');
                 $('#confirmPasswordError').addClass('is-valid');
-
-                // $('#passwordError').text('looks good!');
-                $('#confirmPasswordError').text('looks good!');
+                $('#confirmPasswordError').text('');
             }
 
             return true;
@@ -222,7 +220,6 @@ $(document).ready(function() {
                 $('#confirmPasswordError').removeClass('is-valid');
                 $('#confirmPasswordError').addClass('is-invalid');
 
-                // $('#passwordError').text('looks good!');
                 $('#confirmPasswordError').text('passwords should not be empty and should match.');
             }
 
@@ -258,10 +255,9 @@ $(document).ready(function() {
             field.removeClass('is-invalid');
             field.addClass('is-valid');
 
-            error.removeClass('is-invalid')
-            error.addClass('is-valid')
-            error.text('looks good!');
-         
+            error.removeClass('is-invalid');
+            error.addClass('is-valid');
+            error.text('');
         }
 
         var filled = isFilled();
@@ -311,11 +307,6 @@ $(document).ready(function() {
         validateField($('#idnum'), 'id number', $('#idnumError'));
     });
     
-
-
-
-
-
     // // Register Function Redirect
     // $("#register").click(function () {
     //     var flag;
