@@ -3,7 +3,7 @@
 The web application is provides online bidding opportunities for users. This took inspiration from a well-known Facebook group of a university named 'DLSU Bids to Pick' where students freely exhange products around the area. With this, the website provides the appropriate functions that replicates the bidding experience.
 
 # Heroku App Deployment
-Link: [La-Sale Web Application] (https://lasale.herokuapp.com/)
+Link: [La-Sale Web Application](https://lasale.herokuapp.com/)
 
 ## Contents
 The folders found in the project directory provides appropriate organization for the codes and their specific functions.
