@@ -71,7 +71,7 @@ Create listings allows a user to post a product or service. The necessary detail
 **For testing purposes** You may create a listing with the deadline set a few minutes from now. With this, you may view and interact with it in the browse page. Also, you may search for it using the filter drop down or the search bar. This will be tagged as inactive once the bidding expires, therefore removing all possible functions. Magic!
 
 ### Edit Listing
-![alt_text](https://media.discordapp.net/attachments/529699127370448916/703536194226487377/unknown.png?width=878&height=431g)
+![alt_text]https://media.discordapp.net/attachments/529699127370448916/703562524016246784/unknown.png?width=884&height=431)
 This is where a bid can be editted. The input fields are optional, so even a single input would be valid. Uploading an image will just append the image to the existing images that the user uploaded. Images posted cannot be deleted, since this would be unethical. 
 
 ### Listing
