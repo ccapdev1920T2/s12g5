@@ -3,7 +3,6 @@ const Listing = require('../models/ListingModel.js');
 
 const editListingController = {
 	getEditListing: function(req, res){
-		console.log(req.query.listingid)
 		res.render('editlisting', {_id: req.query.listingid})
 		
 	},
