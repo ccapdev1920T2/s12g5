@@ -37,7 +37,6 @@ const createListingController = {
 			productType: productType,
 			status: 'active'
 		}
-		console.log(listing)
 
 		db.insertOne(Listing, listing, function(flag) {
 			if(flag)

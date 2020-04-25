@@ -28,7 +28,6 @@ const profileController = {
 				description: result.description,
 				session: req.session.username
 			}
-			//console.log(details)
 
 			query = {listingOwner: req.query.username, status:'active'};
 			projection = 'images name description startPrice buyOutPrice' //limit images to 1
@@ -44,7 +43,6 @@ const profileController = {
 	submitRating: function(req, res) {
 		var query = {username: req.query.username};
 		var username = req.query.username;
-		console.log("username " + req.query.username);
 		var send = 1;
 
 		db.findOne(Archer, query, 'rating ratings', function(result){

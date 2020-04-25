@@ -10,8 +10,6 @@ const editListingController = {
 
 	postEditListing: function(req, res){
 		var query = {_id: req.body._id}
-		console.log(query)
-
 		var buyOutPrice = req.body.buyout;
 		var description = req.body.desc;
 		if(req.file != null)
@@ -20,10 +18,6 @@ const editListingController = {
 
 		var img = [];
 
-		console.log(images)
-		console.log(buyOutPrice)
-		console.log(description)
-		console.log(endDate)
 
 		if(buyOutPrice!=''){
 			db.updateOne(Listing, query, {buyOutPrice: buyOutPrice})
@@ -46,7 +40,6 @@ const editListingController = {
 
 		db.deleteOne(Listing, query)
 
-		console.log(query);
 
 		res.redirect('/mylistings')
 	},

@@ -61,7 +61,6 @@ const signupController = {
 					*/
 				   db.insertOne(Archer, archer, function(flag){
 						if(flag){
-							console.log(archer);
 							res.redirect("/signupsuccess?firstname="+firstname);
 						}
 					})

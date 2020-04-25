@@ -11,7 +11,6 @@ const signinController = {
 	postSignIn: function (req, res) {
 		var query = {username: req.body.username};
 		var password = req.body.password;
-		console.log(query);
 
 		var projection = null;
 
@@ -19,19 +18,16 @@ const signinController = {
 			if(result != null){
 				bcrypt.compare(password, result.password, function(err, equal) {
 					if(equal){
-						console.log('login successful');
 						req.session.username = req.body.username;
 						res.redirect('/browse');
 					}
                      
                     else {
-                    	console.log('wrong password');
                     }
 
                 });	
 			}
 			else {
-				console.log("no user found");
 			}
 		})
 	},

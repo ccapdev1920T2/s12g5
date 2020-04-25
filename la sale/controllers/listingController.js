@@ -10,10 +10,8 @@ const listingController = {
 	getListing: function(req, res) {
 		var query = {_id: req.query.listingid}; //verify where it comes from
 		db.findOne(Listing, query, projection=null, function(result){
-			console.log (req.query.listingid)
 			if(result!=null) {
 				var photos = [];
-				// console.log(result.images.length);
 				for(var i = 0; i < result.images.length; i++) {
 					photos[i] = {img: result.images[i]};
 				}

@@ -11,17 +11,22 @@ const editProfileController = {
         var projection = 'profilePic firstname lastname username rating idnum college description'
 
         db.findOne(Archer, query, projection, function(result){
+            if(result.rating != null) {
+                var rate = result.rating.toFixed(2)
+            }
+            else{
+                var rate = 'none'
+            }
             var details = {
                 img: result.profilePic,
                 firstname: result.firstname,
                 lastname: result.lastname,
                 username: result.username,
-                rating: result.rating,
+                rating: rate,
                 idnum: result.idnum.toString().slice(0,3),
                 college: result.college,
                 userdesc: result.description
             }
-            console.log(details.img);
 
             res.render("editprofile",details)
         });
@@ -36,7 +41,7 @@ const editProfileController = {
         var password = req.body.password;
         var description = req.body.abouti;
 
-        if(profilePic!=''){
+        if(profilePic!='' && req.file != null){
             db.updateOne(Archer, query, {profilePic:profilePic})
         }
         if(password!=''){
@@ -50,7 +55,6 @@ const editProfileController = {
             db.updateOne(Archer, query, {description:description})
         }
 
-        console.log(req.file);
         res.redirect("/editprofileSuccess")
     },
 }
