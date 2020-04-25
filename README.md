@@ -46,7 +46,7 @@ The navigation bar or navbar should be used as the primary tool in order to acce
 
 ### Profile
 ![alt text](https://media.discordapp.net/attachments/696739033371508777/698201951346884618/unknown.png?width=1347&height=677)
-![alt text](https://media.discordapp.net/attachments/696739033371508777/698201993130410064/unknown.png?width=1341&height=677)
+![alt text](https://media.discordapp.net/attachments/529699127370448916/703562269300359208/unknown.png?width=884&height=431)
 The profile page provides the personal information of the user in the session. Moreover, it also provides a way to edit certain information such as profile picture, password, and user description. These are optional so it may be left blank while the other information could be filled out.
   
 ### Listings
@@ -71,7 +71,7 @@ Create listings allows a user to post a product or service. The necessary detail
 **For testing purposes** You may create a listing with the deadline set a few minutes from now. With this, you may view and interact with it in the browse page. Also, you may search for it using the filter drop down or the search bar. This will be tagged as inactive once the bidding expires, therefore removing all possible functions. Magic!
 
 ### Edit Listing
-![alt_text](https://cdn.discordapp.com/attachments/529699127370448916/703536194226487377/unknown.png)
+![alt_text](https://media.discordapp.net/attachments/529699127370448916/703536194226487377/unknown.png?width=878&height=431g)
 This is where a bid can be editted. The input fields are optional, so even a single input would be valid. Uploading an image will just append the image to the existing images that the user uploaded. Images posted cannot be deleted, since this would be unethical. 
 
 ### Listing
