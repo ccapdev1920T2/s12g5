@@ -14,7 +14,6 @@ const validation = {
             check('buyout', 'Buy out price should not be empty.').notEmpty(),
             check('desc', 'Description should not be empty.').notEmpty(),
             check('startprice', 'Last name should not be empty.').notEmpty(),
-            check('images', 'Listing should include an image.').notEmpty(),
             check('enddate', 'End date should be defined.').notEmpty()
 
         ];
