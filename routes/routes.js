@@ -1,6 +1,6 @@
 const express = require('express');
 const multer  = require('multer');
-const path = require('path')
+
 
 
 const controller = require('../controllers/signinController.js');
@@ -21,6 +21,7 @@ const editProfileSuccessController = require('../controllers/editprofileSuccessC
 const ratingSuccessController = require('../controllers/ratingSuccessController');
 const aboutController = require('../controllers/aboutController');
 const validation = require('../controllers/helpers/signupValidation.js');
+const createListingValidation = require('../controllers/helpers/createListingValidation.js')
 const app = express();
 
 
@@ -44,7 +45,7 @@ app.get('/browse', browseController.getBrowse);
 
 app.get('/createlisting', createListingController.getCreateListing);
 
-app.post('/createlisting', upload.single('images'),createListingController.postCreateListing);
+app.post('/createlisting', upload.single('images'), createListingValidation.createListingValidation(), createListingController.postCreateListing);
 
 app.get('/signup', signUpController.getSignUp);
 
@@ -117,3 +118,5 @@ app.get('/getCheckEndDate', editListingController.getCheckEndDate);
 app.get('/getCheckLogin', controller.getCheckLogin);
 
 app.get('/getSendMessage', messagesController.getSendMessage);
+
+app.get('/logout', logoutController.getLogout);

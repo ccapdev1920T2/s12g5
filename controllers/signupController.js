@@ -54,11 +54,6 @@ const signupController = {
 					posted: posted
 					}
 		
-					/*
-						calls the function insertOne()
-						defined in the `database` object in `../models/db.js`
-						this function adds a document to collection `users`
-					*/
 				   db.insertOne(Archer, archer, function(flag){
 						if(flag){
 							res.redirect("/signupsuccess?firstname="+firstname);
